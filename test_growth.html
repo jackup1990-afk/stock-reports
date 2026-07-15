@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>量化策略报告 - US 2026-05-12</title>
+    
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: #f5f5f5; color: #333; line-height: 1.6; padding: 20px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 { color: #1a1a2e; margin-bottom: 5px; font-size: 1.8em; }
+    h2 { color: #16213e; margin: 20px 0 10px; font-size: 1.3em; border-bottom: 2px solid #e0e0e0; padding-bottom: 5px; }
+    h3 { color: #0f3460; margin: 15px 0 8px; font-size: 1.1em; }
+    .header { background: #1a1a2e; color: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    .header h1 { color: white; }
+    .header .meta { color: #b0b0b0; font-size: 0.9em; margin-top: 5px; }
+    .freshness { color: #856404; background: #fff3cd; padding: 8px 12px; border-radius: 4px; margin: 10px 0; font-size: 0.9em; }
+    .filter-info { color: #0c5460; background: #d1ecf1; padding: 8px 12px; border-radius: 4px; margin: 10px 0; font-size: 0.9em; }
+
+    /* Dashboard */
+    .dashboard { background: white; border-radius: 8px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .dashboard .summary { display: flex; gap: 20px; flex-wrap: wrap; }
+    .dashboard .stat { padding: 8px 15px; border-radius: 6px; }
+    .stat-s { background: #fff3cd; color: #856404; font-weight: bold; }
+    .stat-clear { background: #f8d7da; color: #721c24; }
+    .stat-reduce { background: #fff3cd; color: #856404; }
+    .top3 { margin-top: 10px; color: #333; }
+
+    /* Signal tables */
+    .signal-section { background: white; border-radius: 8px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+    th { background: #f0f0f0; padding: 8px 6px; text-align: left; font-weight: 600; position: sticky; top: 0; }
+    td { padding: 6px; border-bottom: 1px solid #eee; }
+    tr:hover { background: #f8f9fa; }
+    .code { font-family: monospace; font-weight: bold; }
+    .change-up { color: #dc3545; font-weight: bold; }
+    .change-down { color: #28a745; font-weight: bold; }
+    .change-flat { color: #6c757d; }
+    .amount { font-family: monospace; }
+    .tier-badge {
+        display: inline-block; padding: 2px 8px; border-radius: 10px;
+        font-size: 0.8em; font-weight: bold; color: white;
+    }
+    .signal-badge {
+        display: inline-block; padding: 3px 10px; border-radius: 12px;
+        font-size: 0.8em; font-weight: bold;
+    }
+    .action-badge {
+        display: inline-block; padding: 2px 8px; border-radius: 4px;
+        font-size: 0.8em; color: white; font-weight: bold;
+    }
+    .state { color: #555; font-size: 0.9em; }
+    .reason { color: #777; font-size: 0.85em; max-width: 300px; }
+    .turnover { font-family: monospace; font-size: 0.9em; }
+    .turnover-warn { color: #dc3545; font-weight: bold; }
+    .dev-warn { color: #dc3545; }
+    .sr-ref { color: #6c757d; font-family: monospace; font-size: 0.85em; }
+
+    /* Tier group header */
+    .tier-header {
+        background: #f0f0f0; padding: 6px 12px; margin: 10px 0 5px;
+        border-radius: 4px; font-weight: bold; font-size: 0.9em;
+    }
+
+    /* Section toggle */
+    .toggle-btn {
+        background: none; border: 1px solid #ccc; padding: 4px 12px;
+        border-radius: 4px; cursor: pointer; font-size: 0.8em; color: #555;
+    }
+    .toggle-btn:hover { background: #f0f0f0; }
+
+    /* Star stocks */
+    .star-section { background: white; border-radius: 8px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .star-table td { padding: 5px 6px; }
+    .tags { font-size: 0.85em; }
+    .tag-ma30-up { color: #28a745; }
+    .tag-ma30-down { color: #dc3545; }
+    .tag-turnover { color: #17a2b8; }
+    .tag-dev { color: #dc3545; }
+    .tag-trend { color: #6f42c1; }
+
+    /* Market Overview */
+    .overview-section { background: white; border-radius: 8px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 10px 0; }
+    .overview-card { padding: 12px; border-radius: 6px; text-align: center; }
+    .overview-card .label { font-size: 0.85em; color: #666; }
+    .overview-card .value { font-size: 1.4em; font-weight: bold; margin-top: 4px; }
+    .overview-card-up { background: #f8d7da; }
+    .overview-card-up .value { color: #dc3545; }
+    .overview-card-down { background: #d4edda; }
+    .overview-card-down .value { color: #28a745; }
+    .overview-card-neutral { background: #e2e3e5; }
+    .overview-card-neutral .value { color: #383d41; }
+    .overview-card-total { background: #cce5ff; }
+    .overview-card-total .value { color: #004085; }
+    .state-dist { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+    .state-chip { padding: 4px 10px; border-radius: 12px; font-size: 0.8em; font-weight: 500; }
+
+    /* Sector Analysis */
+    .sector-section { background: white; border-radius: 8px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .sector-table { font-size: 0.85em; }
+    .sector-table th { background: #f0f0f0; padding: 6px 8px; text-align: left; font-weight: 600; }
+    .sector-table td { padding: 5px 8px; border-bottom: 1px solid #eee; }
+    .sector-table tr:hover { background: #f8f9fa; }
+    .sector-name { font-weight: 600; }
+    .deviation-low { color: #28a745; font-weight: bold; }
+    .momentum-high { color: #dc3545; font-weight: bold; }
+    .momentum-low { color: #28a745; }
+    .sector-type-badge { display: inline-block; padding: 1px 6px; border-radius: 8px; font-size: 0.75em; color: white; }
+    .sector-type-concept { background: #6f42c1; }
+    .sector-type-industry { background: #17a2b8; }
+
+    /* Deep Dive */
+    .deep-dive-section { background: white; border-radius: 8px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .deep-dive-card { border: 1px solid #e0e0e0; border-radius: 6px; margin: 10px 0; padding: 12px; }
+    .deep-dive-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .deep-dive-title { font-size: 1.05em; font-weight: bold; }
+    .roc-bars { display: flex; gap: 6px; margin: 8px 0; flex-wrap: wrap; }
+    .roc-bar { display: flex; flex-direction: column; align-items: center; min-width: 60px; }
+    .roc-bar-label { font-size: 0.75em; color: #666; }
+    .roc-bar-value { font-size: 0.9em; font-weight: bold; padding: 2px 6px; border-radius: 4px; color: white; margin-top: 2px; }
+    .risk-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.8em; font-weight: bold; color: white; }
+    .risk-extreme { background: #dc3545; }
+    .risk-high { background: #e67e22; }
+    .risk-medium { background: #ffc107; color: #333; }
+    .risk-low { background: #28a745; }
+
+    /* Growth Stock Screening */
+    .growth-section { background: white; border-radius: 8px; padding: 15px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .growth-principle { background: #f8f9fa; border-left: 4px solid #6f42c1; padding: 10px 12px; margin: 8px 0; font-size: 0.9em; }
+    .growth-principle strong { color: #6f42c1; }
+    .growth-card { border: 1px solid #e0e0e0; border-radius: 8px; margin: 12px 0; padding: 15px; background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%); }
+    .growth-card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .growth-card-title { font-size: 1.1em; font-weight: bold; color: #1a1a2e; }
+    .growth-card-price { font-size: 1.2em; font-weight: bold; }
+    .growth-card-price .change { font-size: 0.8em; margin-left: 8px; }
+    .growth-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin: 10px 0; }
+    .growth-metric { text-align: center; padding: 8px; background: white; border-radius: 6px; border: 1px solid #eee; }
+    .growth-metric .label { font-size: 0.75em; color: #666; }
+    .growth-metric .value { font-size: 1em; font-weight: bold; color: #333; }
+    .growth-thesis { background: white; border-radius: 6px; padding: 12px; margin: 10px 0; border-left: 3px solid #28a745; }
+    .growth-thesis h4 { color: #28a745; margin-bottom: 6px; font-size: 0.95em; }
+    .growth-thesis ul { margin: 0; padding-left: 20px; font-size: 0.9em; }
+    .growth-thesis li { margin: 3px 0; }
+    .supply-demand-bar { display: flex; gap: 10px; margin: 8px 0; }
+    .sd-item { flex: 1; text-align: center; padding: 6px; border-radius: 4px; font-size: 0.85em; }
+    .sd-supply { background: #fff3cd; color: #856404; }
+    .sd-demand { background: #d4edda; color: #155724; }
+    .growth-risk { background: #f8d7da; border-radius: 6px; padding: 10px; margin: 8px 0; font-size: 0.85em; }
+    .growth-risk strong { color: #721c24; }
+    .risk-very-low { background: #17a2b8; }
+    .action-rec { margin-top: 8px; padding: 8px 12px; border-radius: 4px; font-size: 0.9em; }
+    .action-rec-open { background: #d4edda; border-left: 4px solid #28a745; }
+    .action-rec-hold { background: #d1ecf1; border-left: 4px solid #17a2b8; }
+    .action-rec-watch { background: #e2e3e5; border-left: 4px solid #6c757d; }
+    details summary { cursor: pointer; padding: 6px 0; font-weight: 600; color: #16213e; }
+    details summary:hover { color: #0f3460; }
+    details[open] summary { margin-bottom: 8px; }
+
+    .footer { text-align: center; color: #999; font-size: 0.8em; margin-top: 30px; padding: 15px; }
+</style>
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>量化策略分析 - US市场</h1>
+        <div class="meta">数据日期: 2026-05-12 | 共 2414 只标的 | 生成时间: 2026-05-13 19:29</div>
+        <div class="meta">成交额门槛: 1.0亿</div>
+    </div>
+
+    <div class="freshness">📅 数据日期: 2026-05-12（昨日数据，可能今日尚未更新）</div>
+    <div class="filter-info">⏩ 成交额过滤: 1419 只标的未达门槛（US≥1亿 / HK≥1亿）</div>
+
+    
+    <div class="overview-section">
+        <h2>📊 市场概况</h2>
+        <div class="overview-grid">
+            <div class="overview-card overview-card-total">
+                <div class="label">活跃标的</div>
+                <div class="value">2414</div>
+            </div>
+            <div class="overview-card overview-card-up">
+                <div class="label">上涨</div>
+                <div class="value">822</div>
+            </div>
+            <div class="overview-card overview-card-down">
+                <div class="label">下跌</div>
+                <div class="value">1502</div>
+            </div>
+            <div class="overview-card overview-card-neutral">
+                <div class="label">平盘</div>
+                <div class="value">90</div>
+            </div>
+            <div class="overview-card overview-card-down">
+                <div class="label">市场情绪</div>
+                <div class="value">偏空</div>
+            </div>
+        </div>
+        <h3>状态分布</h3>
+        <div class="state-dist"><span class="state-chip" style="background:#6c757d;color:white">未知: 2414</span></div>
+    </div>
+
+    <div class="dashboard">
+        <h2>📊 今日要点</h2>
+        <div class="summary">
+            <div class="stat stat-s">S级: 4 只</div>
+            <div class="stat stat-reduce">减仓: 0 只</div>
+            <div class="stat stat-clear">清仓: 57 只</div>
+            <div class="stat">持有: 513 只</div>
+            <div class="stat">观望: 410 只</div>
+        </div>
+        <div style="margin-top:8px;">信号分布: <span class="tier-badge" style="background:#4682b4">L3</span> 1只 <span class="tier-badge" style="background:#708090">L4</span> 3只</div>
+        <div class="freshness">⚠️ 高位预警(乖离>30%): RXT(174%), FCEL(46%)</div>
+        <div class="top3">TOP3评分: <b>QUBT</b>(95) <b>Q</b>(92) <b>RXT</b>(86)</div>
+    </div>
+
+    
+
+    <h2>★ 核心明星股跟踪（成交额前15名）</h2>
+    <div class="star-section">
+        <table class="star-table"><tr>
+        <th>代码</th><th>名称</th><th>收盘</th><th>涨跌</th>
+        <th>成交额</th><th>层级</th><th>RSI12</th><th>状态</th><th>标签</th>
+    </tr><tr>
+        <td class="code">MU</td>
+        <td>美光科技</td>
+        <td>766.58</td>
+        <td class="change-down">-3.60%</td>
+        <td class="amount">548.7亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>83.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势洗盘</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手6.6%</span> <span class="tag-dev">乖离37.2%</span> <span class="tag-trend">进三退一(3.2)</span> <span class="sr-ref">60日低321.80/高795.33</span></td>
+    </tr>
+<tr>
+        <td class="code">SPY</td>
+        <td>标普500ETF-SPDR</td>
+        <td>738.18</td>
+        <td class="change-down">-0.20%</td>
+        <td class="amount">398.3亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>78.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势洗盘</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-trend">进三退二(2.3)</span> <span class="sr-ref">60日低631.97/高739.30</span></td>
+    </tr>
+<tr>
+        <td class="code">NVDA</td>
+        <td>英伟达</td>
+        <td>220.78</td>
+        <td class="change-up">+0.60%</td>
+        <td class="amount">348.7亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>62.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势主升</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手0.7%</span> <span class="tag-trend">涨跌相当(1.5)</span> <span class="sr-ref">60日低165.17/高220.78</span></td>
+    </tr>
+<tr>
+        <td class="code">QQQ</td>
+        <td>纳指100ETF-Invesco QQQ Trust</td>
+        <td>707.24</td>
+        <td class="change-down">-0.80%</td>
+        <td class="amount">321.4亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>80.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势洗盘</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-trend">进三退一(3.0)</span> <span class="sr-ref">60日低558.28/高713.29</span></td>
+    </tr>
+<tr>
+        <td class="code">TSLA</td>
+        <td>特斯拉</td>
+        <td>433.45</td>
+        <td class="change-down">-2.60%</td>
+        <td class="amount">261.6亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>79.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势洗盘</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手2.1%</span> <span class="tag-trend">进三退二(1.7)</span> <span class="sr-ref">60日低343.25/高445.00</span></td>
+    </tr>
+<tr>
+        <td class="code">SNDK</td>
+        <td>闪迪</td>
+        <td>1452.02</td>
+        <td class="change-down">-6.20%</td>
+        <td class="amount">244.0亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>74.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势主升</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手12.2%</span> <span class="tag-dev">乖离27.1%</span> <span class="tag-trend">进三退二(1.9)</span> <span class="sr-ref">60日低572.50/高1562.34</span></td>
+    </tr>
+<tr>
+        <td class="code">INTC</td>
+        <td>英特尔</td>
+        <td>120.61</td>
+        <td class="change-down">-6.80%</td>
+        <td class="amount">206.1亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>77.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势主升</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手3.4%</span> <span class="tag-dev">乖离33.4%</span> <span class="tag-trend">进三退一(3.4)</span> <span class="sr-ref">60日低41.19/高129.44</span></td>
+    </tr>
+<tr>
+        <td class="code">AMD</td>
+        <td>超威半导体</td>
+        <td>448.29</td>
+        <td class="change-down">-2.30%</td>
+        <td class="amount">173.0亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>71.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势洗盘</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手2.4%</span> <span class="tag-dev">乖离29.4%</span> <span class="tag-trend">进三退二(1.7)</span> <span class="sr-ref">60日低193.39/高458.79</span></td>
+    </tr>
+<tr>
+        <td class="code">MSFT</td>
+        <td>微软</td>
+        <td>407.77</td>
+        <td class="change-down">-1.20%</td>
+        <td class="amount">157.4亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>36.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 趋势整理</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手0.5%</span> <span class="tag-trend">涨跌相当(1.0)</span> <span class="sr-ref">60日低356.77/高432.92</span></td>
+    </tr>
+<tr>
+        <td class="code">SOXL</td>
+        <td>三倍做多半导体ETF-Direxion</td>
+        <td>172.52</td>
+        <td class="change-down">-9.40%</td>
+        <td class="amount">150.2亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>65.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势主升</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-dev">乖离35.4%</span> <span class="tag-trend">涨跌相当(1.2)</span> <span class="sr-ref">60日低40.62/高190.42</span></td>
+    </tr>
+<tr>
+        <td class="code">AAPL</td>
+        <td>苹果</td>
+        <td>294.80</td>
+        <td class="change-up">+0.70%</td>
+        <td class="amount">134.5亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>80.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势主升</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手0.3%</span> <span class="tag-trend">进三退二(2.0)</span> <span class="sr-ref">60日低246.63/高294.80</span></td>
+    </tr>
+<tr>
+        <td class="code">GOOGL</td>
+        <td>谷歌-A</td>
+        <td>387.35</td>
+        <td class="change-down">-0.30%</td>
+        <td class="amount">100.5亿</td>
+        <td><span class="tier-badge" style="background:#b8860b">L1</span></td>
+        <td>78.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势洗盘</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手0.2%</span> <span class="tag-trend">进三退二(2.3)</span> <span class="sr-ref">60日低273.50/高400.80</span></td>
+    </tr>
+<tr>
+        <td class="code">SMH</td>
+        <td>半导体指数ETF-VanEck</td>
+        <td>561.25</td>
+        <td class="change-down">-2.60%</td>
+        <td class="amount">98.2亿</td>
+        <td><span class="tier-badge" style="background:#2e8b57">L2</span></td>
+        <td>69.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势洗盘</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-dev">乖离11.1%</span> <span class="tag-trend">进三退二(2.0)</span> <span class="sr-ref">60日低362.53/高576.31</span></td>
+    </tr>
+<tr>
+        <td class="code">AMZN</td>
+        <td>亚马逊</td>
+        <td>265.82</td>
+        <td class="change-down">-1.20%</td>
+        <td class="amount">97.4亿</td>
+        <td><span class="tier-badge" style="background:#2e8b57">L2</span></td>
+        <td>53.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 主升浪途中</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手0.4%</span> <span class="tag-trend">涨跌相当(1.4)</span> <span class="sr-ref">60日低199.34/高274.99</span></td>
+    </tr>
+<tr>
+        <td class="code">QCOM</td>
+        <td>高通</td>
+        <td>210.31</td>
+        <td class="change-down">-11.50%</td>
+        <td class="amount">81.8亿</td>
+        <td><span class="tier-badge" style="background:#2e8b57">L2</span></td>
+        <td>72.0</td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span> 强势主升</td>
+        <td class="tags"><span class="tag-ma30-up">↑MA30</span> <span class="tag-turnover">换手3.7%</span> <span class="tag-dev">乖离26.5%</span> <span class="tag-trend">进三退一(2.7)</span> <span class="sr-ref">60日低124.07/高237.53</span></td>
+    </tr></table>
+    </div>
+
+    <h2>★ 开仓信号 (15 只)</h2>
+    
+    <div class="signal-section">
+        <h3 style="background:#fff3cd;color:#856404;padding:8px 12px;border-radius:4px;display:inline-block;">
+            S级 - 强烈推荐 (4 只)
+        </h3>
+        <div class="tier-header" style="border-left: 4px solid #4682b4">[L3] 1 只</div><table><tr>
+        <th>代码</th><th>名称</th><th>收盘</th><th>涨跌</th>
+        <th>成交额</th><th>层级</th><th>换手率</th>
+        <th>RSI12</th><th>MA20斜率</th><th>评分</th><th>动作</th>
+        <th>状态</th><th>依据</th>
+    </tr><tr>
+        <td class="code">QUBT</td>
+        <td>Quantum Computing Inc</td>
+        <td>11.78</td>
+        <td class="change-up">+15.70%</td>
+        <td class="amount">17.8亿</td>
+        <td><span class="tier-badge" style="background:#4682b4">L3</span></td>
+        <td><span class="turnover turnover-warn">75.7%</span> <span class="turnover-warn">(>5%)</span></td>
+        <td>73.0</td>
+        <td>+8.86%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(95)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离23.7%</span><br><span class="sr-ref">60日低6.31/高11.78</span></td>
+        <td class="reason">强势股主升浪加速，涨幅15.7%，RSI12=73.0</td>
+    </tr></table><div class="tier-header" style="border-left: 4px solid #708090">[L4] 3 只</div><table><tr>
+        <th>代码</th><th>名称</th><th>收盘</th><th>涨跌</th>
+        <th>成交额</th><th>层级</th><th>换手率</th>
+        <th>RSI12</th><th>MA20斜率</th><th>评分</th><th>动作</th>
+        <th>状态</th><th>依据</th>
+    </tr><tr>
+        <td class="code">Q</td>
+        <td>Qnity Electronics Inc</td>
+        <td>168.36</td>
+        <td class="change-up">+9.90%</td>
+        <td class="amount">7.2亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">2.0%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>72.0</td>
+        <td>+3.80%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(92)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="tags"> 乖离18.0%</span><br><span class="sr-ref">60日低107.04/高168.36</span></td>
+        <td class="reason">强势股主升浪加速，涨幅9.9%，RSI12=72.0</td>
+    </tr>
+<tr>
+        <td class="code">RXT</td>
+        <td>Rackspace Technology Inc</td>
+        <td>6.33</td>
+        <td class="change-up">+35.00%</td>
+        <td class="amount">3.3亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">46.7%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>84.0</td>
+        <td>+56.42%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(86)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离173.7%</span><br><span class="sr-ref">60日低0.88/高6.33</span></td>
+        <td class="reason">强势股主升浪加速，涨幅35.0%，RSI12=84.0</td>
+    </tr>
+<tr>
+        <td class="code">FCEL</td>
+        <td>燃料电池能源</td>
+        <td>17.09</td>
+        <td class="change-up">+7.20%</td>
+        <td class="amount">2.6亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">29.2%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>73.0</td>
+        <td>+19.40%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(81)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离45.8%</span><br><span class="sr-ref">60日低6.23/高17.09</span></td>
+        <td class="reason">强势股主升浪加速，涨幅7.2%，RSI12=73.0</td>
+    </tr></table>
+    </div>
+    <div class="signal-section">
+        <h3 style="background:#d4edda;color:#155724;padding:8px 12px;border-radius:4px;display:inline-block;">
+            A级 - 推荐 (10 只)
+        </h3>
+        <div class="tier-header" style="border-left: 4px solid #708090">[L4] 10 只</div><table><tr>
+        <th>代码</th><th>名称</th><th>收盘</th><th>涨跌</th>
+        <th>成交额</th><th>层级</th><th>换手率</th>
+        <th>RSI12</th><th>MA20斜率</th><th>评分</th><th>动作</th>
+        <th>状态</th><th>依据</th>
+    </tr><tr>
+        <td class="code">AMBQ</td>
+        <td>Ambiq Micro Inc</td>
+        <td>66.37</td>
+        <td class="change-up">+45.30%</td>
+        <td class="amount">1.8亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">14.8%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>88.0</td>
+        <td>+13.06%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(79)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离71.8%</span><br><span class="sr-ref">60日低23.68/高66.37</span></td>
+        <td class="reason">强势股主升浪加速，涨幅45.3%，RSI12=88.0</td>
+    </tr>
+<tr>
+        <td class="code">SFM</td>
+        <td>Sprouts Farmers Market Inc</td>
+        <td>86.89</td>
+        <td class="change-up">+6.50%</td>
+        <td class="amount">2.8亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">3.4%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>75.0</td>
+        <td>+2.01%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(79)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="tags"> 乖离12.9%</span><br><span class="sr-ref">60日低70.74/高86.89</span></td>
+        <td class="reason">强势股主升浪加速，涨幅6.5%，RSI12=75.0</td>
+    </tr>
+<tr>
+        <td class="code">RVI</td>
+        <td>Robinhood Ventures Fund I</td>
+        <td>53.49</td>
+        <td class="change-up">+22.40%</td>
+        <td class="amount">1.0亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">-</span></td>
+        <td>83.0</td>
+        <td>+13.30%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(79)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离66.1%</span><br><span class="sr-ref">60日低22.02/高53.49</span></td>
+        <td class="reason">强势股主升浪加速，涨幅22.4%，RSI12=83.0</td>
+    </tr>
+<tr>
+        <td class="code">HUT</td>
+        <td>Hut 8 Corp</td>
+        <td>107.31</td>
+        <td class="change-up">+5.00%</td>
+        <td class="amount">4.7亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">5.1%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>74.0</td>
+        <td>+12.62%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(75)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离29.5%</span><br><span class="sr-ref">60日低42.72/高108.94</span></td>
+        <td class="reason">强势股主升浪加速，涨幅5.0%，RSI12=74.0</td>
+    </tr>
+<tr>
+        <td class="code">OSCR</td>
+        <td>Oscar Health Inc-A</td>
+        <td>23.73</td>
+        <td class="change-up">+7.90%</td>
+        <td class="amount">3.0亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">5.2%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>91.0</td>
+        <td>+10.10%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(72)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离30.5%</span><br><span class="sr-ref">60日低10.85/高23.73</span></td>
+        <td class="reason">强势股主升浪加速，涨幅7.9%，RSI12=91.0</td>
+    </tr>
+<tr>
+        <td class="code">ERNA</td>
+        <td>Eterna Therapeutics</td>
+        <td>12.01</td>
+        <td class="change-up">+59.50%</td>
+        <td class="amount">2.6亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">2615.2%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>97.0</td>
+        <td>+828.00%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(71)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离559.4%</span><br><span class="sr-ref">60日低0.15/高12.01</span></td>
+        <td class="reason">强势股主升浪加速，涨幅59.5%，RSI12=97.0</td>
+    </tr>
+<tr>
+        <td class="code">QS</td>
+        <td>QuantumScape Corp-A</td>
+        <td>8.42</td>
+        <td class="change-up">+4.90%</td>
+        <td class="amount">2.6亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">6.3%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>68.0</td>
+        <td>+5.13%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(71)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="tags"> 乖离14.9%</span><br><span class="sr-ref">60日低5.96/高8.42</span></td>
+        <td class="reason">强势股主升浪加速，涨幅4.9%，RSI12=68.0</td>
+    </tr>
+<tr>
+        <td class="code">DGXX</td>
+        <td>Digi Power X Inc</td>
+        <td>8.39</td>
+        <td class="change-up">+12.90%</td>
+        <td class="amount">1.7亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">31.0%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>94.0</td>
+        <td>+34.92%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(71)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离93.0%</span><br><span class="sr-ref">60日低1.89/高8.39</span></td>
+        <td class="reason">强势股主升浪加速，涨幅12.9%，RSI12=94.0</td>
+    </tr>
+<tr>
+        <td class="code">HUM</td>
+        <td>哈门那</td>
+        <td>295.35</td>
+        <td class="change-up">+7.70%</td>
+        <td class="amount">8.4亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">2.4%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>90.0</td>
+        <td>+8.26%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(70)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离26.7%</span><br><span class="sr-ref">60日低162.78/高295.35</span></td>
+        <td class="reason">强势股主升浪加速，涨幅7.7%，RSI12=90.0</td>
+    </tr>
+<tr>
+        <td class="code">CNC</td>
+        <td>康西哥</td>
+        <td>59.31</td>
+        <td class="change-up">+5.20%</td>
+        <td class="amount">5.5亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">2.0%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>92.0</td>
+        <td>+11.04%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(65)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离24.0%</span><br><span class="sr-ref">60日低31.80/高59.31</span></td>
+        <td class="reason">强势股主升浪加速，涨幅5.2%，RSI12=92.0</td>
+    </tr></table>
+    </div>
+    <div class="signal-section">
+        <h3 style="background:#cce5ff;color:#004085;padding:8px 12px;border-radius:4px;display:inline-block;">
+            B级 - 关注 (1 只)
+        </h3>
+        <div class="tier-header" style="border-left: 4px solid #708090">[L4] 1 只</div><table><tr>
+        <th>代码</th><th>名称</th><th>收盘</th><th>涨跌</th>
+        <th>成交额</th><th>层级</th><th>换手率</th>
+        <th>RSI12</th><th>MA20斜率</th><th>评分</th><th>动作</th>
+        <th>状态</th><th>依据</th>
+    </tr><tr>
+        <td class="code">QURE</td>
+        <td>uniQure NV</td>
+        <td>29.10</td>
+        <td class="change-up">+5.30%</td>
+        <td class="amount">1.2亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">8.1%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>85.0</td>
+        <td>+13.68%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(59)</small></td>
+        <td><span class="action-badge" style="background:#28a745">开仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离43.5%</span><br><span class="sr-ref">60日低14.73/高29.10</span></td>
+        <td class="reason">强势股主升浪加速，涨幅5.3%，RSI12=85.0</td>
+    </tr></table>
+    </div>
+
+    
+    <div class="deep-dive-section">
+        <h2>🔍 S级信号深度分析</h2>
+        <details>
+            <summary>展开查看 4 只S级信号的详细ROC、风险评估和操作建议</summary>
+            
+        <div class="deep-dive-card">
+            <div class="deep-dive-header">
+                <span class="deep-dive-title">QUBT Quantum Computing Inc</span>
+                <span><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(95分)</small></span>
+            </div>
+            <div style="display:flex;gap:15px;flex-wrap:wrap;align-items:center;">
+                <span>收盘: <b>11.78</b></span>
+                <span class="change-up">涨跌: +15.70%</span>
+                <span>RSI6: 78.0 / RSI12: 73.0</span>
+                <span>MA20斜率: +8.86%</span>
+                <span>换手率: 75.7% <span style="color:#dc3545;font-weight:bold;">(异常)</span></span>
+            </div>
+            <div style="margin-top:6px;">乖离率: 23.7% <span class="risk-badge risk-high">高风险</span></div>
+            <div class="roc-bars"><div class="roc-bar"><span class="roc-bar-label">5日</span><span class="roc-bar-value" style="background:#dc3545">+23.2%</span></div><div class="roc-bar"><span class="roc-bar-label">10日</span><span class="roc-bar-value" style="background:#dc3545">+37.5%</span></div><div class="roc-bar"><span class="roc-bar-label">20日</span><span class="roc-bar-value" style="background:#dc3545">+45.3%</span></div><div class="roc-bar"><span class="roc-bar-label">60日</span><span class="roc-bar-value" style="background:#dc3545">+39.1%</span></div><div class="roc-bar"><span class="roc-bar-label">120日</span><span class="roc-bar-value" style="background:#dc3545">+14.7%</span></div><div class="roc-bar"><span class="roc-bar-label">240日</span><span class="roc-bar-value" style="background:#ccc">+0.0%</span></div></div>
+            <div style="font-size:0.85em;color:#666;margin-top:4px;">60日区间: 6.31 ~ 11.78 (收盘11.78)</div>
+            <div class="action-rec action-rec-open">▲ <b>开仓</b> - 强势主升<br><small>强势股主升浪加速，涨幅15.7%，RSI12=73.0 | 乖离风险: 高 | 趋势强度: 涨跌相当(1.1)</small></div>
+        </div>
+        <div class="deep-dive-card">
+            <div class="deep-dive-header">
+                <span class="deep-dive-title">Q Qnity Electronics Inc</span>
+                <span><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(92分)</small></span>
+            </div>
+            <div style="display:flex;gap:15px;flex-wrap:wrap;align-items:center;">
+                <span>收盘: <b>168.36</b></span>
+                <span class="change-up">涨跌: +9.90%</span>
+                <span>RSI6: 85.0 / RSI12: 72.0</span>
+                <span>MA20斜率: +3.80%</span>
+                <span>换手率: 2.0% <span style="color:#dc3545;font-weight:bold;">(异常)</span></span>
+            </div>
+            <div style="margin-top:6px;">乖离率: 18.0% <span class="risk-badge risk-medium">中风险</span></div>
+            <div class="roc-bars"><div class="roc-bar"><span class="roc-bar-label">5日</span><span class="roc-bar-value" style="background:#dc3545">+14.9%</span></div><div class="roc-bar"><span class="roc-bar-label">10日</span><span class="roc-bar-value" style="background:#dc3545">+22.4%</span></div><div class="roc-bar"><span class="roc-bar-label">20日</span><span class="roc-bar-value" style="background:#dc3545">+26.8%</span></div><div class="roc-bar"><span class="roc-bar-label">60日</span><span class="roc-bar-value" style="background:#dc3545">+50.7%</span></div><div class="roc-bar"><span class="roc-bar-label">120日</span><span class="roc-bar-value" style="background:#dc3545">+125.2%</span></div><div class="roc-bar"><span class="roc-bar-label">240日</span><span class="roc-bar-value" style="background:#ccc">+0.0%</span></div></div>
+            <div style="font-size:0.85em;color:#666;margin-top:4px;">60日区间: 107.04 ~ 168.36 (收盘168.36)</div>
+            <div class="action-rec action-rec-open">▲ <b>开仓</b> - 强势主升<br><small>强势股主升浪加速，涨幅9.9%，RSI12=72.0 | 乖离风险: 中 | 趋势强度: 进三退二(1.5)</small></div>
+        </div>
+        <div class="deep-dive-card">
+            <div class="deep-dive-header">
+                <span class="deep-dive-title">RXT Rackspace Technology Inc</span>
+                <span><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(86分)</small></span>
+            </div>
+            <div style="display:flex;gap:15px;flex-wrap:wrap;align-items:center;">
+                <span>收盘: <b>6.33</b></span>
+                <span class="change-up">涨跌: +35.00%</span>
+                <span>RSI6: 84.0 / RSI12: 84.0</span>
+                <span>MA20斜率: +56.42%</span>
+                <span>换手率: 46.7% <span style="color:#dc3545;font-weight:bold;">(异常)</span></span>
+            </div>
+            <div style="margin-top:6px;">乖离率: 173.7% <span class="risk-badge risk-extreme">极高风险</span></div>
+            <div class="roc-bars"><div class="roc-bar"><span class="roc-bar-label">5日</span><span class="roc-bar-value" style="background:#dc3545">+158.4%</span></div><div class="roc-bar"><span class="roc-bar-label">10日</span><span class="roc-bar-value" style="background:#dc3545">+313.7%</span></div><div class="roc-bar"><span class="roc-bar-label">20日</span><span class="roc-bar-value" style="background:#dc3545">+410.5%</span></div><div class="roc-bar"><span class="roc-bar-label">60日</span><span class="roc-bar-value" style="background:#dc3545">+1406.4%</span></div><div class="roc-bar"><span class="roc-bar-label">120日</span><span class="roc-bar-value" style="background:#dc3545">+465.2%</span></div><div class="roc-bar"><span class="roc-bar-label">240日</span><span class="roc-bar-value" style="background:#ccc">+0.0%</span></div></div>
+            <div style="font-size:0.85em;color:#666;margin-top:4px;">60日区间: 0.88 ~ 6.33 (收盘6.33)</div>
+            <div class="action-rec action-rec-open">▲ <b>开仓</b> - 强势主升<br><small>强势股主升浪加速，涨幅35.0%，RSI12=84.0 | 乖离风险: 极高 | 趋势强度: 进三退一(5.6)</small></div>
+        </div>
+        <div class="deep-dive-card">
+            <div class="deep-dive-header">
+                <span class="deep-dive-title">FCEL 燃料电池能源</span>
+                <span><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(81分)</small></span>
+            </div>
+            <div style="display:flex;gap:15px;flex-wrap:wrap;align-items:center;">
+                <span>收盘: <b>17.09</b></span>
+                <span class="change-up">涨跌: +7.20%</span>
+                <span>RSI6: 81.0 / RSI12: 73.0</span>
+                <span>MA20斜率: +19.40%</span>
+                <span>换手率: 29.2% <span style="color:#dc3545;font-weight:bold;">(异常)</span></span>
+            </div>
+            <div style="margin-top:6px;">乖离率: 45.8% <span class="risk-badge risk-extreme">极高风险</span></div>
+            <div class="roc-bars"><div class="roc-bar"><span class="roc-bar-label">5日</span><span class="roc-bar-value" style="background:#dc3545">+26.1%</span></div><div class="roc-bar"><span class="roc-bar-label">10日</span><span class="roc-bar-value" style="background:#dc3545">+71.9%</span></div><div class="roc-bar"><span class="roc-bar-label">20日</span><span class="roc-bar-value" style="background:#dc3545">+134.1%</span></div><div class="roc-bar"><span class="roc-bar-label">60日</span><span class="roc-bar-value" style="background:#dc3545">+136.7%</span></div><div class="roc-bar"><span class="roc-bar-label">120日</span><span class="roc-bar-value" style="background:#dc3545">+162.1%</span></div><div class="roc-bar"><span class="roc-bar-label">240日</span><span class="roc-bar-value" style="background:#ccc">+0.0%</span></div></div>
+            <div style="font-size:0.85em;color:#666;margin-top:4px;">60日区间: 6.23 ~ 17.09 (收盘17.09)</div>
+            <div class="action-rec action-rec-open">▲ <b>开仓</b> - 强势主升<br><small>强势股主升浪加速，涨幅7.2%，RSI12=73.0 | 乖离风险: 极高 | 趋势强度: 进三退一(3.0)</small></div>
+        </div>
+        </details>
+    </div>
+
+    
+    <div class="growth-section">
+        <h2>成长股筛选 (基于6条投资原则)</h2>
+        
+    <div class="growth-principle">
+        <strong>筛选原则:</strong>
+        1. 未被充分定价 (ROC_60<80%) → 2. 非共识 → 3. 供给弹性低 → 4. 中小盘 (1B-20B) → 5. 个股要强 (趋势+热点) → 6. 月涨幅潜力
+    </div>
+        <details>
+            <summary>展开查看 10 只符合条件的成长股候选</summary>
+            
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">RXO RXO Inc</span>
+                    <span class="sector-type-badge sector-type-concept">其他</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">94分</span>
+                </div>
+                <div class="growth-card-price">
+                    20.05
+                    <span class="change change-down">-3.10%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+23.5%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#dc3545">+48.4%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">53</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+6.75%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">2.5B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">15.3%</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">TMC TMC the metal company Inc</span>
+                    <span class="sector-type-badge sector-type-concept">其他</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">92分</span>
+                </div>
+                <div class="growth-card-price">
+                    5.64
+                    <span class="change change-down">-4.60%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+19.5%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#28a745">-7.4%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">59</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+6.22%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">1.2B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">13.8%</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">AMSC 美国超导</span>
+                    <span class="sector-type-badge sector-type-concept">其他</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">90分</span>
+                </div>
+                <div class="growth-card-price">
+                    54.51
+                    <span class="change change-down">-7.20%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+38.2%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#dc3545">+59.1%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">58</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+10.72%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">2.5B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">7.7%</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">IPX IperionX</span>
+                    <span class="sector-type-badge sector-type-concept">其他</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">90分</span>
+                </div>
+                <div class="growth-card-price">
+                    40.48
+                    <span class="change change-down">-2.00%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+26.9%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#dc3545">+1.2%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">70</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+8.52%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">1.1B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">24.2%</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">SMR NuScale Power Corp-A</span>
+                    <span class="sector-type-badge sector-type-concept">核能</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">89分</span>
+                </div>
+                <div class="growth-card-price">
+                    12.00
+                    <span class="change change-down">-9.70%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+17.1%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#28a745">-16.1%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">50</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+6.81%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">3.3B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">13.1%</div>
+                </div>
+            </div>
+            
+            <div class="supply-demand-bar">
+                <div class="sd-item sd-supply">供给弹性: 极低 (10年建堆)</div>
+                <div class="sd-item sd-demand">需求: AI数据中心基荷电力</div>
+            </div>
+        </div>
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">NN NextNav Inc</span>
+                    <span class="sector-type-badge sector-type-concept">其他</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">85分</span>
+                </div>
+                <div class="growth-card-price">
+                    20.08
+                    <span class="change change-down">-0.70%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+24.6%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#dc3545">+24.8%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">68</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+6.12%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">2.0B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">15.5%</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">CLSK CleanSpark Inc</span>
+                    <span class="sector-type-badge sector-type-concept">其他</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">85分</span>
+                </div>
+                <div class="growth-card-price">
+                    13.47
+                    <span class="change change-down">-5.80%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+19.5%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#dc3545">+36.8%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">55</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+7.83%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">3.3B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">7.6%</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">PDFS PDF Solutions Inc</span>
+                    <span class="sector-type-badge sector-type-concept">其他</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">85分</span>
+                </div>
+                <div class="growth-card-price">
+                    50.95
+                    <span class="change change-down">-7.50%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+23.3%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#dc3545">+51.2%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">58</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+6.84%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">1.6B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">8.1%</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">JBLU 捷蓝航空</span>
+                    <span class="sector-type-badge sector-type-concept">其他</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">85分</span>
+                </div>
+                <div class="growth-card-price">
+                    4.73
+                    <span class="change change-down">-4.60%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+26.7%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#28a745">-20.0%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">70</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+12.01%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">1.6B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">8.5%</div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="growth-card">
+            <div class="growth-card-header">
+                <div>
+                    <span class="growth-card-title">GTLB Gitlab Inc-A</span>
+                    <span class="sector-type-badge sector-type-concept">其他</span>
+                    <span class="tier-badge" style="background:#6f42c1;margin-left:8px;">84分</span>
+                </div>
+                <div class="growth-card-price">
+                    23.08
+                    <span class="change change-down">-10.00%</span>
+                </div>
+            </div>
+            <div class="growth-metrics">
+                <div class="growth-metric">
+                    <div class="label">ROC_20</div>
+                    <div class="value" style="color:#dc3545">+14.9%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">ROC_60</div>
+                    <div class="value" style="color:#28a745">-21.9%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">RSI12</div>
+                    <div class="value">58</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">MA20斜率</div>
+                    <div class="value">+5.60%</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">流通市值</div>
+                    <div class="value">3.4B</div>
+                </div>
+                <div class="growth-metric">
+                    <div class="label">上涨空间</div>
+                    <div class="value" style="color:#28a745">12.6%</div>
+                </div>
+            </div>
+            
+        </div>
+        </details>
+        <div class="growth-risk">
+            <strong>风险提示:</strong> 以上筛选基于量化原则，不构成投资建议。一个月翻倍是极端目标（概率<5%），更现实的预期是3-6个月+30-50%。投资有风险，入市需谨慎。
+        </div>
+    </div>
+
+    
+    
+        <div class="signal-section">
+            <h3 style="color:#721c24;">✕ 清仓信号 (57 只)</h3>
+            <table><tr>
+        <th>代码</th><th>名称</th><th>收盘</th><th>涨跌</th>
+        <th>成交额</th><th>层级</th><th>换手率</th>
+        <th>RSI12</th><th>MA20斜率</th><th>评分</th><th>动作</th>
+        <th>状态</th><th>依据</th>
+    </tr><tr>
+        <td class="code">CVE</td>
+        <td>Cenovus能源</td>
+        <td>30.01</td>
+        <td class="change-up">+3.00%</td>
+        <td class="amount">1.7亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">0.4%</span></td>
+        <td>74.0</td>
+        <td>+2.89%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(66)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势终结<br><span class="sr-ref">60日低22.52/高30.45</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">COST</td>
+        <td>开市客</td>
+        <td>1021.88</td>
+        <td class="change-up">+2.20%</td>
+        <td class="amount">21.8亿</td>
+        <td><span class="tier-badge" style="background:#4682b4">L3</span></td>
+        <td><span class="turnover">0.5%</span></td>
+        <td>55.0</td>
+        <td>+0.14%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(64)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势终结<br><span class="sr-ref">60日低964.26/高1030.56</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">AAOX</td>
+        <td>2倍做多AAOI ETF-Tradr</td>
+        <td>69.21</td>
+        <td class="change-up">+3.50%</td>
+        <td class="amount">3.5亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">-</span></td>
+        <td>55.0</td>
+        <td>+5.33%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(63)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势终结<span class="dev-warn"> 乖离23.4%</span><br><span class="sr-ref">60日低17.99/高70.70</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">ADP</td>
+        <td>自动数据处理</td>
+        <td>213.81</td>
+        <td class="change-up">+1.00%</td>
+        <td class="amount">8.6亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">1.0%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>70.0</td>
+        <td>+2.07%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(62)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势终结<br><span class="sr-ref">60日低188.79/高221.34</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">COP</td>
+        <td>康菲石油</td>
+        <td>117.87</td>
+        <td class="change-up">+2.00%</td>
+        <td class="amount">8.1亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">0.6%</span></td>
+        <td>43.0</td>
+        <td>-1.33%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(57)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-down">↓MA30</span> 趋势终结<br><span class="sr-ref">60日低113.87/高133.80</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">SCHD</td>
+        <td>美国红利股ETF-Schwab</td>
+        <td>31.76</td>
+        <td class="change-flat">+0.00%</td>
+        <td class="amount">7.3亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">-</span></td>
+        <td>63.0</td>
+        <td>+0.73%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(56)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势终结<br><span class="sr-ref">60日低30.13/高32.07</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">OMC</td>
+        <td>宏盟集团</td>
+        <td>76.04</td>
+        <td class="change-up">+1.20%</td>
+        <td class="amount">3.0亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">1.4%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>52.0</td>
+        <td>+0.20%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(54)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-down">↓MA30</span> 趋势终结<br><span class="sr-ref">60日低73.82/高83.19</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">ROST</td>
+        <td>罗斯百货</td>
+        <td>217.67</td>
+        <td class="change-up">+1.50%</td>
+        <td class="amount">7.0亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">1.0%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>36.0</td>
+        <td>-0.07%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(53)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-down">↓MA30</span> 趋势终结<br><span class="sr-ref">60日低206.28/高228.91</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">AIG</td>
+        <td>美国国际集团</td>
+        <td>76.40</td>
+        <td class="change-up">+0.40%</td>
+        <td class="amount">3.6亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">0.9%</span></td>
+        <td>56.0</td>
+        <td>-0.26%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(53)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-down">↓MA30</span> 趋势终结<br><span class="sr-ref">60日低72.95/高78.77</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">TIGO</td>
+        <td>米雷康姆国际通信</td>
+        <td>80.13</td>
+        <td class="change-up">+2.10%</td>
+        <td class="amount">2.1亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">2.8%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>37.0</td>
+        <td>-0.34%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(52)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-down">↓MA30</span> 趋势终结<br><span class="sr-ref">60日低68.17/高84.88</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">UL</td>
+        <td>联合利华(英国)</td>
+        <td>57.92</td>
+        <td class="change-up">+1.20%</td>
+        <td class="amount">1.9亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">0.4%</span></td>
+        <td>49.0</td>
+        <td>+0.08%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(52)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势终结<br><span class="sr-ref">60日低55.45/高66.38</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">MUSA</td>
+        <td>Murphy USA Inc</td>
+        <td>576.96</td>
+        <td class="change-down">-0.20%</td>
+        <td class="amount">1.6亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">1.6%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>65.0</td>
+        <td>+3.87%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(52)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势终结<br><span class="sr-ref">60日低435.39/高604.52</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">IEX</td>
+        <td>IDEX Corp</td>
+        <td>213.85</td>
+        <td class="change-down">-0.10%</td>
+        <td class="amount">1.5亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">1.0%</span></td>
+        <td>64.0</td>
+        <td>+1.67%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(52)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势终结<br><span class="sr-ref">60日低183.49/高218.19</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">GIS</td>
+        <td>通用磨坊</td>
+        <td>34.13</td>
+        <td class="change-up">+1.00%</td>
+        <td class="amount">3.3亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">1.8%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>43.0</td>
+        <td>-0.51%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(52)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-down">↓MA30</span> 趋势终结<br><span class="sr-ref">60日低33.80/高42.79</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr>
+<tr>
+        <td class="code">GEV</td>
+        <td>GE Vernova Inc</td>
+        <td>1071.98</td>
+        <td class="change-down">-0.10%</td>
+        <td class="amount">22.2亿</td>
+        <td><span class="tier-badge" style="background:#4682b4">L3</span></td>
+        <td><span class="turnover">0.8%</span></td>
+        <td>37.0</td>
+        <td>+2.28%</td>
+        <td><span class="signal-badge" style="background:#cce5ff;color:#004085">B级</span> <small>(51)</small></td>
+        <td><span class="action-badge" style="background:#dc3545">清仓</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势终结<br><span class="sr-ref">60日低804.52/高1149.53</span></td>
+        <td class="reason">MA5下穿MA10或MA10下穿MA20，趋势终结</td>
+    </tr></table>
+        </div>
+    
+        <div class="signal-section">
+            <h3 style="color:#0c5460;">● 持有观察 (513 只)</h3>
+            <table><tr>
+        <th>代码</th><th>名称</th><th>收盘</th><th>涨跌</th>
+        <th>成交额</th><th>层级</th><th>换手率</th>
+        <th>RSI12</th><th>MA20斜率</th><th>评分</th><th>动作</th>
+        <th>状态</th><th>依据</th>
+    </tr><tr>
+        <td class="code">SE</td>
+        <td>Sea Ltd ADR</td>
+        <td>96.02</td>
+        <td class="change-up">+13.10%</td>
+        <td class="amount">14.2亿</td>
+        <td><span class="tier-badge" style="background:#4682b4">L3</span></td>
+        <td><span class="turnover turnover-warn">4.8%</span> <span class="turnover-warn">(>5%)</span></td>
+        <td>68.0</td>
+        <td>+1.02%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(93)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势整理<br><span class="sr-ref">60日低78.16/高96.02</span></td>
+        <td class="reason">MA20斜率1.02%上行，短期回调整理，RSI12=68.0</td>
+    </tr>
+<tr>
+        <td class="code">ZBRA</td>
+        <td>斑马技术</td>
+        <td>241.79</td>
+        <td class="change-up">+11.40%</td>
+        <td class="amount">7.1亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">6.2%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>60.0</td>
+        <td>+0.53%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(88)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势整理<br><span class="sr-ref">60日低199.30/高241.79</span></td>
+        <td class="reason">MA20斜率0.53%上行，短期回调整理，RSI12=60.0</td>
+    </tr>
+<tr>
+        <td class="code">PACS</td>
+        <td>PACS Group Inc</td>
+        <td>41.01</td>
+        <td class="change-up">+28.60%</td>
+        <td class="amount">1.4亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">7.9%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>67.0</td>
+        <td>+0.27%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(86)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势整理<span class="tags"> 乖离19.0%</span><br><span class="sr-ref">60日低30.38/高41.01</span></td>
+        <td class="reason">MA20斜率0.27%上行，短期回调整理，RSI12=67.0</td>
+    </tr>
+<tr>
+        <td class="code">NOVT</td>
+        <td>Novanta Inc</td>
+        <td>159.19</td>
+        <td class="change-up">+13.70%</td>
+        <td class="amount">2.3亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">4.1%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>70.0</td>
+        <td>+3.27%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(85)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="tags"> 乖离19.8%</span><br><span class="sr-ref">60日低113.09/高159.19</span></td>
+        <td class="reason">当日涨13.7%占20日涨幅58%，疑似一日游</td>
+    </tr>
+<tr>
+        <td class="code">ARMK</td>
+        <td>Aramark</td>
+        <td>48.41</td>
+        <td class="change-up">+8.60%</td>
+        <td class="amount">3.8亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">3.0%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>62.0</td>
+        <td>+1.31%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(83)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<br><span class="sr-ref">60日低38.88/高48.41</span></td>
+        <td class="reason">当日涨8.6%占20日涨幅90%，疑似一日游</td>
+    </tr>
+<tr>
+        <td class="code">ALKS</td>
+        <td>阿尔凯默斯</td>
+        <td>38.29</td>
+        <td class="change-up">+8.00%</td>
+        <td class="amount">1.5亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">2.6%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>77.0</td>
+        <td>+1.29%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(81)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="tags"> 乖离11.2%</span><br><span class="sr-ref">60日低27.20/高38.29</span></td>
+        <td class="reason">当日涨8.0%占20日涨幅61%，疑似一日游</td>
+    </tr>
+<tr>
+        <td class="code">RAL</td>
+        <td>Ralliant Corp</td>
+        <td>59.16</td>
+        <td class="change-up">+19.40%</td>
+        <td class="amount">4.6亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">7.0%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>88.0</td>
+        <td>+2.36%</td>
+        <td><span class="signal-badge" style="background:#fff3cd;color:#856404">S级</span> <small>(80)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 强势主升<span class="dev-warn"> 乖离27.2%</span><br><span class="sr-ref">60日低39.45/高59.16</span></td>
+        <td class="reason">当日涨19.4%占20日涨幅72%，疑似一日游</td>
+    </tr>
+<tr>
+        <td class="code">SPHR</td>
+        <td>Sphere Entertainment Co-A</td>
+        <td>135.96</td>
+        <td class="change-up">+7.10%</td>
+        <td class="amount">2.0亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover turnover-warn">5.8%</span> <span class="turnover-warn">(>8%)</span></td>
+        <td>54.0</td>
+        <td>+0.98%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(73)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势整理<br><span class="sr-ref">60日低105.70/高144.73</span></td>
+        <td class="reason">MA20斜率0.98%上行，短期回调整理，RSI12=54.0</td>
+    </tr>
+<tr>
+        <td class="code">UCO</td>
+        <td>2倍做多彭博原油ETF-ProShares</td>
+        <td>49.91</td>
+        <td class="change-up">+4.90%</td>
+        <td class="amount">2.4亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">-</span></td>
+        <td>65.0</td>
+        <td>+3.07%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(70)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势整理<span class="tags"> 乖离12.1%</span><br><span class="sr-ref">60日低32.61/高50.47</span></td>
+        <td class="reason">MA20斜率3.07%上行，短期回调整理，RSI12=65.0</td>
+    </tr>
+<tr>
+        <td class="code">USO</td>
+        <td>美国原油ETF</td>
+        <td>144.30</td>
+        <td class="change-up">+4.10%</td>
+        <td class="amount">8.8亿</td>
+        <td><span class="tier-badge" style="background:#708090">L4</span></td>
+        <td><span class="turnover">-</span></td>
+        <td>60.0</td>
+        <td>+2.15%</td>
+        <td><span class="signal-badge" style="background:#d4edda;color:#155724">A级</span> <small>(69)</small></td>
+        <td><span class="action-badge" style="background:#17a2b8">持有</span></td>
+        <td class="state"><span class="tag-ma30-up">↑MA30</span> 趋势整理<br><span class="sr-ref">60日低104.33/高150.63</span></td>
+        <td class="reason">MA20斜率2.15%上行，短期回调整理，RSI12=60.0</td>
+    </tr></table>
+        </div>
+
+    <div class="footer">
+        评分说明: S≥80(强烈推荐) A≥60(推荐) B≥40(关注) C&lt;40(观望)<br>
+        以上信号严格按状态机规则执行，不预判、不逆势。
+    </div>
+</div>
+</body>
+</html>

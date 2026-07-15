@@ -1,0 +1,1285 @@
+你是专业的量化交易分析师。基于以下状态机信号数据和资讯，生成深度分析报告。
+
+## 你的任务
+
+1. 解读每个S级信号的技术含义（连贯叙事，不是逐指标罗列）
+2. 整合资讯，解释"为什么涨/跌"
+3. 交叉验证风险指标（RSI超买+乖离率高+短期暴涨=多重风险叠加）
+4. 给出五档操作建议
+5. 输出结构化的深度分析报告
+
+## 信号数据
+
+{
+  "market": "US",
+  "date": "2026-06-09",
+  "total": 2259,
+  "generated_at": "2026-06-10 12:26",
+  "signals": {
+    "s_level": [
+      {
+        "code": "MSTZ",
+        "name": "2倍做空MSTR ETF-T-Rex",
+        "close": 10.18,
+        "change": 15.7,
+        "amount": 170348681.854,
+        "rsi12": 76.0,
+        "rsi6": 77.0,
+        "ma20_slope": 20.26,
+        "ma5_slope": 37.39,
+        "ma_bond_value": 113.13,
+        "above_ma20_pct": 51.4,
+        "price_rank_60d": 0.64,
+        "roc_20": 119.87041036717063,
+        "amount_ratio": 1.0,
+        "consecutive_down_3d": 0,
+        "total_mv": 0.0,
+        "circ_mv": 0,
+        "roc_5": 27.409261576971204,
+        "roc_10": 68.26446280991736,
+        "roc_60": -5.914972273567472,
+        "roc_120": -23.227752639517345,
+        "roc_240": 0,
+        "low60": 4.22,
+        "high60": 13.49,
+        "state": "强势主升",
+        "action": "开仓",
+        "reason": "热点区主升加速，涨幅15.7%，RSI12=76.0",
+        "score": 88.8,
+        "tier": "S"
+      },
+      {
+        "code": "CRDU",
+        "name": "2倍做多CRDO ETF-Tradr",
+        "close": 76.99,
+        "change": 11.4,
+        "amount": 139495482.495,
+        "rsi12": 72.0,
+        "rsi6": 55.0,
+        "ma20_slope": 6.13,
+        "ma5_slope": -7.71,
+        "ma_bond_value": 105.45,
+        "above_ma20_pct": 26.3,
+        "price_rank_60d": 0.96,
+        "roc_20": 27.69945264554652,
+        "amount_ratio": 2.8,
+        "consecutive_down_3d": 0,
+        "total_mv": 0.0,
+        "circ_mv": 0,
+        "roc_5": 3.495093426535817,
+        "roc_10": 41.08484515301446,
+        "roc_60": 237.9719051799824,
+        "roc_120": 38.27227011494252,
+        "roc_240": 0,
+        "low60": 13.25,
+        "high60": 79.67,
+        "state": "强势主升",
+        "action": "开仓",
+        "reason": "热点区主升加速，涨幅11.4%，RSI12=72.0",
+        "score": 87.9,
+        "tier": "S"
+      },
+      {
+        "code": "VECO",
+        "name": "维易科精密仪器",
+        "close": 67.19,
+        "change": 10.1,
+        "amount": 263460379.412,
+        "rsi12": 61.0,
+        "rsi6": 70.0,
+        "ma20_slope": 5.55,
+        "ma5_slope": 4.55,
+        "ma_bond_value": 101.23,
+        "above_ma20_pct": 16.1,
+        "price_rank_60d": 1.0,
+        "roc_20": 40.4473244147157,
+        "amount_ratio": 3.1,
+        "consecutive_down_3d": 0,
+        "total_mv": 4100839857.15,
+        "circ_mv": 4005334512.97,
+        "roc_5": 16.568355308813317,
+        "roc_10": 20.736747529200358,
+        "roc_60": 106.92947336002463,
+        "roc_120": 109.64118564742591,
+        "roc_240": 0,
+        "low60": 30.3,
+        "high60": 67.19,
+        "state": "强势主升",
+        "action": "开仓",
+        "reason": "活跃区主升加速，涨幅10.1%，RSI12=61.0",
+        "score": 86.0,
+        "tier": "S"
+      },
+      {
+        "code": "SPCE",
+        "name": "维珍银河",
+        "close": 4.59,
+        "change": 11.4,
+        "amount": 249694441.656,
+        "rsi12": 59.0,
+        "rsi6": 19.0,
+        "ma20_slope": 14.56,
+        "ma5_slope": -16.95,
+        "ma_bond_value": 107.25,
+        "above_ma20_pct": 18.6,
+        "price_rank_60d": 0.45,
+        "roc_20": 82.14285714285714,
+        "amount_ratio": 0.9,
+        "consecutive_down_3d": 0,
+        "total_mv": 479434560.66,
+        "circ_mv": 478564461.9,
+        "roc_5": 0.0,
+        "roc_10": 30.76923076923077,
+        "roc_60": 82.14285714285714,
+        "roc_120": 28.21229050279329,
+        "roc_240": 0,
+        "low60": 2.17,
+        "high60": 7.52,
+        "state": "强势主升",
+        "action": "开仓",
+        "reason": "活跃区主升加速，涨幅11.4%，RSI12=59.0",
+        "score": 85.3,
+        "tier": "S"
+      },
+      {
+        "code": "MGNI",
+        "name": "Magnite Inc",
+        "close": 15.81,
+        "change": 10.3,
+        "amount": 56350737.675,
+        "rsi12": 78.0,
+        "rsi6": 79.0,
+        "ma20_slope": 3.37,
+        "ma5_slope": 3.94,
+        "ma_bond_value": 100.24,
+        "above_ma20_pct": 17.8,
+        "price_rank_60d": 1.0,
+        "roc_20": 26.8860353130016,
+        "amount_ratio": 1.8,
+        "consecutive_down_3d": 0,
+        "total_mv": 2264229197.43,
+        "circ_mv": 2231214534.09,
+        "roc_5": 16.250000000000007,
+        "roc_10": 21.896684656900536,
+        "roc_60": 35.128205128205146,
+        "roc_120": 16.85144124168515,
+        "roc_240": 0,
+        "low60": 11.32,
+        "high60": 15.81,
+        "state": "强势主升",
+        "action": "开仓",
+        "reason": "热点区主升加速，涨幅10.3%，RSI12=78.0",
+        "score": 84.7,
+        "tier": "S"
+      },
+      {
+        "code": "CRDO",
+        "name": "Credo Technology Group Holding ",
+        "close": 234.32,
+        "change": 5.4,
+        "amount": 3656090855.213,
+        "rsi12": 72.0,
+        "rsi6": 49.0,
+        "ma20_slope": 4.11,
+        "ma5_slope": -1.8,
+        "ma_bond_value": 103.18,
+        "above_ma20_pct": 13.9,
+        "price_rank_60d": 0.99,
+        "roc_20": 24.446332784534498,
+        "amount_ratio": 2.1,
+        "consecutive_down_3d": 0,
+        "total_mv": 43220309940.8,
+        "circ_mv": 38781265162.4,
+        "roc_5": 3.6355594869526753,
+        "roc_10": 7.284464997023944,
+        "roc_60": 102.15684582866015,
+        "roc_120": 66.96593986033916,
+        "roc_240": 0,
+        "low60": 87.81,
+        "high60": 236.03,
+        "state": "强势主升",
+        "action": "开仓",
+        "reason": "热点区主升加速，涨幅5.4%，RSI12=72.0",
+        "score": 81.1,
+        "tier": "S"
+      },
+      {
+        "code": "UCTT",
+        "name": "超科林半导体",
+        "close": 91.88,
+        "change": 9.5,
+        "amount": 141838883.806,
+        "rsi12": 55.0,
+        "rsi6": 61.0,
+        "ma20_slope": 3.93,
+        "ma5_slope": 0.93,
+        "ma_bond_value": 100.7,
+        "above_ma20_pct": 7.6,
+        "price_rank_60d": 0.98,
+        "roc_20": 25.682237877026182,
+        "amount_ratio": 1.4,
+        "consecutive_down_3d": 0,
+        "total_mv": 4118828981.76,
+        "circ_mv": 4029915051.9199996,
+        "roc_5": 8.47697756788665,
+        "roc_10": 14.53502867115432,
+        "roc_60": 81.72468354430377,
+        "roc_120": 226.62637753288303,
+        "roc_240": 0,
+        "low60": 52.9,
+        "high60": 92.55,
+        "state": "强势主升",
+        "action": "开仓",
+        "reason": "活跃区主升加速，涨幅9.5%，RSI12=55.0",
+        "score": 80.8,
+        "tier": "S"
+      },
+      {
+        "code": "BLLN",
+        "name": "BillionToOne Inc-A",
+        "close": 102.39,
+        "change": 8.4,
+        "amount": 67481864.202,
+        "rsi12": 70.0,
+        "rsi6": 59.0,
+        "ma20_slope": 4.25,
+        "ma5_slope": 8.0,
+        "ma_bond_value": 104.53,
+        "above_ma20_pct": 17.7,
+        "price_rank_60d": 1.0,
+        "roc_20": 30.49961763956157,
+        "amount_ratio": 1.1,
+        "consecutive_down_3d": 0,
+        "total_mv": 4709477606.76,
+        "circ_mv": 2372792924.91,
+        "roc_5": 12.368305531167687,
+        "roc_10": 22.799232429839297,
+        "roc_60": 30.184361093451994,
+        "roc_120": -8.285560730920817,
+        "roc_240": 0,
+        "low60": 64.03,
+        "high60": 102.39,
+        "state": "强势主升",
+        "action": "开仓",
+        "reason": "热点区主升加速，涨幅8.4%，RSI12=70.0",
+        "score": 80.0,
+        "tier": "S"
+      }
+    ],
+    "reduce": [
+      {
+        "code": "APH",
+        "name": "安费诺",
+        "close": 154.07,
+        "change": 7.3,
+        "amount": 2345683409.218,
+        "rsi12": 77.0,
+        "rsi6": 64.0,
+        "ma20_slope": 1.87,
+        "ma5_slope": -0.08,
+        "ma_bond_value": 104.0,
+        "above_ma20_pct": 13.2,
+        "price_rank_60d": 1.0,
+        "roc_20": 20.33898305084745,
+        "amount_ratio": 1.5,
+        "consecutive_down_3d": 0,
+        "total_mv": 189542220941.15,
+        "circ_mv": 188174925031.38,
+        "roc_5": 3.820754716981124,
+        "roc_10": 10.39696188019489,
+        "roc_60": 17.413504039018438,
+        "roc_120": 22.02597814034531,
+        "roc_240": 0,
+        "low60": 119.15,
+        "high60": 154.07,
+        "state": "高位预警",
+        "action": "减仓",
+        "reason": "RSI12=77.0热点但MA20斜率1.87%，反弹过热",
+        "score": 86.0,
+        "tier": "S"
+      },
+      {
+        "code": "HIMS",
+        "name": "Hims & Hers Health Inc-A",
+        "close": 28.98,
+        "change": 6.7,
+        "amount": 714553284.74,
+        "rsi12": 81.0,
+        "rsi6": 74.0,
+        "ma20_slope": 0.75,
+        "ma5_slope": 7.03,
+        "ma_bond_value": 103.29,
+        "above_ma20_pct": 13.0,
+        "price_rank_60d": 0.83,
+        "roc_20": 12.982456140350884,
+        "amount_ratio": 1.2,
+        "consecutive_down_3d": 0,
+        "total_mv": 6707644001.1,
+        "circ_mv": 5917756803.84,
+        "roc_5": 4.39481268011527,
+        "roc_10": 22.02105263157895,
+        "roc_60": 11.978361669242664,
+        "roc_120": -21.378187737384696,
+        "roc_240": 0,
+        "low60": 18.78,
+        "high60": 31.01,
+        "state": "高位预警",
+        "action": "减仓",
+        "reason": "RSI12=81.0过热但MA20斜率0.75%，反弹过热",
+        "score": 78.5,
+        "tier": "A"
+      },
+      {
+        "code": "FLUT",
+        "name": "Flutter Entertainment plc",
+        "close": 111.31,
+        "change": 6.1,
+        "amount": 320317695.329,
+        "rsi12": 75.0,
+        "rsi6": 83.0,
+        "ma20_slope": 0.27,
+        "ma5_slope": 6.79,
+        "ma_bond_value": 102.53,
+        "above_ma20_pct": 13.0,
+        "price_rank_60d": 0.98,
+        "roc_20": 9.990118577075098,
+        "amount_ratio": 1.1,
+        "consecutive_down_3d": 0,
+        "total_mv": 19301206872.25,
+        "circ_mv": 14339918478.53,
+        "roc_5": 6.710765986003259,
+        "roc_10": 14.30478537687411,
+        "roc_60": 1.5694862669951626,
+        "roc_120": -49.25230236163035,
+        "roc_240": 0,
+        "low60": 92.38,
+        "high60": 111.79,
+        "state": "高位预警",
+        "action": "减仓",
+        "reason": "RSI12=75.0热点但MA20斜率0.27%，反弹过热",
+        "score": 78.0,
+        "tier": "A"
+      },
+      {
+        "code": "TMO",
+        "name": "赛默飞世尔科技",
+        "close": 494.07,
+        "change": 5.2,
+        "amount": 1368548705.339,
+        "rsi12": 70.0,
+        "rsi6": 50.0,
+        "ma20_slope": 0.5,
+        "ma5_slope": -0.81,
+        "ma_bond_value": 101.61,
+        "above_ma20_pct": 6.2,
+        "price_rank_60d": 0.6,
+        "roc_20": 4.133119757197659,
+        "amount_ratio": 1.1,
+        "consecutive_down_3d": 0,
+        "total_mv": 183607017212.55,
+        "circ_mv": 183137041030.16998,
+        "roc_5": 2.4871390640557602,
+        "roc_10": 10.23918961131688,
+        "roc_60": -0.2382635032811725,
+        "roc_120": -13.273885797539023,
+        "roc_240": 0,
+        "low60": 438.34,
+        "high60": 531.67,
+        "state": "高位预警",
+        "action": "减仓",
+        "reason": "RSI12=70.0热点但MA20斜率0.50%，反弹过热",
+        "score": 77.2,
+        "tier": "A"
+      },
+      {
+        "code": "ZSL",
+        "name": "Proshares二倍做空白银ETF",
+        "close": 26.57,
+        "change": 8.3,
+        "amount": 121025702.04,
+        "rsi12": 82.0,
+        "rsi6": 90.0,
+        "ma20_slope": 2.8,
+        "ma5_slope": 15.86,
+        "ma_bond_value": 107.21,
+        "above_ma20_pct": 31.5,
+        "price_rank_60d": 0.84,
+        "roc_20": 37.81120331950207,
+        "amount_ratio": 0.9,
+        "consecutive_down_3d": 0,
+        "total_mv": 0.0,
+        "circ_mv": 0,
+        "roc_5": 30.404907975460123,
+        "roc_10": 36.74729799279465,
+        "roc_60": 44.63799673380511,
+        "roc_120": -63.99728997289973,
+        "roc_240": 0,
+        "low60": 15.39,
+        "high60": 28.75,
+        "state": "高位预警",
+        "action": "减仓",
+        "reason": "RSI12=82.0过热但MA20斜率2.80%，反弹过热",
+        "score": 76.1,
+        "tier": "A"
+      }
+    ],
+    "hold": [
+      {
+        "code": "SJM",
+        "name": "JM斯马克",
+        "close": 112.39,
+        "change": 10.4,
+        "amount": 594492403.018,
+        "rsi12": 72.0,
+        "rsi6": 87.0,
+        "ma20_slope": 1.65,
+        "ma5_slope": 1.67,
+        "ma_bond_value": 100.28,
+        "above_ma20_pct": 10.0,
+        "price_rank_60d": 1.0,
+        "roc_20": 13.022928399034598,
+        "amount_ratio": 3.2,
+        "consecutive_down_3d": 0,
+        "total_mv": 11986204572.41,
+        "circ_mv": 11728589496.74,
+        "roc_5": 11.864238081019211,
+        "roc_10": 9.841673182173581,
+        "roc_60": 4.432261661401222,
+        "roc_120": 13.985801217038546,
+        "roc_240": 0,
+        "low60": 89.53,
+        "high60": 112.39,
+        "state": "强势主升",
+        "action": "持有",
+        "reason": "当日涨10.4%占20日涨幅80%，疑似一日游",
+        "score": 90.7,
+        "tier": "S"
+      },
+      {
+        "code": "PAYO",
+        "name": "Payoneer Global Inc",
+        "close": 6.39,
+        "change": 38.9,
+        "amount": 331364648.631,
+        "rsi12": 72.0,
+        "rsi6": 77.0,
+        "ma20_slope": 0.79,
+        "ma5_slope": 4.6,
+        "ma_bond_value": 100.32,
+        "above_ma20_pct": 25.2,
+        "price_rank_60d": 1.0,
+        "roc_20": 21.25237191650854,
+        "amount_ratio": 17.3,
+        "consecutive_down_3d": 0,
+        "total_mv": 2139235662.96,
+        "circ_mv": 1717655170.1399999,
+        "roc_5": 23.837209302325572,
+        "roc_10": 26.785714285714278,
+        "roc_60": 17.896678966789665,
+        "roc_120": 15.970961887477314,
+        "roc_240": 0,
+        "low60": 4.27,
+        "high60": 6.39,
+        "state": "强势主升",
+        "action": "持有",
+        "reason": "当日涨38.9%占20日涨幅183%，疑似一日游",
+        "score": 90.2,
+        "tier": "S"
+      },
+      {
+        "code": "DKNG",
+        "name": "DraftKings Inc-A",
+        "close": 27.59,
+        "change": 11.3,
+        "amount": 551355122.479,
+        "rsi12": 63.0,
+        "rsi6": 75.0,
+        "ma20_slope": 1.58,
+        "ma5_slope": 2.8,
+        "ma_bond_value": 99.88,
+        "above_ma20_pct": 9.6,
+        "price_rank_60d": 1.0,
+        "roc_20": 9.397303727200638,
+        "amount_ratio": 1.6,
+        "consecutive_down_3d": 0,
+        "total_mv": 13688194061.03,
+        "circ_mv": 13196864829.789999,
+        "roc_5": 4.785415875427276,
+        "roc_10": 9.832802547770696,
+        "roc_60": 7.899882675009776,
+        "roc_120": -20.121598147075854,
+        "roc_240": 0,
+        "low60": 20.72,
+        "high60": 27.59,
+        "state": "强势主升",
+        "action": "持有",
+        "reason": "当日涨11.3%占20日涨幅120%，疑似一日游",
+        "score": 88.6,
+        "tier": "S"
+      },
+      {
+        "code": "ESTA",
+        "name": "Establishment Labs",
+        "close": 79.82,
+        "change": 21.4,
+        "amount": 69097540.079,
+        "rsi12": 75.0,
+        "rsi6": 69.0,
+        "ma20_slope": 2.06,
+        "ma5_slope": -1.18,
+        "ma_bond_value": 101.13,
+        "above_ma20_pct": 16.1,
+        "price_rank_60d": 1.0,
+        "roc_20": 18.992248062015495,
+        "amount_ratio": 1.8,
+        "consecutive_down_3d": 0,
+        "total_mv": 2349133729.8,
+        "circ_mv": 1567748690.82,
+        "roc_5": 11.216385676466487,
+        "roc_10": 13.65513313398831,
+        "roc_60": 5.206273889547896,
+        "roc_120": 15.4469192941857,
+        "roc_240": 0,
+        "low60": 54.69,
+        "high60": 79.82,
+        "state": "强势主升",
+        "action": "持有",
+        "reason": "当日涨21.4%占20日涨幅113%，疑似一日游",
+        "score": 87.0,
+        "tier": "S"
+      },
+      {
+        "code": "ASH",
+        "name": "亚什兰",
+        "close": 62.5,
+        "change": 11.2,
+        "amount": 156148131.096,
+        "rsi12": 67.0,
+        "rsi6": 78.0,
+        "ma20_slope": 1.95,
+        "ma5_slope": 2.28,
+        "ma_bond_value": 101.41,
+        "above_ma20_pct": 11.5,
+        "price_rank_60d": 1.0,
+        "roc_20": 20.609803164801235,
+        "amount_ratio": 2.5,
+        "consecutive_down_3d": 0,
+        "total_mv": 2861736062.5,
+        "circ_mv": 2565336875.0,
+        "roc_5": 7.74004481985865,
+        "roc_10": 10.28763013940356,
+        "roc_60": 8.941955725989198,
+        "roc_120": 9.294395383404733,
+        "roc_240": 0,
+        "low60": 48.81,
+        "high60": 62.5,
+        "state": "强势主升",
+        "action": "持有",
+        "reason": "当日涨11.2%占20日涨幅54%，疑似一日游",
+        "score": 86.6,
+        "tier": "S"
+      },
+      {
+        "code": "SN",
+        "name": "SharkNinja Inc",
+        "close": 128.48,
+        "change": 8.6,
+        "amount": 438924627.21,
+        "rsi12": 77.0,
+        "rsi6": 65.0,
+        "ma20_slope": 1.58,
+        "ma5_slope": 1.33,
+        "ma_bond_value": 102.87,
+        "above_ma20_pct": 11.5,
+        "price_rank_60d": 1.0,
+        "roc_20": 13.578500707213564,
+        "amount_ratio": 1.4,
+        "consecutive_down_3d": 0,
+        "total_mv": 18182538293.92,
+        "circ_mv": 10718170337.599998,
+        "roc_5": 5.070330389270517,
+        "roc_10": 10.558471732208929,
+        "roc_60": 16.630355846042114,
+        "roc_120": 12.830420655133032,
+        "roc_240": 0,
+        "low60": 97.62,
+        "high60": 128.48,
+        "state": "强势主升",
+        "action": "持有",
+        "reason": "当日涨8.6%占20日涨幅63%，疑似一日游",
+        "score": 86.0,
+        "tier": "S"
+      },
+      {
+        "code": "CECO",
+        "name": "CECO环保",
+        "close": 95.445,
+        "change": 18.5,
+        "amount": 144969625.42,
+        "rsi12": 64.0,
+        "rsi6": 85.0,
+        "ma20_slope": 1.72,
+        "ma5_slope": 2.99,
+        "ma_bond_value": 99.17,
+        "above_ma20_pct": 16.4,
+        "price_rank_60d": 1.0,
+        "roc_20": 8.732057416267933,
+        "amount_ratio": 1.7,
+        "consecutive_down_3d": 0,
+        "total_mv": 3423901443.795,
+        "circ_mv": 2844950876.4599996,
+        "roc_5": 21.63247100802854,
+        "roc_10": 6.203404918215187,
+        "roc_60": 85.76294277929154,
+        "roc_120": 56.74987682706518,
+        "roc_240": 0,
+        "low60": 54.285,
+        "high60": 95.445,
+        "state": "趋势整理",
+        "action": "持有",
+        "reason": "RSI12=64.0活跃，MA20斜率1.72%，蓄力整理",
+        "score": 85.4,
+        "tier": "S"
+      },
+      {
+        "code": "VELO",
+        "name": "Velo3D Inc",
+        "close": 19.43,
+        "change": 22.6,
+        "amount": 171083744.912,
+        "rsi12": 61.0,
+        "rsi6": 39.0,
+        "ma20_slope": 8.58,
+        "ma5_slope": 0.98,
+        "ma_bond_value": 108.36,
+        "above_ma20_pct": 10.2,
+        "price_rank_60d": 0.63,
+        "roc_20": 35.58967201674808,
+        "amount_ratio": 2.8,
+        "consecutive_down_3d": 0,
+        "total_mv": 579033468.86,
+        "circ_mv": 218408238.82,
+        "roc_5": -22.52791068580542,
+        "roc_10": -7.520228462636848,
+        "roc_60": 90.86444007858546,
+        "roc_120": 237.32638888888889,
+        "roc_240": 0,
+        "low60": 8.65,
+        "high60": 25.8,
+        "state": "强势主升",
+        "action": "持有",
+        "reason": "当日涨22.6%占20日涨幅64%，疑似一日游",
+        "score": 84.9,
+        "tier": "S"
+      },
+      {
+        "code": "BAP",
+        "name": "Credicorp Ltd",
+        "close": 349.61,
+        "change": 9.3,
+        "amount": 503985467.507,
+        "rsi12": 53.0,
+        "rsi6": 58.0,
+        "ma20_slope": 0.62,
+        "ma5_slope": -4.13,
+        "ma_bond_value": 100.04,
+        "above_ma20_pct": 5.5,
+        "price_rank_60d": 0.8,
+        "roc_20": 9.259953747109192,
+        "amount_ratio": 2.7,
+        "consecutive_down_3d": 0,
+        "total_mv": 27775926106.37,
+        "circ_mv": 18612355732.41,
+        "roc_5": 1.6514988515104838,
+        "roc_10": -0.6083866382373806,
+        "roc_60": 5.759748313519079,
+        "roc_120": 26.212996389891703,
+        "roc_240": 0,
+        "low60": 303.86,
+        "high60": 361.34,
+        "state": "趋势整理",
+        "action": "持有",
+        "reason": "RSI12=53.0过渡区，MA20斜率0.62%，整理蓄力",
+        "score": 82.8,
+        "tier": "S"
+      },
+      {
+        "code": "ENVA",
+        "name": "易诺华国际",
+        "close": 179.41,
+        "change": 9.4,
+        "amount": 66548910.398,
+        "rsi12": 61.0,
+        "rsi6": 61.0,
+        "ma20_slope": 1.89,
+        "ma5_slope": -1.26,
+        "ma_bond_value": 98.99,
+        "above_ma20_pct": 6.0,
+        "price_rank_60d": 1.0,
+        "roc_20": 10.195933910693443,
+        "amount_ratio": 1.5,
+        "consecutive_down_3d": 0,
+        "total_mv": 4464599191.36,
+        "circ_mv": 4262929075.02,
+        "roc_5": 2.5786163522012524,
+        "roc_10": 4.9610951851635114,
+        "roc_60": 23.705440253740605,
+        "roc_120": 42.23085460599334,
+        "roc_240": 0,
+        "low60": 129.71,
+        "high60": 179.41,
+        "state": "强势主升",
+        "action": "持有",
+        "reason": "当日涨9.4%占20日涨幅92%，疑似一日游",
+        "score": 80.5,
+        "tier": "S"
+      }
+    ],
+    "counts": {
+      "open": 30,
+      "reduce": 20,
+      "clear": 20,
+      "hold": 20,
+      "watch": 1056
+    }
+  },
+  "judgment": {
+    "CRDO": {
+      "record_count": 3,
+      "latest_judgment": "",
+      "latest_date": "2025-12-20",
+      "focus_points": [
+        "美股 AI 全线暴涨，三大原因拆解！",
+        "CRDO高效数据传输受益于AI需求",
+        "AI数据中心高速连接需求、AEC市场份额"
+      ],
+      "reasoning_chains": [
+        "7月必买 AMD，130美元买价，最高价格 263.51 美元，涨幅 97%。 → 我们的量化系统由 前纽约资深分析师 Ken 与顶尖数据科学家联手打造。不同于普通软件，我们的 AI 量化模型会进行全维度扫描： → 数千个数据点：基本面、K 线、趋势、行业与市场结构 → 三位一体筛选，我们Top Stock 强势上涨股 组合总回报达 234.21%，表现是标普 500 近 3 倍，纳指的 2 倍！",
+        "[推导] Q1超预期+Q2乐观指引 → CRDO高效数据传输受益于AI需求 → 看好",
+        "CRDO 的高速数据传输技术优化 GPU 间效率，满足 AI 模型和云计算高性能需求 → 科技巨头客户如微软、亚马逊依赖其技术验证核心地位 → 2024 财年收入同比增长 70%，分析师预计未来收入年增长率 49.68%，EB"
+      ],
+      "core_judgments": [
+        "美股 AI 全线暴涨，三大原因拆解！",
+        "Q1超预期+Q2乐观指引 → CRDO高效数据传输受益于AI需求。Susquehanna目标价上调至165。看好。BUY。",
+        "CRDO是AI数据中心高速连接的关键玩家，客户阵容顶级（微软/亚马逊/特斯拉），收入暴增70%验证需求。当前亏损是高速成长期正常现象，AEC市场2028年28亿美元是大机会。"
+      ]
+    }
+  },
+  "search_targets": [
+    {
+      "code": "MSTZ",
+      "name": "2倍做空MSTR ETF-T-Rex",
+      "action": "开仓",
+      "score": 88.8,
+      "search_query": "2倍做空MSTR ETF-T-Rex MSTZ stock news"
+    },
+    {
+      "code": "CRDU",
+      "name": "2倍做多CRDO ETF-Tradr",
+      "action": "开仓",
+      "score": 87.9,
+      "search_query": "2倍做多CRDO ETF-Tradr CRDU stock news"
+    },
+    {
+      "code": "VECO",
+      "name": "维易科精密仪器",
+      "action": "开仓",
+      "score": 86.0,
+      "search_query": "维易科精密仪器 VECO stock news"
+    },
+    {
+      "code": "SPCE",
+      "name": "维珍银河",
+      "action": "开仓",
+      "score": 85.3,
+      "search_query": "维珍银河 SPCE stock news"
+    },
+    {
+      "code": "MGNI",
+      "name": "Magnite Inc",
+      "action": "开仓",
+      "score": 84.7,
+      "search_query": "Magnite Inc MGNI stock news"
+    },
+    {
+      "code": "CRDO",
+      "name": "Credo Technology Group Holding ",
+      "action": "开仓",
+      "score": 81.1,
+      "search_query": "Credo Technology Group Holding  CRDO stock news"
+    },
+    {
+      "code": "UCTT",
+      "name": "超科林半导体",
+      "action": "开仓",
+      "score": 80.8,
+      "search_query": "超科林半导体 UCTT stock news"
+    },
+    {
+      "code": "BLLN",
+      "name": "BillionToOne Inc-A",
+      "action": "开仓",
+      "score": 80.0,
+      "search_query": "BillionToOne Inc-A BLLN stock news"
+    },
+    {
+      "code": "NUVL",
+      "name": "Nuvalent Inc-A",
+      "action": "清仓",
+      "score": 95.0,
+      "search_query": "Nuvalent Inc-A NUVL stock decline"
+    },
+    {
+      "code": "ALHC",
+      "name": "Alignment Healthcare Inc",
+      "action": "清仓",
+      "score": 88.3,
+      "search_query": "Alignment Healthcare Inc ALHC stock decline"
+    },
+    {
+      "code": "NAIL",
+      "name": "三倍做多住宅建筑商和供应-Direxion",
+      "action": "清仓",
+      "score": 88.3,
+      "search_query": "三倍做多住宅建筑商和供应-Direxion NAIL stock decline"
+    },
+    {
+      "code": "SHC",
+      "name": "Sotera Health Co",
+      "action": "清仓",
+      "score": 83.2,
+      "search_query": "Sotera Health Co SHC stock decline"
+    },
+    {
+      "code": "FND",
+      "name": "Floor & Decor Holdings Inc-A",
+      "action": "清仓",
+      "score": 79.3,
+      "search_query": "Floor & Decor Holdings Inc-A FND stock decline"
+    }
+  ],
+  "news": {
+    "MSTZ": [
+      {
+        "title": "Turns Out, MSTZ Can Actually Go Up",
+        "link": "https://seekingalpha.com/article/4846418-turns-out-mstz-can-actually-go-up?source=feed_symbol_MSTZ",
+        "published": "Thu, 20 Nov 2025 23:03:08 -0500",
+        "summary": ""
+      },
+      {
+        "title": "Wall Street's top and bottom 20 performing ETFs YTD as H1 concludes",
+        "link": "https://seekingalpha.com/symbol/MSTZ/news?source=feed_symbol_MSTZ",
+        "published": "Wed, 02 Jul 2025 11:58:55 -0400",
+        "summary": ""
+      },
+      {
+        "title": "MSTZ: Utter Annihilation Of Capital",
+        "link": "https://seekingalpha.com/article/4781529-mstz-utter-annihilation-of-capital?source=feed_symbol_MSTZ",
+        "published": "Sat, 03 May 2025 23:38:54 -0400",
+        "summary": ""
+      }
+    ],
+    "CRDU": [],
+    "VECO": [
+      {
+        "title": "Veeco Instruments stock rallies 17% as follow-on order signals growing chip demand",
+        "link": "https://seekingalpha.com/symbol/VECO/news?source=feed_symbol_VECO",
+        "published": "Tue, 09 Jun 2026 10:21:43 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Veeco outlines $740M-$800M FY2026 revenue outlook while planning 10x SPECTOR capacity expansion by early '27",
+        "link": "https://seekingalpha.com/symbol/VECO/news?source=feed_symbol_VECO",
+        "published": "Tue, 05 May 2026 23:32:05 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Veeco Instruments Inc. (VECO) Q1 2026 Earnings Call Transcript",
+        "link": "https://seekingalpha.com/article/4899003-veeco-instruments-inc-veco-q1-2026-earnings-call-transcript?source=feed_symbol_VECO",
+        "published": "Tue, 05 May 2026 23:31:16 -0400",
+        "summary": ""
+      }
+    ],
+    "SPCE": [
+      {
+        "title": "Sell-the-news hits space stocks after Starfighters Space Russell 3000 entry",
+        "link": "https://seekingalpha.com/symbol/SPCE/news?source=feed_symbol_SPCE",
+        "published": "Fri, 05 Jun 2026 17:38:22 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Virgin Galactic soars to a 52-week high after stake disclosure, testing update",
+        "link": "https://seekingalpha.com/symbol/SPCE/news?source=feed_symbol_SPCE",
+        "published": "Mon, 01 Jun 2026 10:42:05 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Virgin Galactic: Reddit Hype And An Uncertain Liquidity Situation",
+        "link": "https://seekingalpha.com/article/4910524-virgin-galactic-stock-reddit-hype-uncertain-liquidity-situation?source=feed_symbol_SPCE",
+        "published": "Mon, 01 Jun 2026 07:30:21 -0400",
+        "summary": ""
+      }
+    ],
+    "MGNI": [
+      {
+        "title": "Magnite: Great Start To 2026 Should Drive The Stock's Recovery",
+        "link": "https://seekingalpha.com/article/4912652-magnite-great-start-to-2026-should-drive-the-stocks-recovery?source=feed_symbol_MGNI",
+        "published": "Sat, 06 Jun 2026 23:48:27 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Magnite raises 2026 adjusted EBITDA margin target to at least 35.5% while projecting mid-30% free cash flow growth",
+        "link": "https://seekingalpha.com/symbol/MGNI/news?source=feed_symbol_MGNI",
+        "published": "Thu, 07 May 2026 06:13:07 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Magnite, Inc. (MGNI) Q1 2026 Earnings Call Transcript",
+        "link": "https://seekingalpha.com/article/4900110-magnite-inc-mgni-q1-2026-earnings-call-transcript?source=feed_symbol_MGNI",
+        "published": "Thu, 07 May 2026 06:11:15 -0400",
+        "summary": ""
+      }
+    ],
+    "CRDO": [
+      {
+        "title": "Credo's Next Growth Phase",
+        "link": "https://seekingalpha.com/article/4912664-credos-next-growth-phase?source=feed_symbol_CRDO",
+        "published": "Sun, 07 Jun 2026 04:44:17 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Credo: Optics Ramp, Margin Upside And Bullish Charts Point To More Upside",
+        "link": "https://seekingalpha.com/article/4912573-credo-optics-ramp-margin-upside-and-bullish-charts-point-to-more-upside?source=feed_symbol_CRDO",
+        "published": "Sat, 06 Jun 2026 02:56:58 -0400",
+        "summary": ""
+      },
+      {
+        "title": "You're Not Buying The $600M Optical Number - You're Buying Credo's Guidance (Rating Upgrade)",
+        "link": "https://seekingalpha.com/article/4912567-youre-not-buying-the-600m-optical-number-youre-buying-credo-guidance?source=feed_symbol_CRDO",
+        "published": "Sat, 06 Jun 2026 02:11:25 -0400",
+        "summary": ""
+      }
+    ],
+    "UCTT": [
+      {
+        "title": "Ultra Clean: H2 2026 Production Ramp Accelerates The Roadmap To $4B In Revenue",
+        "link": "https://seekingalpha.com/article/4913492-ultra-clean-2h26-production-ramp-accelerates-the-roadmap-to-4b-in-revenue?source=feed_symbol_UCTT",
+        "published": "Tue, 09 Jun 2026 17:46:21 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Ultra Clean: WFE Upgrades Bodes Well, But Preferable To Wait For A Pullback",
+        "link": "https://seekingalpha.com/article/4898537-ultra-clean-wfe-upgrades-bodes-well-but-preferable-to-wait-for-a-pullback?source=feed_symbol_UCTT",
+        "published": "Tue, 05 May 2026 12:04:36 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Ultra clean projects Q2 revenue of $565M-$605M while expecting gross margin to improve through the year",
+        "link": "https://seekingalpha.com/symbol/UCTT/news?source=feed_symbol_UCTT",
+        "published": "Tue, 28 Apr 2026 19:22:26 -0400",
+        "summary": ""
+      }
+    ],
+    "BLLN": [
+      {
+        "title": "BillionToOne - Starting 2026 Strong",
+        "link": "https://seekingalpha.com/article/4907045-billiontoone-starting-2026-strong?source=feed_symbol_BLLN",
+        "published": "Wed, 20 May 2026 10:55:58 -0400",
+        "summary": ""
+      },
+      {
+        "title": "BillionToOne, Inc. (BLLN) Q1 2026 Earnings Call Transcript",
+        "link": "https://seekingalpha.com/article/4907851-billiontoone-inc-blln-q1-2026-earnings-call-transcript?source=feed_symbol_BLLN",
+        "published": "Thu, 07 May 2026 00:20:02 -0400",
+        "summary": ""
+      },
+      {
+        "title": "BillionToOne, Inc. GAAP EPS of $0.34 beats by $0.30, revenue of $108.39M beats by $11.09M",
+        "link": "https://seekingalpha.com/symbol/BLLN/news?source=feed_symbol_BLLN",
+        "published": "Wed, 06 May 2026 17:20:14 -0400",
+        "summary": ""
+      }
+    ],
+    "NUVL": [
+      {
+        "title": "Quant rating check: Top oncology peers as Nuvalent goes private in $10.6B deal with GSK",
+        "link": "https://seekingalpha.com/symbol/NUVL/news?source=feed_symbol_NUVL",
+        "published": "Tue, 09 Jun 2026 05:18:04 -0400",
+        "summary": ""
+      },
+      {
+        "title": "GSK to buy Nuvalent for $10.6B",
+        "link": "https://seekingalpha.com/symbol/NUVL/news?source=feed_symbol_NUVL",
+        "published": "Tue, 09 Jun 2026 03:02:29 -0400",
+        "summary": ""
+      },
+      {
+        "title": "GSK in talks to buy Nuvalent for over $9B - report",
+        "link": "https://seekingalpha.com/symbol/NUVL/news?source=feed_symbol_NUVL",
+        "published": "Tue, 09 Jun 2026 00:50:34 -0400",
+        "summary": ""
+      }
+    ],
+    "ALHC": [
+      {
+        "title": "Alignment Healthcare, Inc. (ALHC) Presents at Goldman Sachs 47th Annual Global Healthcare Conference 2026 Transcript",
+        "link": "https://seekingalpha.com/article/4913381-alignment-healthcare-inc-alhc-presents-at-goldman-sachs-47th-annual-global-healthcare?source=feed_symbol_ALHC",
+        "published": "Tue, 09 Jun 2026 13:32:11 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Alignment Healthcare, Inc. (ALHC) Presents at Bank of America Global Healthcare Conference 2026 Transcript",
+        "link": "https://seekingalpha.com/article/4904025-alignment-healthcare-inc-alhc-presents-at-bank-of-america-global-healthcare-conference-2026?source=feed_symbol_ALHC",
+        "published": "Wed, 13 May 2026 14:20:52 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Alignment Healthcare gains on SmallCap 600 addition; Sun Country Airlines removed",
+        "link": "https://seekingalpha.com/symbol/ALHC/news?source=feed_symbol_ALHC",
+        "published": "Tue, 12 May 2026 00:56:23 -0400",
+        "summary": ""
+      }
+    ],
+    "NAIL": [
+      {
+        "title": "Mortgage rates fall on prospect of easing energy prices; home delistings hit six-year high",
+        "link": "https://seekingalpha.com/symbol/NAIL/news?source=feed_symbol_NAIL",
+        "published": "Thu, 04 Jun 2026 12:30:18 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Investor home purchases decline 6% Y/Y in Q1 on elevated housing costs",
+        "link": "https://seekingalpha.com/symbol/NAIL/news?source=feed_symbol_NAIL",
+        "published": "Thu, 28 May 2026 12:21:46 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Mortgage rates up for second straight week, reach about nine-month high",
+        "link": "https://seekingalpha.com/symbol/NAIL/news?source=feed_symbol_NAIL",
+        "published": "Thu, 28 May 2026 12:10:19 -0400",
+        "summary": ""
+      }
+    ],
+    "SHC": [
+      {
+        "title": "Sotera Health Company (SHC) Presents at Goldman Sachs 47th Annual Global Healthcare Conference 2026 Transcript",
+        "link": "https://seekingalpha.com/article/4912969-sotera-health-company-shc-presents-at-goldman-sachs-47th-annual-global-healthcare-conference?source=feed_symbol_SHC",
+        "published": "Mon, 08 Jun 2026 16:08:34 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Sotera Health Company (SHC) Presents at Jefferies Global Healthcare Conference 2026 Transcript",
+        "link": "https://seekingalpha.com/article/4911535-sotera-health-company-shc-presents-at-jefferies-global-healthcare-conference-2026-transcript?source=feed_symbol_SHC",
+        "published": "Wed, 03 Jun 2026 15:12:10 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Sotera Health Company (SHC) Presents at RBC Capital Markets Global Healthcare Conference 2026 Transcript",
+        "link": "https://seekingalpha.com/article/4906768-sotera-health-company-shc-presents-at-rbc-capital-markets-global-healthcare-conference-2026?source=feed_symbol_SHC",
+        "published": "Tue, 19 May 2026 19:20:44 -0400",
+        "summary": ""
+      }
+    ],
+    "FND": [
+      {
+        "title": "Floor & Decor's Cyclical Malaise Vs. Structural Moat",
+        "link": "https://seekingalpha.com/article/4906615-floor-and-decor-cyclical-malaise-vs-structural-moat?source=feed_symbol_FND",
+        "published": "Tue, 19 May 2026 15:15:00 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Floor & Decor: No Turn Here",
+        "link": "https://seekingalpha.com/article/4897581-floor-and-decor-no-turn-here?source=feed_symbol_FND",
+        "published": "Fri, 01 May 2026 15:06:28 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Floor & Decor outlines 2026 EPS of $1.83-$2.08 while launching $400M buyback",
+        "link": "https://seekingalpha.com/symbol/FND/news?source=feed_symbol_FND",
+        "published": "Fri, 01 May 2026 01:32:26 -0400",
+        "summary": ""
+      }
+    ]
+  }
+}
+
+## 分析原则
+
+### 叙事风格
+- ✅ "趋势启动初期，MA20温和上行，RSI12=65处于健康区间，5日动量+8.2%显示短期资金持续流入"
+- ❌ "RSI12=65偏高；MA20斜率+3%加速上行；ROC5=8.2%"
+- 用连贯段落把多个指标串成一个故事，不要分条罗列
+
+### 风险交叉验证
+- RSI12>70 + 乖离率>20% + 5日涨幅>15% → 三重超买，回调概率极高
+- RSI12>80 + 成交额异常放大 → 可能是顶部放量
+- 乖离率>30% → 无论其他指标如何，必须标注"极高风险"
+
+### 操作建议五档
+| 档位 | 条件 |
+|------|------|
+| 强烈推荐买入 | 乖离<15% + RSI12<65 + 趋势启动 + 有逻辑支撑 |
+| 可买入 | 乖离<20% + 趋势健康 + 有明确逻辑 |
+| 可持有 | 已持仓者继续，趋势未破 |
+| 注意止盈 | 乖离>30% 或 RSI12>85 或 涨幅已透支 |
+| 应清仓 | 趋势终结（MA10<MA20 + MA20下行） |
+
+## 输出格式（Markdown）
+
+# 量化策略深度分析报告
+> 数据日期: 2026-06-09 | 市场: US
+
+## 一、市场概览
+（一句话总结当前市场情绪 + 信号统计）
+
+## 二、S级信号深度分析
+
+### ⭐⭐⭐ {code} {name} — {一句话定位}
+
+| 指标 | 值 |
+|------|-----|
+| 收盘价 | {close} |
+| 涨跌幅 | {change}% |
+| 成交额 | {amount} |
+| RSI12 | {rsi12} |
+| MA20斜率 | {ma20_slope}% |
+| 乖离率 | {above_ma20}% |
+| ROC 5/20/60 | +X% / +X% / +X% |
+| 评分 | {score} |
+
+**技术解读**: （连贯叙事，把RSI/MA20/ROC/成交额串成一个故事）
+
+**资讯面**: （搜索结果整合，回答"为什么涨"）
+
+**风险提示**: （基于技术指标的风险评估）
+
+**操作建议**: 强烈买入 / 可买入 / 可持有 / 注意止盈 / 应清仓
+
+---
+
+（重复以上格式，每只S级标的）
+
+## 三、A级信号（前20只）
+
+| 代码 | 名称 | 涨幅 | RSI12 | 评分 | ROC 5/20/60 | 操作 |
+|------|------|------|-------|------|-------------|------|
+| ... | ... | ... | ... | ... | ... | ... |
+
+## 四、清仓信号分析
+（列表形式，每条一行简要说明）
+
+## 五、板块总结
+- 板块热度标记（🔥🔥🔥/🔥🔥/🔥/→/↓）
+- 资金流向判断
+
+## 六、风险总结
+- 乖离率>20%的标的清单
+- RSI12>80的超买标的
+- 短期暴涨（5日>15%）的标的
+- 板块拥挤度风险
+
+---
+⚠️ 以上分析基于技术指标和公开资讯，不构成投资建议。状态机规则严格执行，不预判、不逆势。
+
+请基于以上要求进行深度分析。
+
+## 资讯数据
+
+
+### MSTZ 资讯
+1. **Turns Out, MSTZ Can Actually Go Up**
+   发布时间: Thu, 20 Nov 2025 23:03:08 -0500
+2. **Wall Street's top and bottom 20 performing ETFs YTD as H1 concludes**
+   发布时间: Wed, 02 Jul 2025 11:58:55 -0400
+3. **MSTZ: Utter Annihilation Of Capital**
+   发布时间: Sat, 03 May 2025 23:38:54 -0400
+
+### VECO 资讯
+1. **Veeco Instruments stock rallies 17% as follow-on order signals growing chip demand**
+   发布时间: Tue, 09 Jun 2026 10:21:43 -0400
+2. **Veeco outlines $740M-$800M FY2026 revenue outlook while planning 10x SPECTOR capacity expansion by early '27**
+   发布时间: Tue, 05 May 2026 23:32:05 -0400
+3. **Veeco Instruments Inc. (VECO) Q1 2026 Earnings Call Transcript**
+   发布时间: Tue, 05 May 2026 23:31:16 -0400
+
+### SPCE 资讯
+1. **Sell-the-news hits space stocks after Starfighters Space Russell 3000 entry**
+   发布时间: Fri, 05 Jun 2026 17:38:22 -0400
+2. **Virgin Galactic soars to a 52-week high after stake disclosure, testing update**
+   发布时间: Mon, 01 Jun 2026 10:42:05 -0400
+3. **Virgin Galactic: Reddit Hype And An Uncertain Liquidity Situation**
+   发布时间: Mon, 01 Jun 2026 07:30:21 -0400
+
+### MGNI 资讯
+1. **Magnite: Great Start To 2026 Should Drive The Stock's Recovery**
+   发布时间: Sat, 06 Jun 2026 23:48:27 -0400
+2. **Magnite raises 2026 adjusted EBITDA margin target to at least 35.5% while projecting mid-30% free cash flow growth**
+   发布时间: Thu, 07 May 2026 06:13:07 -0400
+3. **Magnite, Inc. (MGNI) Q1 2026 Earnings Call Transcript**
+   发布时间: Thu, 07 May 2026 06:11:15 -0400
+
+### CRDO 资讯
+1. **Credo's Next Growth Phase**
+   发布时间: Sun, 07 Jun 2026 04:44:17 -0400
+2. **Credo: Optics Ramp, Margin Upside And Bullish Charts Point To More Upside**
+   发布时间: Sat, 06 Jun 2026 02:56:58 -0400
+3. **You're Not Buying The $600M Optical Number - You're Buying Credo's Guidance (Rating Upgrade)**
+   发布时间: Sat, 06 Jun 2026 02:11:25 -0400
+
+### UCTT 资讯
+1. **Ultra Clean: H2 2026 Production Ramp Accelerates The Roadmap To $4B In Revenue**
+   发布时间: Tue, 09 Jun 2026 17:46:21 -0400
+2. **Ultra Clean: WFE Upgrades Bodes Well, But Preferable To Wait For A Pullback**
+   发布时间: Tue, 05 May 2026 12:04:36 -0400
+3. **Ultra clean projects Q2 revenue of $565M-$605M while expecting gross margin to improve through the year**
+   发布时间: Tue, 28 Apr 2026 19:22:26 -0400
+
+### BLLN 资讯
+1. **BillionToOne - Starting 2026 Strong**
+   发布时间: Wed, 20 May 2026 10:55:58 -0400
+2. **BillionToOne, Inc. (BLLN) Q1 2026 Earnings Call Transcript**
+   发布时间: Thu, 07 May 2026 00:20:02 -0400
+3. **BillionToOne, Inc. GAAP EPS of $0.34 beats by $0.30, revenue of $108.39M beats by $11.09M**
+   发布时间: Wed, 06 May 2026 17:20:14 -0400
+
+### NUVL 资讯
+1. **Quant rating check: Top oncology peers as Nuvalent goes private in $10.6B deal with GSK**
+   发布时间: Tue, 09 Jun 2026 05:18:04 -0400
+2. **GSK to buy Nuvalent for $10.6B**
+   发布时间: Tue, 09 Jun 2026 03:02:29 -0400
+3. **GSK in talks to buy Nuvalent for over $9B - report**
+   发布时间: Tue, 09 Jun 2026 00:50:34 -0400
+
+### ALHC 资讯
+1. **Alignment Healthcare, Inc. (ALHC) Presents at Goldman Sachs 47th Annual Global Healthcare Conference 2026 Transcript**
+   发布时间: Tue, 09 Jun 2026 13:32:11 -0400
+2. **Alignment Healthcare, Inc. (ALHC) Presents at Bank of America Global Healthcare Conference 2026 Transcript**
+   发布时间: Wed, 13 May 2026 14:20:52 -0400
+3. **Alignment Healthcare gains on SmallCap 600 addition; Sun Country Airlines removed**
+   发布时间: Tue, 12 May 2026 00:56:23 -0400
+
+### NAIL 资讯
+1. **Mortgage rates fall on prospect of easing energy prices; home delistings hit six-year high**
+   发布时间: Thu, 04 Jun 2026 12:30:18 -0400
+2. **Investor home purchases decline 6% Y/Y in Q1 on elevated housing costs**
+   发布时间: Thu, 28 May 2026 12:21:46 -0400
+3. **Mortgage rates up for second straight week, reach about nine-month high**
+   发布时间: Thu, 28 May 2026 12:10:19 -0400
+
+### SHC 资讯
+1. **Sotera Health Company (SHC) Presents at Goldman Sachs 47th Annual Global Healthcare Conference 2026 Transcript**
+   发布时间: Mon, 08 Jun 2026 16:08:34 -0400
+2. **Sotera Health Company (SHC) Presents at Jefferies Global Healthcare Conference 2026 Transcript**
+   发布时间: Wed, 03 Jun 2026 15:12:10 -0400
+3. **Sotera Health Company (SHC) Presents at RBC Capital Markets Global Healthcare Conference 2026 Transcript**
+   发布时间: Tue, 19 May 2026 19:20:44 -0400
+
+### FND 资讯
+1. **Floor & Decor's Cyclical Malaise Vs. Structural Moat**
+   发布时间: Tue, 19 May 2026 15:15:00 -0400
+2. **Floor & Decor: No Turn Here**
+   发布时间: Fri, 01 May 2026 15:06:28 -0400
+3. **Floor & Decor outlines 2026 EPS of $1.83-$2.08 while launching $400M buyback**
+   发布时间: Fri, 01 May 2026 01:32:26 -0400
+
+请将以上资讯整合到对应的S级标的分析中。

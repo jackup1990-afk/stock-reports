@@ -1,0 +1,2953 @@
+{
+  "market": "HK",
+  "market_name": "港股",
+  "week_start": "2026-06-01",
+  "week_end": "2026-06-05",
+  "trading_days": 5,
+  "generated_at": "2026-06-07 21:12",
+  "overview": {
+    "total_stocks": 292,
+    "total_etfs": 8,
+    "up_count": 98,
+    "down_count": 189,
+    "avg_change": -1.92,
+    "median_change": -2.05
+  },
+  "tier_overview": {
+    "L1": {
+      "count": 8,
+      "up_count": 5,
+      "down_count": 3,
+      "avg_chg": -0.26,
+      "median_chg": 2.46,
+      "top_code": "00700",
+      "top_name": "腾讯控股",
+      "top_chg": 6.09,
+      "amount_range": "52.0~227.8亿"
+    },
+    "L2": {
+      "count": 10,
+      "up_count": 3,
+      "down_count": 7,
+      "avg_chg": -3.56,
+      "median_chg": -1.92,
+      "top_code": "01810",
+      "top_name": "小米集团-W",
+      "top_chg": -0.86,
+      "amount_range": "20.4~41.8亿"
+    },
+    "L3": {
+      "count": 73,
+      "up_count": 29,
+      "down_count": 43,
+      "avg_chg": -1.63,
+      "median_chg": -1.8,
+      "top_code": "02318",
+      "top_name": "中国平安",
+      "top_chg": -5.25,
+      "amount_range": "5.0~19.8亿"
+    },
+    "L4": {
+      "count": 201,
+      "up_count": 61,
+      "down_count": 136,
+      "avg_chg": -2.01,
+      "median_chg": -2.11,
+      "top_code": "00354",
+      "top_name": "中国软件国际",
+      "top_chg": 14.59,
+      "amount_range": "1.0~4.9亿"
+    },
+    "L5": {
+      "count": 0
+    }
+  },
+  "tiers": {
+    "L1": [
+      {
+        "code": "00700",
+        "name": "腾讯控股",
+        "is_etf": false,
+        "base_close": 427.2,
+        "last_close": 453.2,
+        "weekly_chg": 6.09,
+        "avg_amount": 227.82,
+        "daily_changes": [
+          10.46,
+          -3.16,
+          -1.59,
+          -1.26
+        ],
+        "rsi12": 49.0,
+        "roc_20": 0,
+        "ma20": 453.7,
+        "ma20_slope": -0.76,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "09988",
+        "name": "阿里巴巴-W",
+        "is_etf": false,
+        "base_close": 120.9,
+        "last_close": 122.4,
+        "weekly_chg": 1.24,
+        "avg_amount": 105.51,
+        "daily_changes": [
+          6.6,
+          -3.28,
+          -2.45,
+          -0.89
+        ],
+        "rsi12": 36.0,
+        "roc_20": 0,
+        "ma20": 129.6,
+        "ma20_slope": -0.76,
+        "elasticity": 18.9,
+        "meets_amount": true
+      },
+      {
+        "code": "00981",
+        "name": "中芯国际",
+        "is_etf": false,
+        "base_close": 81.6,
+        "last_close": 75.65,
+        "weekly_chg": -7.29,
+        "avg_amount": 104.94,
+        "daily_changes": [
+          3.15,
+          1.22,
+          -1.75,
+          -7.18
+        ],
+        "rsi12": 55.0,
+        "roc_20": 0,
+        "ma20": 77.9,
+        "ma20_slope": 3.71,
+        "elasticity": 66.9,
+        "meets_amount": true
+      },
+      {
+        "code": "00992",
+        "name": "联想集团",
+        "is_etf": false,
+        "base_close": 24.0,
+        "last_close": 24.88,
+        "weekly_chg": 3.67,
+        "avg_amount": 76.63,
+        "daily_changes": [
+          5.31,
+          -1.66,
+          -4.36,
+          -0.48
+        ],
+        "rsi12": 89.0,
+        "roc_20": 0,
+        "ma20": 17.6,
+        "ma20_slope": 24.44,
+        "elasticity": 80.4,
+        "meets_amount": true
+      },
+      {
+        "code": "03690",
+        "name": "美团-W",
+        "is_etf": false,
+        "base_close": 73.45,
+        "last_close": 79.95,
+        "weekly_chg": 8.85,
+        "avg_amount": 63.72,
+        "daily_changes": [
+          9.27,
+          -5.96,
+          -2.24,
+          1.72
+        ],
+        "rsi12": 45.0,
+        "roc_20": 0,
+        "ma20": 81.4,
+        "ma20_slope": -0.73,
+        "elasticity": 40.0,
+        "meets_amount": true
+      },
+      {
+        "code": "01347",
+        "name": "华虹半导体",
+        "is_etf": false,
+        "base_close": 161.3,
+        "last_close": 145.3,
+        "weekly_chg": -9.92,
+        "avg_amount": 59.81,
+        "daily_changes": [
+          -2.89,
+          2.57,
+          3.16,
+          -7.16
+        ],
+        "rsi12": 65.0,
+        "roc_20": 0,
+        "ma20": 139.7,
+        "ma20_slope": 6.81,
+        "elasticity": 118.4,
+        "meets_amount": true
+      },
+      {
+        "code": "06869",
+        "name": "长飞光纤光缆",
+        "is_etf": false,
+        "base_close": 227.2,
+        "last_close": 239.2,
+        "weekly_chg": 5.28,
+        "avg_amount": 55.34,
+        "daily_changes": [
+          10.75,
+          10.65,
+          -2.64,
+          -4.63
+        ],
+        "rsi12": 55.0,
+        "roc_20": 0,
+        "ma20": 234.6,
+        "ma20_slope": 1.84,
+        "elasticity": 209.1,
+        "meets_amount": true
+      },
+      {
+        "code": "01299",
+        "name": "友邦保险",
+        "is_etf": false,
+        "base_close": 82.25,
+        "last_close": 74.0,
+        "weekly_chg": -10.03,
+        "avg_amount": 52.05,
+        "daily_changes": [
+          0.12,
+          0.18,
+          -6.75,
+          -3.52
+        ],
+        "rsi12": 10.0,
+        "roc_20": 0,
+        "ma20": 84.3,
+        "ma20_slope": -1.63,
+        "elasticity": 0,
+        "meets_amount": true
+      }
+    ],
+    "L2": [
+      {
+        "code": "01810",
+        "name": "小米集团-W",
+        "is_etf": false,
+        "base_close": 28.04,
+        "last_close": 27.8,
+        "weekly_chg": -0.86,
+        "avg_amount": 41.75,
+        "daily_changes": [
+          3.13,
+          -3.51,
+          -0.7,
+          -2.04
+        ],
+        "rsi12": 29.0,
+        "roc_20": 0,
+        "ma20": 30.0,
+        "ma20_slope": -1.22,
+        "elasticity": 18.5,
+        "meets_amount": true
+      },
+      {
+        "code": "09992",
+        "name": "泡泡玛特",
+        "is_etf": false,
+        "base_close": 173.4,
+        "last_close": 176.4,
+        "weekly_chg": 1.73,
+        "avg_amount": 40.39,
+        "daily_changes": [
+          -0.22,
+          0.06,
+          -1.0,
+          -0.62
+        ],
+        "rsi12": 84.0,
+        "roc_20": 0,
+        "ma20": 163.7,
+        "ma20_slope": 3.47,
+        "elasticity": 28.9,
+        "meets_amount": true
+      },
+      {
+        "code": "01888",
+        "name": "建滔积层板",
+        "is_etf": false,
+        "base_close": 54.6,
+        "last_close": 49.92,
+        "weekly_chg": -8.57,
+        "avg_amount": 36.27,
+        "daily_changes": [
+          4.38,
+          9.55,
+          0.28,
+          -8.24
+        ],
+        "rsi12": 61.0,
+        "roc_20": 0,
+        "ma20": 48.0,
+        "ma20_slope": 8.41,
+        "elasticity": 134.5,
+        "meets_amount": true
+      },
+      {
+        "code": "09926",
+        "name": "康方生物",
+        "is_etf": false,
+        "base_close": 118.1,
+        "last_close": 93.6,
+        "weekly_chg": -20.75,
+        "avg_amount": 34.8,
+        "daily_changes": [
+          -8.11,
+          -3.57,
+          -3.16,
+          -5.88
+        ],
+        "rsi12": 29.0,
+        "roc_20": 0,
+        "ma20": 118.1,
+        "ma20_slope": -5.82,
+        "elasticity": 61.4,
+        "meets_amount": true
+      },
+      {
+        "code": "03750",
+        "name": "宁德时代",
+        "is_etf": false,
+        "base_close": 744.5,
+        "last_close": 711.0,
+        "weekly_chg": -4.5,
+        "avg_amount": 34.09,
+        "daily_changes": [
+          3.45,
+          -0.19,
+          -7.01,
+          -1.73
+        ],
+        "rsi12": 56.0,
+        "roc_20": 0,
+        "ma20": 695.9,
+        "ma20_slope": 4.46,
+        "elasticity": 59.0,
+        "meets_amount": true
+      },
+      {
+        "code": "01024",
+        "name": "快手-W",
+        "is_etf": false,
+        "base_close": 45.54,
+        "last_close": 46.86,
+        "weekly_chg": 2.9,
+        "avg_amount": 28.62,
+        "daily_changes": [
+          5.24,
+          -4.57,
+          0.43,
+          -0.17
+        ],
+        "rsi12": 40.0,
+        "roc_20": 0,
+        "ma20": 48.0,
+        "ma20_slope": 1.99,
+        "elasticity": 22.2,
+        "meets_amount": true
+      },
+      {
+        "code": "01211",
+        "name": "比亚迪股份",
+        "is_etf": false,
+        "base_close": 91.3,
+        "last_close": 89.7,
+        "weekly_chg": -1.75,
+        "avg_amount": 27.54,
+        "daily_changes": [
+          6.61,
+          -3.62,
+          -1.55,
+          -2.29
+        ],
+        "rsi12": 37.0,
+        "roc_20": 0,
+        "ma20": 94.9,
+        "ma20_slope": -2.88,
+        "elasticity": 19.9,
+        "meets_amount": true
+      },
+      {
+        "code": "00005",
+        "name": "汇丰控股",
+        "is_etf": false,
+        "base_close": 145.1,
+        "last_close": 141.8,
+        "weekly_chg": -2.27,
+        "avg_amount": 24.01,
+        "daily_changes": [
+          0.62,
+          -0.2,
+          -0.34,
+          -3.14
+        ],
+        "rsi12": 57.0,
+        "roc_20": 0,
+        "ma20": 143.0,
+        "ma20_slope": 0.97,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "00883",
+        "name": "中国海洋石油",
+        "is_etf": false,
+        "base_close": 26.4,
+        "last_close": 26.54,
+        "weekly_chg": 0.53,
+        "avg_amount": 21.1,
+        "daily_changes": [
+          2.47,
+          -0.37,
+          -0.88,
+          -1.78
+        ],
+        "rsi12": 51.0,
+        "roc_20": 0,
+        "ma20": 26.8,
+        "ma20_slope": -1.84,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "02382",
+        "name": "舜宇光学科技",
+        "is_etf": false,
+        "base_close": 83.8,
+        "last_close": 82.05,
+        "weekly_chg": -2.09,
+        "avg_amount": 20.38,
+        "daily_changes": [
+          1.67,
+          0.96,
+          -3.35,
+          1.3
+        ],
+        "rsi12": 77.0,
+        "roc_20": 0,
+        "ma20": 72.3,
+        "ma20_slope": 6.35,
+        "elasticity": 47.1,
+        "meets_amount": true
+      }
+    ],
+    "L3": [
+      {
+        "code": "02318",
+        "name": "中国平安",
+        "is_etf": false,
+        "base_close": 60.05,
+        "last_close": 56.9,
+        "weekly_chg": -5.25,
+        "avg_amount": 19.79,
+        "daily_changes": [
+          0.65,
+          -1.37,
+          -1.3,
+          -0.26
+        ],
+        "rsi12": 15.0,
+        "roc_20": 0,
+        "ma20": 61.4,
+        "ma20_slope": -1.99,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "06809",
+        "name": "澜起科技",
+        "is_etf": false,
+        "base_close": 400.0,
+        "last_close": 368.8,
+        "weekly_chg": -7.8,
+        "avg_amount": 19.41,
+        "daily_changes": [
+          2.09,
+          6.0,
+          0.79,
+          -9.21
+        ],
+        "rsi12": 35.0,
+        "roc_20": 0,
+        "ma20": 419.0,
+        "ma20_slope": 7.76,
+        "elasticity": 172.5,
+        "meets_amount": true
+      },
+      {
+        "code": "00939",
+        "name": "建设银行",
+        "is_etf": false,
+        "base_close": 8.49,
+        "last_close": 8.72,
+        "weekly_chg": 2.71,
+        "avg_amount": 19.17,
+        "daily_changes": [
+          1.52,
+          -1.04,
+          -0.23,
+          1.99
+        ],
+        "rsi12": 47.0,
+        "roc_20": 0,
+        "ma20": 8.7,
+        "ma20_slope": -0.71,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "03986",
+        "name": "兆易创新",
+        "is_etf": false,
+        "base_close": 740.0,
+        "last_close": 723.0,
+        "weekly_chg": -2.3,
+        "avg_amount": 18.48,
+        "daily_changes": [
+          0.35,
+          3.45,
+          6.87,
+          -8.02
+        ],
+        "rsi12": 66.0,
+        "roc_20": 0,
+        "ma20": 656.1,
+        "ma20_slope": 11.23,
+        "elasticity": 165.6,
+        "meets_amount": true
+      },
+      {
+        "code": "06651",
+        "name": "五一视界",
+        "is_etf": false,
+        "base_close": 96.95,
+        "last_close": 126.6,
+        "weekly_chg": 30.58,
+        "avg_amount": 17.21,
+        "daily_changes": [
+          22.48,
+          -0.25,
+          2.08,
+          3.01
+        ],
+        "rsi12": 77.0,
+        "roc_20": 0,
+        "ma20": 84.4,
+        "ma20_slope": 23.44,
+        "elasticity": 255.1,
+        "meets_amount": true
+      },
+      {
+        "code": "00388",
+        "name": "香港交易所",
+        "is_etf": false,
+        "base_close": 399.8,
+        "last_close": 396.4,
+        "weekly_chg": -0.85,
+        "avg_amount": 17.02,
+        "daily_changes": [
+          2.55,
+          -0.24,
+          -2.1,
+          -1.1
+        ],
+        "rsi12": 31.0,
+        "roc_20": 0,
+        "ma20": 411.6,
+        "ma20_slope": -0.67,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "02513",
+        "name": "智谱",
+        "is_etf": false,
+        "base_close": 1595.0,
+        "last_close": 1297.0,
+        "weekly_chg": -18.68,
+        "avg_amount": 16.87,
+        "daily_changes": [
+          -3.68,
+          3.54,
+          -2.46,
+          -9.05
+        ],
+        "rsi12": 62.0,
+        "roc_20": 0,
+        "ma20": 1210.7,
+        "ma20_slope": 12.56,
+        "elasticity": 256.2,
+        "meets_amount": true
+      },
+      {
+        "code": "06166",
+        "name": "剑桥科技",
+        "is_etf": false,
+        "base_close": 146.4,
+        "last_close": 133.3,
+        "weekly_chg": -8.95,
+        "avg_amount": 16.69,
+        "daily_changes": [
+          1.13,
+          7.14,
+          -3.89,
+          -3.75
+        ],
+        "rsi12": 46.0,
+        "roc_20": 0,
+        "ma20": 142.5,
+        "ma20_slope": 1.53,
+        "elasticity": 214.1,
+        "meets_amount": true
+      },
+      {
+        "code": "09888",
+        "name": "百度集团-SW",
+        "is_etf": false,
+        "base_close": 130.0,
+        "last_close": 125.6,
+        "weekly_chg": -3.38,
+        "avg_amount": 16.47,
+        "daily_changes": [
+          4.34,
+          -1.34,
+          -2.11,
+          -3.46
+        ],
+        "rsi12": 36.0,
+        "roc_20": 0,
+        "ma20": 133.2,
+        "ma20_slope": 1.61,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "00189",
+        "name": "东岳集团",
+        "is_etf": false,
+        "base_close": 16.34,
+        "last_close": 16.68,
+        "weekly_chg": 2.08,
+        "avg_amount": 16.11,
+        "daily_changes": [
+          1.28,
+          -3.78,
+          5.6,
+          -5.87
+        ],
+        "rsi12": 65.0,
+        "roc_20": 0,
+        "ma20": 14.4,
+        "ma20_slope": 8.01,
+        "elasticity": 86.4,
+        "meets_amount": true
+      },
+      {
+        "code": "00100",
+        "name": "MINIMAX-WP",
+        "is_etf": false,
+        "base_close": 840.0,
+        "last_close": 553.0,
+        "weekly_chg": -34.17,
+        "avg_amount": 15.59,
+        "daily_changes": [
+          -5.72,
+          1.12,
+          -1.7,
+          -16.65
+        ],
+        "rsi12": 31.0,
+        "roc_20": 0,
+        "ma20": 749.6,
+        "ma20_slope": -3.0,
+        "elasticity": 167.5,
+        "meets_amount": true
+      },
+      {
+        "code": "09618",
+        "name": "京东集团-SW",
+        "is_etf": false,
+        "base_close": 113.5,
+        "last_close": 115.8,
+        "weekly_chg": 2.03,
+        "avg_amount": 15.31,
+        "daily_changes": [
+          6.85,
+          -4.16,
+          -0.09,
+          0.7
+        ],
+        "rsi12": 29.0,
+        "roc_20": 0,
+        "ma20": 119.5,
+        "ma20_slope": -0.15,
+        "elasticity": 25.1,
+        "meets_amount": true
+      },
+      {
+        "code": "01378",
+        "name": "中国宏桥",
+        "is_etf": false,
+        "base_close": 28.02,
+        "last_close": 26.52,
+        "weekly_chg": -5.35,
+        "avg_amount": 15.28,
+        "daily_changes": [
+          1.47,
+          -0.62,
+          -5.21,
+          -2.86
+        ],
+        "rsi12": 25.0,
+        "roc_20": 0,
+        "ma20": 30.8,
+        "ma20_slope": -4.11,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "00941",
+        "name": "中国移动",
+        "is_etf": false,
+        "base_close": 85.15,
+        "last_close": 82.4,
+        "weekly_chg": -3.23,
+        "avg_amount": 15.1,
+        "daily_changes": [
+          3.97,
+          -0.41,
+          -3.88,
+          0.21
+        ],
+        "rsi12": 25.0,
+        "roc_20": 0,
+        "ma20": 85.0,
+        "ma20_slope": -0.52,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "00148",
+        "name": "建滔集团",
+        "is_etf": false,
+        "base_close": 65.75,
+        "last_close": 62.35,
+        "weekly_chg": -5.17,
+        "avg_amount": 14.6,
+        "daily_changes": [
+          -0.9,
+          3.98,
+          6.61,
+          -6.8
+        ],
+        "rsi12": 65.0,
+        "roc_20": 0,
+        "ma20": 58.0,
+        "ma20_slope": 7.94,
+        "elasticity": 66.2,
+        "meets_amount": true
+      },
+      {
+        "code": "09868",
+        "name": "小鹏汽车-W",
+        "is_etf": false,
+        "base_close": 63.85,
+        "last_close": 65.0,
+        "weekly_chg": 1.8,
+        "avg_amount": 14.37,
+        "daily_changes": [
+          6.19,
+          -5.49,
+          -2.35,
+          -2.18
+        ],
+        "rsi12": 56.0,
+        "roc_20": 0,
+        "ma20": 63.7,
+        "ma20_slope": 2.32,
+        "elasticity": 23.6,
+        "meets_amount": true
+      },
+      {
+        "code": "09999",
+        "name": "网易-S",
+        "is_etf": false,
+        "base_close": 194.1,
+        "last_close": 188.4,
+        "weekly_chg": -2.94,
+        "avg_amount": 14.25,
+        "daily_changes": [
+          1.82,
+          -1.32,
+          -1.08,
+          -2.33
+        ],
+        "rsi12": 60.0,
+        "roc_20": 0,
+        "ma20": 186.8,
+        "ma20_slope": 2.07,
+        "elasticity": 15.9,
+        "meets_amount": true
+      },
+      {
+        "code": "02899",
+        "name": "紫金矿业",
+        "is_etf": false,
+        "base_close": 32.78,
+        "last_close": 32.96,
+        "weekly_chg": 0.55,
+        "avg_amount": 14.19,
+        "daily_changes": [
+          5.13,
+          -0.58,
+          -2.69,
+          -1.08
+        ],
+        "rsi12": 40.0,
+        "roc_20": 0,
+        "ma20": 35.2,
+        "ma20_slope": -1.55,
+        "elasticity": 28.6,
+        "meets_amount": true
+      },
+      {
+        "code": "06160",
+        "name": "百济神州",
+        "is_etf": false,
+        "base_close": 176.8,
+        "last_close": 163.0,
+        "weekly_chg": -7.81,
+        "avg_amount": 14.06,
+        "daily_changes": [
+          -1.57,
+          -2.13,
+          1.63,
+          -2.92
+        ],
+        "rsi12": 33.0,
+        "roc_20": 0,
+        "ma20": 179.5,
+        "ma20_slope": -1.34,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "00763",
+        "name": "中兴通讯",
+        "is_etf": false,
+        "base_close": 26.78,
+        "last_close": 29.66,
+        "weekly_chg": 10.75,
+        "avg_amount": 13.97,
+        "daily_changes": [
+          6.13,
+          -2.6,
+          5.27,
+          4.51
+        ],
+        "rsi12": 67.0,
+        "roc_20": 0,
+        "ma20": 26.5,
+        "ma20_slope": 2.39,
+        "elasticity": 47.4,
+        "meets_amount": true
+      }
+    ],
+    "L4": [
+      {
+        "code": "00354",
+        "name": "中国软件国际",
+        "is_etf": false,
+        "base_close": 3.7,
+        "last_close": 4.24,
+        "weekly_chg": 14.59,
+        "avg_amount": 4.9,
+        "daily_changes": [
+          5.68,
+          7.8,
+          -7.37,
+          -2.6
+        ],
+        "rsi12": 74.0,
+        "roc_20": 0,
+        "ma20": 3.6,
+        "ma20_slope": 6.54,
+        "elasticity": 37.9,
+        "meets_amount": true
+      },
+      {
+        "code": "00386",
+        "name": "中国石油化工股份",
+        "is_etf": false,
+        "base_close": 4.32,
+        "last_close": 4.29,
+        "weekly_chg": -0.69,
+        "avg_amount": 4.87,
+        "daily_changes": [
+          0.69,
+          -0.46,
+          -0.46,
+          -1.38
+        ],
+        "rsi12": 22.0,
+        "roc_20": 0,
+        "ma20": 4.5,
+        "ma20_slope": -1.5,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "01919",
+        "name": "中远海控",
+        "is_etf": false,
+        "base_close": 14.17,
+        "last_close": 15.02,
+        "weekly_chg": 6.0,
+        "avg_amount": 4.86,
+        "daily_changes": [
+          -0.54,
+          -2.96,
+          -2.22,
+          6.68
+        ],
+        "rsi12": 52.0,
+        "roc_20": 0,
+        "ma20": 14.8,
+        "ma20_slope": 0.01,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "00241",
+        "name": "阿里健康",
+        "is_etf": false,
+        "base_close": 3.63,
+        "last_close": 3.59,
+        "weekly_chg": -1.1,
+        "avg_amount": 4.84,
+        "daily_changes": [
+          2.14,
+          -4.19,
+          -2.46,
+          0.56
+        ],
+        "rsi12": 20.0,
+        "roc_20": 0,
+        "ma20": 4.0,
+        "ma20_slope": -4.47,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "00001",
+        "name": "长和",
+        "is_etf": false,
+        "base_close": 70.45,
+        "last_close": 68.2,
+        "weekly_chg": -3.19,
+        "avg_amount": 4.83,
+        "daily_changes": [
+          0.94,
+          -0.5,
+          -1.29,
+          -0.73
+        ],
+        "rsi12": 32.0,
+        "roc_20": 0,
+        "ma20": 70.9,
+        "ma20_slope": 1.18,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "03317",
+        "name": "迅策",
+        "is_etf": false,
+        "base_close": 227.0,
+        "last_close": 166.0,
+        "weekly_chg": -26.87,
+        "avg_amount": 4.83,
+        "daily_changes": [
+          -5.68,
+          -2.8,
+          4.15,
+          -11.8
+        ],
+        "rsi12": 18.0,
+        "roc_20": 0,
+        "ma20": 233.1,
+        "ma20_slope": -7.82,
+        "elasticity": 302.6,
+        "meets_amount": true
+      },
+      {
+        "code": "00568",
+        "name": "山东墨龙",
+        "is_etf": false,
+        "base_close": 5.36,
+        "last_close": 5.36,
+        "weekly_chg": 0.0,
+        "avg_amount": 4.78,
+        "daily_changes": [
+          0.37,
+          16.61,
+          -11.11,
+          -5.63
+        ],
+        "rsi12": 34.0,
+        "roc_20": 0,
+        "ma20": 6.3,
+        "ma20_slope": -10.04,
+        "elasticity": 121.9,
+        "meets_amount": true
+      },
+      {
+        "code": "02685",
+        "name": "量化派",
+        "is_etf": false,
+        "base_close": 10.56,
+        "last_close": 15.8,
+        "weekly_chg": 49.62,
+        "avg_amount": 4.67,
+        "daily_changes": [
+          5.8,
+          2.29,
+          111.26,
+          -33.16
+        ],
+        "rsi12": 48.0,
+        "roc_20": 0,
+        "ma20": 15.3,
+        "ma20_slope": -9.14,
+        "elasticity": 177.8,
+        "meets_amount": true
+      },
+      {
+        "code": "02020",
+        "name": "安踏体育",
+        "is_etf": false,
+        "base_close": 75.8,
+        "last_close": 74.2,
+        "weekly_chg": -2.11,
+        "avg_amount": 4.67,
+        "daily_changes": [
+          0.26,
+          -1.89,
+          -1.13,
+          -0.13
+        ],
+        "rsi12": 36.0,
+        "roc_20": 0,
+        "ma20": 76.4,
+        "ma20_slope": -1.85,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "00285",
+        "name": "比亚迪电子",
+        "is_etf": false,
+        "base_close": 29.18,
+        "last_close": 28.58,
+        "weekly_chg": -2.06,
+        "avg_amount": 4.64,
+        "daily_changes": [
+          1.63,
+          -2.07,
+          1.16,
+          -3.58
+        ],
+        "rsi12": 58.0,
+        "roc_20": 0,
+        "ma20": 28.4,
+        "ma20_slope": 2.44,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "01336",
+        "name": "新华保险",
+        "is_etf": false,
+        "base_close": 48.46,
+        "last_close": 47.38,
+        "weekly_chg": -2.23,
+        "avg_amount": 4.58,
+        "daily_changes": [
+          -0.53,
+          0.21,
+          -3.09,
+          0.77
+        ],
+        "rsi12": 34.0,
+        "roc_20": 0,
+        "ma20": 49.7,
+        "ma20_slope": -1.22,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "02635",
+        "name": "诺比侃",
+        "is_etf": false,
+        "base_close": 14.51,
+        "last_close": 16.4,
+        "weekly_chg": 13.03,
+        "avg_amount": 4.4,
+        "daily_changes": [
+          -2.14,
+          2.32,
+          12.18,
+          0.61
+        ],
+        "rsi12": 48.0,
+        "roc_20": 0,
+        "ma20": 16.7,
+        "ma20_slope": -12.92,
+        "elasticity": 136.6,
+        "meets_amount": true
+      },
+      {
+        "code": "02018",
+        "name": "瑞声科技",
+        "is_etf": false,
+        "base_close": 45.5,
+        "last_close": 45.98,
+        "weekly_chg": 1.05,
+        "avg_amount": 4.4,
+        "daily_changes": [
+          3.25,
+          1.43,
+          -1.65,
+          -3.36
+        ],
+        "rsi12": 63.0,
+        "roc_20": 0,
+        "ma20": 43.4,
+        "ma20_slope": 6.1,
+        "elasticity": 28.1,
+        "meets_amount": true
+      },
+      {
+        "code": "00006",
+        "name": "电能实业",
+        "is_etf": false,
+        "base_close": 60.1,
+        "last_close": 56.4,
+        "weekly_chg": -6.16,
+        "avg_amount": 4.34,
+        "daily_changes": [
+          -1.03,
+          -1.73,
+          -1.23,
+          0.45
+        ],
+        "rsi12": 4.0,
+        "roc_20": 0,
+        "ma20": 62.2,
+        "ma20_slope": -3.04,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "01548",
+        "name": "金斯瑞生物科技",
+        "is_etf": false,
+        "base_close": 13.68,
+        "last_close": 12.92,
+        "weekly_chg": -5.56,
+        "avg_amount": 4.31,
+        "daily_changes": [
+          -0.33,
+          10.54,
+          -3.2,
+          -0.54
+        ],
+        "rsi12": 43.0,
+        "roc_20": 0,
+        "ma20": 13.8,
+        "ma20_slope": -1.46,
+        "elasticity": 51.6,
+        "meets_amount": true
+      },
+      {
+        "code": "01177",
+        "name": "中国生物制药",
+        "is_etf": false,
+        "base_close": 4.99,
+        "last_close": 4.66,
+        "weekly_chg": -6.61,
+        "avg_amount": 4.26,
+        "daily_changes": [
+          -1.41,
+          -2.25,
+          -1.47,
+          -0.85
+        ],
+        "rsi12": 19.0,
+        "roc_20": 0,
+        "ma20": 5.2,
+        "ma20_slope": -3.1,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "00012",
+        "name": "恒基地产",
+        "is_etf": false,
+        "base_close": 30.96,
+        "last_close": 27.86,
+        "weekly_chg": -10.01,
+        "avg_amount": 4.16,
+        "daily_changes": [
+          2.15,
+          -2.55,
+          -3.76,
+          -2.93
+        ],
+        "rsi12": 3.0,
+        "roc_20": 0,
+        "ma20": 32.0,
+        "ma20_slope": -1.76,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "03692",
+        "name": "翰森制药",
+        "is_etf": false,
+        "base_close": 31.44,
+        "last_close": 29.32,
+        "weekly_chg": -6.74,
+        "avg_amount": 4.08,
+        "daily_changes": [
+          -0.39,
+          -2.32,
+          -1.65,
+          -1.61
+        ],
+        "rsi12": 7.0,
+        "roc_20": 0,
+        "ma20": 33.8,
+        "ma20_slope": -4.78,
+        "elasticity": 17.9,
+        "meets_amount": true
+      },
+      {
+        "code": "09863",
+        "name": "零跑汽车",
+        "is_etf": false,
+        "base_close": 39.3,
+        "last_close": 41.28,
+        "weekly_chg": 5.04,
+        "avg_amount": 4.02,
+        "daily_changes": [
+          2.82,
+          -6.49,
+          0.15,
+          0.73
+        ],
+        "rsi12": 38.0,
+        "roc_20": 0,
+        "ma20": 43.6,
+        "ma20_slope": -2.67,
+        "elasticity": 28.6,
+        "meets_amount": true
+      },
+      {
+        "code": "00991",
+        "name": "大唐发电",
+        "is_etf": false,
+        "base_close": 3.15,
+        "last_close": 2.93,
+        "weekly_chg": -6.98,
+        "avg_amount": 3.96,
+        "daily_changes": [
+          3.56,
+          -3.13,
+          -1.29,
+          -4.25
+        ],
+        "rsi12": 46.0,
+        "roc_20": 0,
+        "ma20": 3.1,
+        "ma20_slope": 2.76,
+        "elasticity": 78.2,
+        "meets_amount": true
+      }
+    ],
+    "L5": []
+  },
+  "top_gainers": [
+    {
+      "code": "00894",
+      "name": "万裕科技",
+      "is_etf": false,
+      "base_close": 3.41,
+      "last_close": 7.03,
+      "weekly_chg": 106.16,
+      "avg_amount": 2.39,
+      "daily_changes": [
+        -5.79,
+        32.19,
+        36.43,
+        -4.22
+      ],
+      "rsi12": 86.0,
+      "roc_20": 0,
+      "ma20": 2.5,
+      "ma20_slope": 93.69,
+      "elasticity": 322.4,
+      "meets_amount": true
+    },
+    {
+      "code": "02685",
+      "name": "量化派",
+      "is_etf": false,
+      "base_close": 10.56,
+      "last_close": 15.8,
+      "weekly_chg": 49.62,
+      "avg_amount": 4.67,
+      "daily_changes": [
+        5.8,
+        2.29,
+        111.26,
+        -33.16
+      ],
+      "rsi12": 48.0,
+      "roc_20": 0,
+      "ma20": 15.3,
+      "ma20_slope": -9.14,
+      "elasticity": 177.8,
+      "meets_amount": true
+    },
+    {
+      "code": "06651",
+      "name": "五一视界",
+      "is_etf": false,
+      "base_close": 96.95,
+      "last_close": 126.6,
+      "weekly_chg": 30.58,
+      "avg_amount": 17.21,
+      "daily_changes": [
+        22.48,
+        -0.25,
+        2.08,
+        3.01
+      ],
+      "rsi12": 77.0,
+      "roc_20": 0,
+      "ma20": 84.4,
+      "ma20_slope": 23.44,
+      "elasticity": 255.1,
+      "meets_amount": true
+    },
+    {
+      "code": "02245",
+      "name": "力勤资源",
+      "is_etf": false,
+      "base_close": 10.51,
+      "last_close": 13.33,
+      "weekly_chg": 26.83,
+      "avg_amount": 1.09,
+      "daily_changes": [
+        2.47,
+        10.92,
+        4.26,
+        -0.89
+      ],
+      "rsi12": 65.0,
+      "roc_20": 0,
+      "ma20": 12.1,
+      "ma20_slope": 0.37,
+      "elasticity": 63.6,
+      "meets_amount": true
+    },
+    {
+      "code": "02643",
+      "name": "曹操出行",
+      "is_etf": false,
+      "base_close": 26.92,
+      "last_close": 31.58,
+      "weekly_chg": 17.31,
+      "avg_amount": 1.78,
+      "daily_changes": [
+        9.14,
+        -2.65,
+        -1.09,
+        -3.25
+      ],
+      "rsi12": 74.0,
+      "roc_20": 0,
+      "ma20": 26.6,
+      "ma20_slope": 7.89,
+      "elasticity": 60.7,
+      "meets_amount": true
+    },
+    {
+      "code": "01357",
+      "name": "美图公司",
+      "is_etf": false,
+      "base_close": 4.36,
+      "last_close": 5.02,
+      "weekly_chg": 15.14,
+      "avg_amount": 10.77,
+      "daily_changes": [
+        1.64,
+        -6.44,
+        -2.68,
+        -1.38
+      ],
+      "rsi12": 55.0,
+      "roc_20": 0,
+      "ma20": 4.9,
+      "ma20_slope": 5.9,
+      "elasticity": 64.3,
+      "meets_amount": true
+    },
+    {
+      "code": "00354",
+      "name": "中国软件国际",
+      "is_etf": false,
+      "base_close": 3.7,
+      "last_close": 4.24,
+      "weekly_chg": 14.59,
+      "avg_amount": 4.9,
+      "daily_changes": [
+        5.68,
+        7.8,
+        -7.37,
+        -2.6
+      ],
+      "rsi12": 74.0,
+      "roc_20": 0,
+      "ma20": 3.6,
+      "ma20_slope": 6.54,
+      "elasticity": 37.9,
+      "meets_amount": true
+    },
+    {
+      "code": "06613",
+      "name": "蓝思科技",
+      "is_etf": false,
+      "base_close": 24.08,
+      "last_close": 27.36,
+      "weekly_chg": 13.62,
+      "avg_amount": 13.54,
+      "daily_changes": [
+        5.13,
+        1.74,
+        -6.85,
+        0.59
+      ],
+      "rsi12": 69.0,
+      "roc_20": 0,
+      "ma20": 23.1,
+      "ma20_slope": 13.53,
+      "elasticity": 74.3,
+      "meets_amount": true
+    },
+    {
+      "code": "02635",
+      "name": "诺比侃",
+      "is_etf": false,
+      "base_close": 14.51,
+      "last_close": 16.4,
+      "weekly_chg": 13.03,
+      "avg_amount": 4.4,
+      "daily_changes": [
+        -2.14,
+        2.32,
+        12.18,
+        0.61
+      ],
+      "rsi12": 48.0,
+      "roc_20": 0,
+      "ma20": 16.7,
+      "ma20_slope": -12.92,
+      "elasticity": 136.6,
+      "meets_amount": true
+    },
+    {
+      "code": "03808",
+      "name": "中国重汽",
+      "is_etf": false,
+      "base_close": 37.26,
+      "last_close": 41.58,
+      "weekly_chg": 11.59,
+      "avg_amount": 5.34,
+      "daily_changes": [
+        11.09,
+        -0.33,
+        5.27,
+        -5.33
+      ],
+      "rsi12": 65.0,
+      "roc_20": 0,
+      "ma20": 38.9,
+      "ma20_slope": 1.22,
+      "elasticity": 53.4,
+      "meets_amount": true
+    },
+    {
+      "code": "02889",
+      "name": "博泰车联",
+      "is_etf": false,
+      "base_close": 201.2,
+      "last_close": 223.2,
+      "weekly_chg": 10.93,
+      "avg_amount": 1.74,
+      "daily_changes": [
+        -0.46,
+        5.28,
+        -5.45,
+        3.81
+      ],
+      "rsi12": 68.0,
+      "roc_20": 0,
+      "ma20": 184.5,
+      "ma20_slope": 11.65,
+      "elasticity": 145.8,
+      "meets_amount": true
+    },
+    {
+      "code": "00763",
+      "name": "中兴通讯",
+      "is_etf": false,
+      "base_close": 26.78,
+      "last_close": 29.66,
+      "weekly_chg": 10.75,
+      "avg_amount": 13.97,
+      "daily_changes": [
+        6.13,
+        -2.6,
+        5.27,
+        4.51
+      ],
+      "rsi12": 67.0,
+      "roc_20": 0,
+      "ma20": 26.5,
+      "ma20_slope": 2.39,
+      "elasticity": 47.4,
+      "meets_amount": true
+    },
+    {
+      "code": "00268",
+      "name": "金蝶国际",
+      "is_etf": false,
+      "base_close": 7.27,
+      "last_close": 7.98,
+      "weekly_chg": 9.77,
+      "avg_amount": 11.42,
+      "daily_changes": [
+        3.57,
+        -7.79,
+        -7.72,
+        4.31
+      ],
+      "rsi12": 47.0,
+      "roc_20": 0,
+      "ma20": 8.2,
+      "ma20_slope": -0.45,
+      "elasticity": 55.1,
+      "meets_amount": true
+    },
+    {
+      "code": "02155",
+      "name": "森松国际",
+      "is_etf": false,
+      "base_close": 9.28,
+      "last_close": 10.16,
+      "weekly_chg": 9.48,
+      "avg_amount": 1.72,
+      "daily_changes": [
+        -2.34,
+        0.19,
+        5.16,
+        -7.64
+      ],
+      "rsi12": 70.0,
+      "roc_20": 0,
+      "ma20": 8.8,
+      "ma20_slope": 11.9,
+      "elasticity": 58.9,
+      "meets_amount": true
+    },
+    {
+      "code": "03690",
+      "name": "美团-W",
+      "is_etf": false,
+      "base_close": 73.45,
+      "last_close": 79.95,
+      "weekly_chg": 8.85,
+      "avg_amount": 63.72,
+      "daily_changes": [
+        9.27,
+        -5.96,
+        -2.24,
+        1.72
+      ],
+      "rsi12": 45.0,
+      "roc_20": 0,
+      "ma20": 81.4,
+      "ma20_slope": -0.73,
+      "elasticity": 40.0,
+      "meets_amount": true
+    },
+    {
+      "code": "00856",
+      "name": "伟仕佳杰",
+      "is_etf": false,
+      "base_close": 9.64,
+      "last_close": 10.47,
+      "weekly_chg": 8.61,
+      "avg_amount": 1.67,
+      "daily_changes": [
+        14.06,
+        -7.21,
+        -4.49,
+        -5.42
+      ],
+      "rsi12": 50.0,
+      "roc_20": 0,
+      "ma20": 10.7,
+      "ma20_slope": 2.37,
+      "elasticity": 80.9,
+      "meets_amount": true
+    },
+    {
+      "code": "02602",
+      "name": "万物云",
+      "is_etf": false,
+      "base_close": 17.6,
+      "last_close": 19.02,
+      "weekly_chg": 8.07,
+      "avg_amount": 1.59,
+      "daily_changes": [
+        2.26,
+        1.94,
+        5.12,
+        -4.42
+      ],
+      "rsi12": 57.0,
+      "roc_20": 0,
+      "ma20": 17.9,
+      "ma20_slope": 2.56,
+      "elasticity": 19.1,
+      "meets_amount": true
+    },
+    {
+      "code": "00303",
+      "name": "VTECH HOLDINGS",
+      "is_etf": false,
+      "base_close": 51.25,
+      "last_close": 55.35,
+      "weekly_chg": 8.0,
+      "avg_amount": 1.1,
+      "daily_changes": [
+        -0.85,
+        0.76,
+        0.19,
+        4.24
+      ],
+      "rsi12": 28.0,
+      "roc_20": 0,
+      "ma20": 57.7,
+      "ma20_slope": -3.06,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "00338",
+      "name": "上海石油化工股份",
+      "is_etf": false,
+      "base_close": 1.13,
+      "last_close": 1.22,
+      "weekly_chg": 7.96,
+      "avg_amount": 1.48,
+      "daily_changes": [
+        -0.87,
+        15.79,
+        -0.76,
+        -6.87
+      ],
+      "rsi12": 40.0,
+      "roc_20": 0,
+      "ma20": 1.2,
+      "ma20_slope": -0.12,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "02013",
+      "name": "微盟集团",
+      "is_etf": false,
+      "base_close": 1.26,
+      "last_close": 1.36,
+      "weekly_chg": 7.94,
+      "avg_amount": 2.2,
+      "daily_changes": [
+        12.5,
+        -5.88,
+        -2.78,
+        -2.86
+      ],
+      "rsi12": 44.0,
+      "roc_20": 0,
+      "ma20": 1.4,
+      "ma20_slope": -0.91,
+      "elasticity": 29.3,
+      "meets_amount": true
+    }
+  ],
+  "top_losers": [
+    {
+      "code": "02616",
+      "name": "基石药业-B",
+      "is_etf": false,
+      "base_close": 8.05,
+      "last_close": 4.7,
+      "weekly_chg": -41.61,
+      "avg_amount": 1.66,
+      "daily_changes": [
+        -7.54,
+        -1.99,
+        1.62,
+        -6.19
+      ],
+      "rsi12": 19.0,
+      "roc_20": 0,
+      "ma20": 7.3,
+      "ma20_slope": -13.01,
+      "elasticity": 56.9,
+      "meets_amount": true
+    },
+    {
+      "code": "00290",
+      "name": "国富量子",
+      "is_etf": false,
+      "base_close": 6.08,
+      "last_close": 3.64,
+      "weekly_chg": -40.13,
+      "avg_amount": 1.03,
+      "daily_changes": [
+        -5.69,
+        -13.45,
+        -20.72,
+        -8.54
+      ],
+      "rsi12": 7.0,
+      "roc_20": 0,
+      "ma20": 7.3,
+      "ma20_slope": -7.96,
+      "elasticity": 95.3,
+      "meets_amount": true
+    },
+    {
+      "code": "00100",
+      "name": "MINIMAX-WP",
+      "is_etf": false,
+      "base_close": 840.0,
+      "last_close": 553.0,
+      "weekly_chg": -34.17,
+      "avg_amount": 15.59,
+      "daily_changes": [
+        -5.72,
+        1.12,
+        -1.7,
+        -16.65
+      ],
+      "rsi12": 31.0,
+      "roc_20": 0,
+      "ma20": 749.6,
+      "ma20_slope": -3.0,
+      "elasticity": 167.5,
+      "meets_amount": true
+    },
+    {
+      "code": "03317",
+      "name": "迅策",
+      "is_etf": false,
+      "base_close": 227.0,
+      "last_close": 166.0,
+      "weekly_chg": -26.87,
+      "avg_amount": 4.83,
+      "daily_changes": [
+        -5.68,
+        -2.8,
+        4.15,
+        -11.8
+      ],
+      "rsi12": 18.0,
+      "roc_20": 0,
+      "ma20": 233.1,
+      "ma20_slope": -7.82,
+      "elasticity": 302.6,
+      "meets_amount": true
+    },
+    {
+      "code": "09993",
+      "name": "金辉控股",
+      "is_etf": false,
+      "base_close": 1.69,
+      "last_close": 1.26,
+      "weekly_chg": -25.44,
+      "avg_amount": 2.64,
+      "daily_changes": [
+        -6.96,
+        -8.16,
+        4.44,
+        -10.64
+      ],
+      "rsi12": 25.0,
+      "roc_20": 0,
+      "ma20": 1.6,
+      "ma20_slope": 3.07,
+      "elasticity": 184.9,
+      "meets_amount": true
+    },
+    {
+      "code": "02661",
+      "name": "轻松健康",
+      "is_etf": false,
+      "base_close": 24.16,
+      "last_close": 18.99,
+      "weekly_chg": -21.4,
+      "avg_amount": 3.35,
+      "daily_changes": [
+        -5.87,
+        -2.24,
+        -1.63,
+        5.21
+      ],
+      "rsi12": 27.0,
+      "roc_20": 0,
+      "ma20": 27.3,
+      "ma20_slope": -24.89,
+      "elasticity": 101.5,
+      "meets_amount": true
+    },
+    {
+      "code": "09926",
+      "name": "康方生物",
+      "is_etf": false,
+      "base_close": 118.1,
+      "last_close": 93.6,
+      "weekly_chg": -20.75,
+      "avg_amount": 34.8,
+      "daily_changes": [
+        -8.11,
+        -3.57,
+        -3.16,
+        -5.88
+      ],
+      "rsi12": 29.0,
+      "roc_20": 0,
+      "ma20": 118.1,
+      "ma20_slope": -5.82,
+      "elasticity": 61.4,
+      "meets_amount": true
+    },
+    {
+      "code": "02513",
+      "name": "智谱",
+      "is_etf": false,
+      "base_close": 1595.0,
+      "last_close": 1297.0,
+      "weekly_chg": -18.68,
+      "avg_amount": 16.87,
+      "daily_changes": [
+        -3.68,
+        3.54,
+        -2.46,
+        -9.05
+      ],
+      "rsi12": 62.0,
+      "roc_20": 0,
+      "ma20": 1210.7,
+      "ma20_slope": 12.56,
+      "elasticity": 256.2,
+      "meets_amount": true
+    },
+    {
+      "code": "09903",
+      "name": "天数智芯",
+      "is_etf": false,
+      "base_close": 500.5,
+      "last_close": 410.0,
+      "weekly_chg": -18.08,
+      "avg_amount": 3.29,
+      "daily_changes": [
+        2.53,
+        -2.95,
+        -3.97,
+        -4.7
+      ],
+      "rsi12": 37.0,
+      "roc_20": 0,
+      "ma20": 498.9,
+      "ma20_slope": -1.7,
+      "elasticity": 197.8,
+      "meets_amount": true
+    },
+    {
+      "code": "01877",
+      "name": "君实生物",
+      "is_etf": false,
+      "base_close": 21.06,
+      "last_close": 17.26,
+      "weekly_chg": -18.04,
+      "avg_amount": 1.03,
+      "daily_changes": [
+        -3.41,
+        -3.1,
+        -2.82,
+        -1.93
+      ],
+      "rsi12": 19.0,
+      "roc_20": 0,
+      "ma20": 22.2,
+      "ma20_slope": -8.11,
+      "elasticity": 59.1,
+      "meets_amount": true
+    },
+    {
+      "code": "00470",
+      "name": "先导智能",
+      "is_etf": false,
+      "base_close": 52.7,
+      "last_close": 43.26,
+      "weekly_chg": -17.91,
+      "avg_amount": 1.08,
+      "daily_changes": [
+        -3.5,
+        -1.96,
+        -4.61,
+        -1.37
+      ],
+      "rsi12": 27.0,
+      "roc_20": 0,
+      "ma20": 51.4,
+      "ma20_slope": -4.76,
+      "elasticity": 48.4,
+      "meets_amount": true
+    },
+    {
+      "code": "09606",
+      "name": "映恩生物-B",
+      "is_etf": false,
+      "base_close": 225.6,
+      "last_close": 186.6,
+      "weekly_chg": -17.29,
+      "avg_amount": 2.6,
+      "daily_changes": [
+        1.47,
+        -3.56,
+        -6.34,
+        -0.48
+      ],
+      "rsi12": 31.0,
+      "roc_20": 0,
+      "ma20": 226.1,
+      "ma20_slope": -7.94,
+      "elasticity": 52.0,
+      "meets_amount": true
+    },
+    {
+      "code": "01530",
+      "name": "三生制药",
+      "is_etf": false,
+      "base_close": 18.5,
+      "last_close": 15.68,
+      "weekly_chg": -15.24,
+      "avg_amount": 8.18,
+      "daily_changes": [
+        -8.91,
+        -3.02,
+        -2.32,
+        -1.88
+      ],
+      "rsi12": 24.0,
+      "roc_20": 0,
+      "ma20": 19.3,
+      "ma20_slope": -7.07,
+      "elasticity": 59.3,
+      "meets_amount": true
+    },
+    {
+      "code": "06990",
+      "name": "科伦博泰生物-B",
+      "is_etf": false,
+      "base_close": 462.0,
+      "last_close": 393.4,
+      "weekly_chg": -14.85,
+      "avg_amount": 5.15,
+      "daily_changes": [
+        -7.3,
+        -1.24,
+        -2.11,
+        0.82
+      ],
+      "rsi12": 39.0,
+      "roc_20": 0,
+      "ma20": 441.0,
+      "ma20_slope": -3.24,
+      "elasticity": 47.7,
+      "meets_amount": true
+    },
+    {
+      "code": "09995",
+      "name": "荣昌生物",
+      "is_etf": false,
+      "base_close": 82.65,
+      "last_close": 70.5,
+      "weekly_chg": -14.7,
+      "avg_amount": 3.58,
+      "daily_changes": [
+        -2.17,
+        -4.37,
+        -1.3,
+        -2.62
+      ],
+      "rsi12": 17.0,
+      "roc_20": 0,
+      "ma20": 85.8,
+      "ma20_slope": -7.0,
+      "elasticity": 49.0,
+      "meets_amount": true
+    },
+    {
+      "code": "02186",
+      "name": "绿叶制药",
+      "is_etf": false,
+      "base_close": 2.17,
+      "last_close": 1.86,
+      "weekly_chg": -14.29,
+      "avg_amount": 1.14,
+      "daily_changes": [
+        -1.35,
+        -1.36,
+        -14.75,
+        0.54
+      ],
+      "rsi12": 19.0,
+      "roc_20": 0,
+      "ma20": 2.3,
+      "ma20_slope": -5.83,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "01860",
+      "name": "汇量科技",
+      "is_etf": false,
+      "base_close": 16.16,
+      "last_close": 13.92,
+      "weekly_chg": -13.86,
+      "avg_amount": 3.31,
+      "daily_changes": [
+        -2.23,
+        -5.36,
+        -0.71,
+        -0.71
+      ],
+      "rsi12": 44.0,
+      "roc_20": 0,
+      "ma20": 15.0,
+      "ma20_slope": -3.41,
+      "elasticity": 88.6,
+      "meets_amount": true
+    },
+    {
+      "code": "01138",
+      "name": "中远海能",
+      "is_etf": false,
+      "base_close": 15.99,
+      "last_close": 13.87,
+      "weekly_chg": -13.26,
+      "avg_amount": 5.33,
+      "daily_changes": [
+        0.6,
+        -6.1,
+        -1.06,
+        -1.07
+      ],
+      "rsi12": 21.0,
+      "roc_20": 0,
+      "ma20": 17.4,
+      "ma20_slope": -5.45,
+      "elasticity": 52.4,
+      "meets_amount": true
+    },
+    {
+      "code": "06682",
+      "name": "第四范式",
+      "is_etf": false,
+      "base_close": 32.98,
+      "last_close": 28.66,
+      "weekly_chg": -13.1,
+      "avg_amount": 2.93,
+      "daily_changes": [
+        -1.04,
+        -6.69,
+        -5.86,
+        -5.04
+      ],
+      "rsi12": 35.0,
+      "roc_20": 0,
+      "ma20": 34.3,
+      "ma20_slope": -2.98,
+      "elasticity": 47.9,
+      "meets_amount": true
+    },
+    {
+      "code": "01772",
+      "name": "赣锋锂业",
+      "is_etf": false,
+      "base_close": 64.05,
+      "last_close": 55.8,
+      "weekly_chg": -12.88,
+      "avg_amount": 7.34,
+      "daily_changes": [
+        -2.76,
+        -1.7,
+        -4.87,
+        -3.13
+      ],
+      "rsi12": 3.0,
+      "roc_20": 0,
+      "ma20": 71.2,
+      "ma20_slope": -7.77,
+      "elasticity": 54.8,
+      "meets_amount": true
+    }
+  ],
+  "top_etf": [
+    {
+      "code": "07747",
+      "name": "XL二南三星",
+      "is_etf": true,
+      "base_close": 177.15,
+      "last_close": 185.9,
+      "weekly_chg": 4.94,
+      "avg_amount": 38.17,
+      "daily_changes": [
+        3.06,
+        5.86,
+        -9.94,
+        -13.45
+      ],
+      "rsi12": 64.0,
+      "roc_20": 0,
+      "ma20": 166.2,
+      "ma20_slope": 22.02,
+      "elasticity": 231.7,
+      "meets_amount": true
+    },
+    {
+      "code": "02828",
+      "name": "恒生中国企业",
+      "is_etf": true,
+      "base_close": 86.38,
+      "last_close": 87.0,
+      "weekly_chg": 0.72,
+      "avg_amount": 87.04,
+      "daily_changes": [
+        3.25,
+        -1.84,
+        -1.2,
+        -0.5
+      ],
+      "rsi12": 42.0,
+      "roc_20": 0,
+      "ma20": 88.9,
+      "ma20_slope": -0.42,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "07226",
+      "name": "南方两倍做多恒生科技",
+      "is_etf": true,
+      "base_close": 3.76,
+      "last_close": 3.77,
+      "weekly_chg": 0.16,
+      "avg_amount": 18.16,
+      "daily_changes": [
+        9.44,
+        -5.44,
+        -3.17,
+        -3.63
+      ],
+      "rsi12": 47.0,
+      "roc_20": 0,
+      "ma20": 3.9,
+      "ma20_slope": 0.93,
+      "elasticity": 55.9,
+      "meets_amount": true
+    },
+    {
+      "code": "03033",
+      "name": "南方恒生科技",
+      "is_etf": true,
+      "base_close": 4.78,
+      "last_close": 4.79,
+      "weekly_chg": 0.04,
+      "avg_amount": 133.43,
+      "daily_changes": [
+        4.71,
+        -2.85,
+        -1.62,
+        -1.72
+      ],
+      "rsi12": 48.0,
+      "roc_20": 0,
+      "ma20": 4.9,
+      "ma20_slope": 0.58,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "02800",
+      "name": "盈富基金",
+      "is_etf": true,
+      "base_close": 25.4,
+      "last_close": 25.28,
+      "weekly_chg": -0.47,
+      "avg_amount": 210.1,
+      "daily_changes": [
+        2.49,
+        -1.44,
+        -1.54,
+        -1.02
+      ],
+      "rsi12": 37.0,
+      "roc_20": 0,
+      "ma20": 26.0,
+      "ma20_slope": -0.31,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "07552",
+      "name": "南方两倍做空恒生科技",
+      "is_etf": true,
+      "base_close": 1.67,
+      "last_close": 1.65,
+      "weekly_chg": -1.44,
+      "avg_amount": 9.0,
+      "daily_changes": [
+        -9.42,
+        5.34,
+        3.12,
+        3.65
+      ],
+      "rsi12": 50.0,
+      "roc_20": 0,
+      "ma20": 1.6,
+      "ma20_slope": -1.62,
+      "elasticity": 24.8,
+      "meets_amount": true
+    },
+    {
+      "code": "00823",
+      "name": "领展房产基金",
+      "is_etf": true,
+      "base_close": 40.38,
+      "last_close": 38.2,
+      "weekly_chg": -5.4,
+      "avg_amount": 5.26,
+      "daily_changes": [
+        -1.11,
+        -0.66,
+        -0.21,
+        -1.75
+      ],
+      "rsi12": 12.0,
+      "roc_20": 0,
+      "ma20": 40.5,
+      "ma20_slope": -0.27,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "07709",
+      "name": "XL二南方海力士",
+      "is_etf": true,
+      "base_close": 137.65,
+      "last_close": 106.9,
+      "weekly_chg": -22.34,
+      "avg_amount": 93.61,
+      "daily_changes": [
+        -3.64,
+        5.14,
+        -9.37,
+        -19.32
+      ],
+      "rsi12": 56.0,
+      "roc_20": 0,
+      "ma20": 108.5,
+      "ma20_slope": 23.18,
+      "elasticity": 317.7,
+      "meets_amount": true
+    }
+  ],
+  "bottom_etf": [
+    {
+      "code": "07709",
+      "name": "XL二南方海力士",
+      "is_etf": true,
+      "base_close": 137.65,
+      "last_close": 106.9,
+      "weekly_chg": -22.34,
+      "avg_amount": 93.61,
+      "daily_changes": [
+        -3.64,
+        5.14,
+        -9.37,
+        -19.32
+      ],
+      "rsi12": 56.0,
+      "roc_20": 0,
+      "ma20": 108.5,
+      "ma20_slope": 23.18,
+      "elasticity": 317.7,
+      "meets_amount": true
+    },
+    {
+      "code": "00823",
+      "name": "领展房产基金",
+      "is_etf": true,
+      "base_close": 40.38,
+      "last_close": 38.2,
+      "weekly_chg": -5.4,
+      "avg_amount": 5.26,
+      "daily_changes": [
+        -1.11,
+        -0.66,
+        -0.21,
+        -1.75
+      ],
+      "rsi12": 12.0,
+      "roc_20": 0,
+      "ma20": 40.5,
+      "ma20_slope": -0.27,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "07552",
+      "name": "南方两倍做空恒生科技",
+      "is_etf": true,
+      "base_close": 1.67,
+      "last_close": 1.65,
+      "weekly_chg": -1.44,
+      "avg_amount": 9.0,
+      "daily_changes": [
+        -9.42,
+        5.34,
+        3.12,
+        3.65
+      ],
+      "rsi12": 50.0,
+      "roc_20": 0,
+      "ma20": 1.6,
+      "ma20_slope": -1.62,
+      "elasticity": 24.8,
+      "meets_amount": true
+    },
+    {
+      "code": "02800",
+      "name": "盈富基金",
+      "is_etf": true,
+      "base_close": 25.4,
+      "last_close": 25.28,
+      "weekly_chg": -0.47,
+      "avg_amount": 210.1,
+      "daily_changes": [
+        2.49,
+        -1.44,
+        -1.54,
+        -1.02
+      ],
+      "rsi12": 37.0,
+      "roc_20": 0,
+      "ma20": 26.0,
+      "ma20_slope": -0.31,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "03033",
+      "name": "南方恒生科技",
+      "is_etf": true,
+      "base_close": 4.78,
+      "last_close": 4.79,
+      "weekly_chg": 0.04,
+      "avg_amount": 133.43,
+      "daily_changes": [
+        4.71,
+        -2.85,
+        -1.62,
+        -1.72
+      ],
+      "rsi12": 48.0,
+      "roc_20": 0,
+      "ma20": 4.9,
+      "ma20_slope": 0.58,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "07226",
+      "name": "南方两倍做多恒生科技",
+      "is_etf": true,
+      "base_close": 3.76,
+      "last_close": 3.77,
+      "weekly_chg": 0.16,
+      "avg_amount": 18.16,
+      "daily_changes": [
+        9.44,
+        -5.44,
+        -3.17,
+        -3.63
+      ],
+      "rsi12": 47.0,
+      "roc_20": 0,
+      "ma20": 3.9,
+      "ma20_slope": 0.93,
+      "elasticity": 55.9,
+      "meets_amount": true
+    },
+    {
+      "code": "02828",
+      "name": "恒生中国企业",
+      "is_etf": true,
+      "base_close": 86.38,
+      "last_close": 87.0,
+      "weekly_chg": 0.72,
+      "avg_amount": 87.04,
+      "daily_changes": [
+        3.25,
+        -1.84,
+        -1.2,
+        -0.5
+      ],
+      "rsi12": 42.0,
+      "roc_20": 0,
+      "ma20": 88.9,
+      "ma20_slope": -0.42,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "07747",
+      "name": "XL二南三星",
+      "is_etf": true,
+      "base_close": 177.15,
+      "last_close": 185.9,
+      "weekly_chg": 4.94,
+      "avg_amount": 38.17,
+      "daily_changes": [
+        3.06,
+        5.86,
+        -9.94,
+        -13.45
+      ],
+      "rsi12": 64.0,
+      "roc_20": 0,
+      "ma20": 166.2,
+      "ma20_slope": 22.02,
+      "elasticity": 231.7,
+      "meets_amount": true
+    }
+  ],
+  "sector_stats": [
+    {
+      "sector": "云计算/软件",
+      "count": 4,
+      "avg_chg": 6.41,
+      "top_code": "00268",
+      "top_name": "金蝶国际",
+      "top_chg": 9.77
+    },
+    {
+      "sector": "传媒/娱乐",
+      "count": 3,
+      "avg_chg": 2.64,
+      "top_code": "00700",
+      "top_name": "腾讯控股",
+      "top_chg": 6.09
+    },
+    {
+      "sector": "新能源车",
+      "count": 6,
+      "avg_chg": -0.24,
+      "top_code": "09866",
+      "top_name": "蔚来-SW",
+      "top_chg": 3.53
+    },
+    {
+      "sector": "其他",
+      "count": 274,
+      "avg_chg": -2.03,
+      "top_code": "00894",
+      "top_name": "万裕科技",
+      "top_chg": 106.16
+    },
+    {
+      "sector": "AI/芯片",
+      "count": 2,
+      "avg_chg": -6.65,
+      "top_code": "09888",
+      "top_name": "百度集团-SW",
+      "top_chg": -3.38
+    },
+    {
+      "sector": "医药/生物",
+      "count": 3,
+      "avg_chg": -7.95,
+      "top_code": "06618",
+      "top_name": "京东健康",
+      "top_chg": -1.3
+    }
+  ],
+  "news": {
+    "00894": [
+      {
+        "title": "万裕科技：2025年净利润625万港元 同比下降20.06%",
+        "link": "http://finance.eastmoney.com/a/202604273720402350.html",
+        "published": "2026-04-27 18:44:31",
+        "summary": "中证智能财讯万裕科技（<em>00894</em>）4月27日披露2025年度报告。报告期内，公司实现营业收入16.49亿港元，同比增长2.35%；归母净利润625万港元，同比下降20.06%；据报告显示，万裕科技基本每股收益为0.0131港元，平均净资产收益率为0.42%。"
+      },
+      {
+        "title": "万裕科技：2025年净利润同比减少20.1%",
+        "link": "http://finance.eastmoney.com/a/202603203679200244.html",
+        "published": "2026-03-20 21:08:00",
+        "summary": "南财智讯3月20日电，万裕科技（<em>00894</em>.HK）公告，截至2025年12月31日止年度，公司总收入为16.49亿港元，同比增长2.3%；年内本公司拥有人应占溢利为625万港元，同比减少20.1%；每股基本盈利为0.0131港元。"
+      },
+      {
+        "title": "万裕科技：股东应占溢利同比降20.1%至625万港元",
+        "link": "http://finance.eastmoney.com/a/202603203679203562.html",
+        "published": "2026-03-20 21:13:00",
+        "summary": "3月20日，万裕科技（<em>00894</em>）发布截至2025年12月31日止年度的全年业绩公告。财务摘要显示，公司的收入为16.49亿港元，较2024年的16.12亿港元增长2.3%。毛利也有所上升，达2.73亿港元，增长10.5%。"
+      }
+    ],
+    "02685": [
+      {
+        "title": "量化派：餐饮消费场景AI技术验证持续推进",
+        "link": "http://finance.eastmoney.com/a/202606043760546359.html",
+        "published": "2026-06-04 18:43:00",
+        "summary": "南财智讯6月4日电，量化派（<em>02685</em>.HK）发布自愿公告，公告日期为2026年6月4日。主要内容显示，集团近期在餐饮消费场景持续推进人工智能技术验证，已完成多类技术验证，研发测试阶段技术表现持续稳定。"
+      },
+      {
+        "title": "量化派附属与北京瑞宏达成战略合作，共拓具身智能机器人商业化",
+        "link": "http://finance.eastmoney.com/a/202606053761082875.html",
+        "published": "2026-06-05 08:46:00",
+        "summary": "6月4日，量化派（<em>02685</em>）发布公告，宣布其全资附属公司硅基智能与北京瑞宏签署了一份战略合作框架协议。该协议旨在通过双方的合作，推动家庭服务、商业场景和汽车展厅等领域的具身智能机器人研发与商业化落地。"
+      },
+      {
+        "title": "港股公告精选｜中国海外发展前5月销售额超千亿元 迪生创建上一财年盈利增逾两成",
+        "link": "http://finance.eastmoney.com/a/202606043760602256.html",
+        "published": "2026-06-04 20:25:00",
+        "summary": "傅里叶(03625.HK)：获得车规音频芯片客户新签订的订单及下达的意向订单总值超过200万美元 　　量化派(<em>02685</em>.HK)：已在餐饮消费场景中完成多类人工智能技术验证 　　亦辰集团(08365.HK)：拟收购香港跨境通航空技术有限公司的51%股权，目标公司主要从事低空经济及电子商务相关业务"
+      }
+    ],
+    "06651": [
+      {
+        "title": "港股AI应用股走强 五一视界涨近6%",
+        "link": "http://finance.eastmoney.com/a/202606053761232141.html",
+        "published": "2026-06-05 09:24:02",
+        "summary": "截至发稿，五一视界(<em>06651</em>.HK)涨5.78%，创梦天地(01119.HK)涨4.41%，速腾聚创(02498.HK)涨1.41%。"
+      },
+      {
+        "title": "港股人工智能概念走弱 壁仞科技跌超5%",
+        "link": "http://finance.eastmoney.com/a/202606043759901469.html",
+        "published": "2026-06-04 09:34:56",
+        "summary": "截至发稿，壁仞科技(06082.HK)跌5.45%，五一视界(<em>06651</em>.HK)跌4.15%，天数智芯(09903.HK)跌2.37%。"
+      },
+      {
+        "title": "4只个股获南向资金连续净买入",
+        "link": "http://finance.eastmoney.com/a/202606053762239651.html",
+        "published": "2026-06-05 21:19:00",
+        "summary": "（数据宝） 　　南向资金今日净买入个股 　　 证券代码 证券简称 06.05净买入（亿港元） 连续净买入天数 当日收盘价（港元） 涨跌幅（%） <em>06651</em> 五一视界 0.33 3 126.600 3.01 01810 小米集团-W 4.78 2 27.800 -2.04 09992"
+      }
+    ],
+    "02245": [
+      {
+        "title": "力勤资源：RKEF二期KPS项目全部产线已正式投入商业运营",
+        "link": "http://finance.eastmoney.com/a/202606053761037391.html",
+        "published": "2026-06-05 08:44:00",
+        "summary": "6月4日，力勤资源（<em>02245</em>）发布公告，宣布其RKEF项目二期的KPS项目全部产线已于2026年5月正式投入商业运营。该项目与印度尼西亚合作伙伴在印度尼西亚奥比岛共同投资，包含12条生产线，年设计产能为18.5万金属吨镍铁。"
+      },
+      {
+        "title": "力勤资源：联席公司秘书李凯琪辞任",
+        "link": "http://finance.eastmoney.com/a/202605293754597944.html",
+        "published": "2026-05-29 19:02:00",
+        "summary": "南财智讯5月29日电，力勤资源（<em>02245</em>.HK）公告，联席公司秘书李凯琪已提出辞任公司联席公司秘书、授权代表及法律程序文件代理人，自2026年5月31日起生效。"
+      },
+      {
+        "title": "印尼镍矿新政冲击波：中企百亿美元投资影响几何？",
+        "link": "http://finance.eastmoney.com/a/202605023727498452.html",
+        "published": "2026-05-02 04:04:01",
+        "summary": "过去十年，中国对印度尼西亚的镍产业链投资超过140亿美元，青山集团、华友钴业（603799.SH）、格林美（002340.SZ）、力勤资源（<em>02245</em>.HK）等中资企业均在印度尼西亚有所布局。 　　华友钴业董事长陈雪华在2025年业绩说明会上提到：“这次定价影响还是比较大的。"
+      }
+    ],
+    "02643": [
+      {
+        "title": "曹操出行获纳入香港交易所科技100指数",
+        "link": "http://finance.eastmoney.com/a/202606013755854982.html",
+        "published": "2026-06-01 12:18:46",
+        "summary": "6月1日，曹操出行（<em>02643</em>.HK）宣布，根据香港交易所发布的科技100指数半年度调整结果，公司获纳入该指数成分股。本次调整将于2026年6月12日收市后生效，并于6月15日正式执行。"
+      },
+      {
+        "title": "曹操出行获纳入港交所科技100指数",
+        "link": "http://finance.eastmoney.com/a/202606013755846988.html",
+        "published": "2026-06-01 11:52:00",
+        "summary": "5月29日，港交所宣布，曹操出行（<em>02643</em>.HK）获纳入香港交易所科技100指数。此前公司已入恒生综指及港股通，本次纳入后将于6月15日生效，预计将进一步吸引追踪该指数的被动资金流入，提升流动性与市场关注度。（21世纪经济报道）"
+      },
+      {
+        "title": "港股收盘 | 科技指数单日涨近5% 腾讯领衔科网巨头反弹",
+        "link": "http://hk.eastmoney.com/a/202606023757570591.html",
+        "published": "2026-06-02 16:28:21",
+        "summary": "个股异动 　　曹操出行涨超9% 获纳入港交所科技100指数 　　曹操出行(<em>02643</em>.HK)涨9.14%，报收33.90港元。消息面上，该公司日前宣布，根据香港交易所发布的科技100指数半年度调整结果，公司获纳入该指数成分股。"
+      }
+    ],
+    "01357": [
+      {
+        "title": "美图公司(01357.HK)尾盘涨超5%",
+        "link": "http://finance.eastmoney.com/a/202605263749622928.html",
+        "published": "2026-05-26 15:30:04",
+        "summary": "5月26日，美图公司(<em>01357</em>.HK)尾盘涨超5%，截至发稿，涨4.46%，报4.68港元，成交额3.99亿港元。"
+      },
+      {
+        "title": "美图公司(01357.HK)5月18日回购1000.22万港元，年内累计回购1.74亿港元",
+        "link": "http://finance.eastmoney.com/a/202605183740816316.html",
+        "published": "2026-05-18 21:59:00",
+        "summary": "证券时报·数据宝统计，美图公司在港交所公告显示，5月18日以每股4.440港元至4.500港元的价格回购224.10万股，回购金额达1000.22万港元。该股当日收盘价4.510港元，下跌4.45%，全天成交额3.94亿港元。 　　今年以来该股累计进行12次回购，合计回购3753.55"
+      },
+      {
+        "title": "美图公司涨超16%",
+        "link": "http://finance.eastmoney.com/a/202606013755753852.html",
+        "published": "2026-06-01 10:42:15",
+        "summary": "6月1日，截至发稿，美图公司(<em>01357</em>.HK)涨超16%。"
+      }
+    ],
+    "00354": [
+      {
+        "title": "中国软件国际(00354.HK)：何宁退任执行董事",
+        "link": "http://finance.eastmoney.com/a/202605203743908151.html",
+        "published": "2026-05-20 23:57:11",
+        "summary": "5月20日，中国软件国际(<em>00354</em>.HK)发布公告，为专注处理个人事务，何宁博士将于股东周年大会上轮值退任，且不会膺选连任。因此，自股东周年大会结束时起，何博士退任本公司的执行董事职务。"
+      },
+      {
+        "title": "港股AI应用股全面爆发！港股通信息技术ETF华夏（526000）“含量”高",
+        "link": "http://stock.eastmoney.com/a/202606013755949567.html",
+        "published": "2026-06-01 13:53:00",
+        "summary": "6月1日，港股AI应用股集体走强，其中，美图公司(1357.HK)涨超23%，金蝶国际（00268.HK）涨超20%，中国软件国际（<em>00354</em>.HK）涨超16%，迈富时（02556.HK）涨近15%，金山云（03896.HK）、金山软件（03888.HK）、明源云（00909.HK"
+      },
+      {
+        "title": "港股收盘 | 三大指数集体回调 光通信和半导体逆势走强",
+        "link": "http://hk.eastmoney.com/a/202606033759046435.html",
+        "published": "2026-06-03 16:37:43",
+        "summary": "中软国际涨近8% 华为HarmonyOS7将重点升级AI能力 　　中软国际(<em>00354</em>.HK)涨7.80%，报收4.70港元。消息面上，华为开发者大会2026已确定于6月12日至14日举行。"
+      }
+    ],
+    "06613": [
+      {
+        "title": "港股蓝思科技一度涨超16%",
+        "link": "http://finance.eastmoney.com/a/202605183740167523.html",
+        "published": "2026-05-18 10:51:24",
+        "summary": "5月18日，蓝思科技(<em>06613</em>.HK)一度涨超16%，截至发稿，涨11.77%，报24.5港元，成交额9.4亿港元。"
+      },
+      {
+        "title": "擎天租成立不到半年完成6轮融资！机器人租赁赛道诞生70亿估值独角兽",
+        "link": "http://finance.eastmoney.com/a/202605213744733738.html",
+        "published": "2026-05-21 11:12:47",
+        "summary": "此次融资背后资方名单未披露，但此前投资方名单上，有正大集团旗下正大机器人、美格智能（002881.SZ）、蓝思科技（300433.SZ，<em>06613</em>.HK）以及触控显示龙头长信科技（300088.SZ）等多家产业方和上市公司的身影。"
+      },
+      {
+        "title": "智元机器人租赁平台擎天租连续完成两轮融资 估值70亿元",
+        "link": "http://finance.eastmoney.com/a/202605203743845158.html",
+        "published": "2026-05-20 21:56:00",
+        "summary": "参与融资方不仅包括正大集团旗下正大机器人、长信股份等产业方，还有美格智能（002881.SZ）、蓝思科技（300433.SZ，<em>06613</em>.HK）等多家上市公司参与。"
+      }
+    ],
+    "02635": [
+      {
+        "title": "港股人工智能概念股走强 诺比侃涨近20%",
+        "link": "http://finance.eastmoney.com/a/202605123734152730.html",
+        "published": "2026-05-12 09:56:26",
+        "summary": "截至发稿，诺比侃(<em>02635</em>.HK)涨19.72%，海致科技集团(02706.HK)涨8.72%，快手-W(01024.HK)涨6.01%。"
+      },
+      {
+        "title": "港股诺比侃再跌超14%",
+        "link": "http://finance.eastmoney.com/a/202605113732778186.html",
+        "published": "2026-05-11 10:11:50",
+        "summary": "5月11日，诺比侃(<em>02635</em>.HK)再跌超14%，盘中低见16.8港元，较4月20日高点累计跌幅已近80%。截至发稿，诺比侃跌14.31%，报16.88港元，成交额1.48亿港元。"
+      },
+      {
+        "title": "供应商恒信东方虚增收入被罚 诺比侃火速切割：对此毫不知情 仅为一般业务往来",
+        "link": "http://finance.eastmoney.com/a/202605123734116033.html",
+        "published": "2026-05-12 09:43:00",
+        "summary": "5月11日，诺比侃（<em>02635</em>）发布公告，董事会注意到其供应商恒信东方文化股份有限公司（300081）于2026年4月30日收到中国证券监督管理委员会北京监管局的《行政处罚决定书》。"
+      }
+    ],
+    "03808": [
+      {
+        "title": "中国重汽(03808.HK)午后涨近3% 4",
+        "link": "http://finance.eastmoney.com/a/202605193741815316.html",
+        "published": "2026-05-19 13:49:19",
+        "summary": "5月19日，中国重汽(<em>03808</em>.HK)午后涨近3%，截至发稿，涨2.64%，报37.36港元，成交额1.31亿港元。"
+      },
+      {
+        "title": "中国重汽：9月11日将派发股息0.88港元/股",
+        "link": "http://finance.eastmoney.com/a/202605183740492281.html",
+        "published": "2026-05-18 16:38:00",
+        "summary": "南财智讯5月18日电，中国重汽（<em>03808</em>.HK）公告，公司拟派发截至2025年12月31日止年度的末期股息每股0.88港元（或等值人民币0.78元）。该末期股息将于2026年9月11日派发予于2026年7月16日登记在册的股东。"
+      },
+      {
+        "title": "港股收盘 | 三大指数齐涨 脑机接口与云计算股领跑",
+        "link": "http://finance.eastmoney.com/a/202605193742009422.html",
+        "published": "2026-05-19 16:32:00",
+        "summary": "中国重汽涨超2% 4月重卡延续高景气增长 　　中国重汽(<em>03808</em>.HK)涨2.42%，报37.28港元。消息面上，国泰海通研报指出，1-4月国产重卡累计销量43.5万台，同比增长23%。"
+      }
+    ],
+    "09993": [
+      {
+        "title": "金辉控股：建议委任沈厚才为独立非执行董事、周晓辉为执行董事",
+        "link": "http://finance.eastmoney.com/a/202606033758606948.html",
+        "published": "2026-06-03 09:52:00",
+        "summary": "6月2日，金辉控股（<em>09993</em>）发布公告，董事会建议委任沈厚才为独立非执行董事、周晓辉为执行董事，待股东于预定在2026年6月26日举行的股东周年大会上批准。"
+      },
+      {
+        "title": "港股通（深）净卖出93.32亿港元",
+        "link": "http://finance.eastmoney.com/a/202605273751606063.html",
+        "published": "2026-05-27 21:36:00",
+        "summary": "6.05 02800 盈富基金 港股通(深) 183164.00 -182838.41 -1.01 01810 小米集团-W 港股通(深) 163544.00 9686.53 -4.57 00883 中国海洋石油 港股通(深) 162849.00 -114167.19 -2.23 <em>09993</em>"
+      },
+      {
+        "title": "南向资金今日净卖出77.17亿港元 阿里巴巴-W净卖出18.58亿港元",
+        "link": "http://finance.eastmoney.com/a/202605273751597462.html",
+        "published": "2026-05-27 21:35:00",
+        "summary": "成交金额（万港元） 成交净买入（万港元） 今日涨跌幅（%） 00981 中芯国际 1421635.63 198163.23 0.95 01810 小米集团-W 473194.02 80696.94 -4.57 06809 澜起科技 155228.34 9963.83 1.52 <em>09993</em>"
+      }
+    ],
+    "03317": [
+      {
+        "title": "迅策(03317.HK)涨超7%",
+        "link": "http://finance.eastmoney.com/a/202605183740114767.html",
+        "published": "2026-05-18 10:10:23",
+        "summary": "迅策(<em>03317</em>.HK)早盘涨超7%，截至发稿，涨5.7%，报285.7港元，成交额3.49亿港元。"
+      },
+      {
+        "title": "迅策：执行董事姜春飞辞任",
+        "link": "http://finance.eastmoney.com/a/202606053761021389.html",
+        "published": "2026-06-05 07:54:00",
+        "summary": "南财智讯6月5日电，迅策（<em>03317</em>.HK）公告，执行董事姜春飞因个人职业规划辞任，其辞任将于2026年6月26日举行的年度股东大会结束时生效。"
+      },
+      {
+        "title": "港股大模型概念股日报（2026-06-04）",
+        "link": "http://finance.eastmoney.com/a/202606043760581628.html",
+        "published": "2026-06-04 19:51:25",
+        "summary": "迅策<em>03317</em>.HK国内领先的金融资管数据基础设施提供商被市场称为“Token第一股”。持续深化大模型在金融资产管理核心业务流的集成，通过底层数据治理与AI技术重构投研、交易及风控管线。其底层结构化数据清洗能力，与金融机构数字化转型及大模型合规落地趋势相契合。"
+      }
+    ],
+    "00100": [
+      {
+        "title": "港股人工智能概念股走强 MINIMAX涨超5%",
+        "link": "http://finance.eastmoney.com/a/202606013755364083.html",
+        "published": "2026-06-01 09:26:08",
+        "summary": "截至发稿，MINIMAX-W(<em>00100</em>.HK)涨5.24%，群核科技(0068.HK)涨3.39%，五一视界(06651.HK)涨2.94%，壁仞科技(06082.HK)涨2.19%。"
+      },
+      {
+        "title": "MiniMax拟于科创板上市 AI应用概念逆势走强",
+        "link": "http://stock.eastmoney.com/a/202606013755391650.html",
+        "published": "2026-06-01 09:42:21",
+        "summary": "（股票代码：<em>00100</em>.HK）发布公告，宣布董事会已决议探究拟发行人民币股份并在上海证券交易所科创板上市的初步建议。这家通用人工智能新贵，在登陆港股市场仅四个多月后，正式开启了回归A股、构建“A+H”双资本平台的征程。"
+      },
+      {
+        "title": "MINIMAX：拟于科创板上市",
+        "link": "http://finance.eastmoney.com/a/202605313755197045.html",
+        "published": "2026-05-31 19:23:00",
+        "summary": "5月31日，MINIMAX（<em>00100</em>）发布公告，董事会决定探究拟发行人民币股份的初步建议，可能涉及与专业顾问订立协议及与相关证券或其他监管机构进行咨询。此举的实施将受市场状况及必要的监管批准的限制。"
+      }
+    ],
+    "00290": [
+      {
+        "title": "68只A股筹码大换手（6月5日）",
+        "link": "http://stock.eastmoney.com/a/202606053761964256.html",
+        "published": "2026-06-05 16:13:00",
+        "summary": "雷神科技 35.41 20.41 10.93 301231 荣信文化 33.81 20.40 3.36 600237 铜峰电子 12.07 20.27 -1.23 002995 天地在线 22.49 20.26 -4.78 301099 雅创电子 79.84 20.20 0.68 <em>00290</em>2"
+      },
+      {
+        "title": "国富量子收购Quantum.Ai顶级域名 发起全球量子智能产业联盟",
+        "link": "http://finance.eastmoney.com/a/202605213745402729.html",
+        "published": "2026-05-21 19:30:43",
+        "summary": "上证报中国证券网讯（记者夏子航）5月21日，港股上市公司国富量子（<em>00290</em>.HK）宣布，公司已完成对全球顶级量子AI域名——Quantum.Ai的战略收购。"
+      },
+      {
+        "title": "港股国富量子早盘涨超10%",
+        "link": "http://finance.eastmoney.com/a/202605113732751292.html",
+        "published": "2026-05-11 09:58:02",
+        "summary": "5月11日，国富量子(<em>00290</em>.HK)早盘涨超10%，截至发稿涨9.96%，报9.27港元，成交额5301.86万港元。"
+      }
+    ],
+    "02616": [
+      {
+        "title": "港股公告精选｜兖矿能源斥资约164亿元收购控股股东资产 广汽集团5月销量同比增约一成",
+        "link": "http://finance.eastmoney.com/a/202606033759214462.html",
+        "published": "2026-06-03 20:13:00",
+        "summary": "基石药业-B(<em>02616</em>.HK)：董事及高管拟增持200万股至500万股公司股份。"
+      },
+      {
+        "title": "三抗与双抗对决，基石药业股价暴跌32%",
+        "link": "http://finance.eastmoney.com/a/202606013756299656.html",
+        "published": "2026-06-01 18:29:30",
+        "summary": "6月1日，基石药业-B(<em>02616</em>)股价暴跌32.42%，报收5.44港元，总市值87.05亿港元。 　　消息面上，基石药业美国临床肿瘤学会（ASCO）年会上发布了PD-1/VEGF/CTLA-4三抗药CS2009的最新临床1期数据更新。"
+      },
+      {
+        "title": "基石药业公布一个指标：市值蒸发40%",
+        "link": "http://finance.eastmoney.com/a/202606043760738552.html",
+        "published": "2026-06-04 22:16:00",
+        "summary": "2026年6月1日，基石药业（<em>02616</em>）在美国临床肿瘤学会（ASCO）年会上公布了核心管线CS2009——一款全球首创的程序性细胞死亡蛋白1（PD-1）、血管内皮生长因子（VEGF）、细胞毒性T淋巴细胞相关蛋白4（CTLA-4）三特异性抗体的I/II期临床进展更新数据。"
+      }
+    ],
+    "00700": [
+      {
+        "title": "腾讯控股(00700.HK)6月5日回购109.20万股，耗资5.00亿港元",
+        "link": "http://finance.eastmoney.com/a/202606053762238761.html",
+        "published": "2026-06-05 21:18:00",
+        "summary": "证券时报·数据宝统计，腾讯控股在港交所公告显示，6月5日以每股452.400港元至465.800港元的价格回购109.20万股，回购金额达5.00亿港元。该股当日收盘价453.200港元，下跌1.26%，全天成交额144.65亿港元。 　　自5月18日以来公司已连续14日进行回购，"
+      },
+      {
+        "title": "腾讯控股(00700.HK)连续13日回购，累计斥资57.40亿港元",
+        "link": "http://finance.eastmoney.com/a/202606043760675869.html",
+        "published": "2026-06-04 21:33:00",
+        "summary": "证券时报·数据宝统计，腾讯控股在港交所公告显示，6月4日以每股455.200港元至468.000港元的价格回购109.10万股，回购金额达5.01亿港元。该股当日收盘价459.000港元，下跌1.59%，全天成交额133.29亿港元。 　　自5月18日以来公司已连续13日进行回购，"
+      },
+      {
+        "title": "腾讯控股(00700.HK)6月3日回购1.27亿港元，已连续12日回购",
+        "link": "http://finance.eastmoney.com/a/202606033759376298.html",
+        "published": "2026-06-03 23:21:00",
+        "summary": "证券时报·数据宝统计，腾讯控股在港交所公告显示，6月3日以每股461.800港元至462.800港元的价格回购27.55万股，回购金额达1.27亿港元。该股当日收盘价466.400港元，下跌3.16%，全天成交额229.95亿港元。 　　自5月18日以来公司已连续12日进行回购，合计回购"
+      }
+    ],
+    "09988": [
+      {
+        "title": "6月5日港股通净卖出24.26亿港元",
+        "link": "http://finance.eastmoney.com/a/202606053762237576.html",
+        "published": "2026-06-05 21:18:00",
+        "summary": "阿里巴巴-W 港股通(沪) 186616.96 12500.35 -0.89 <em>09988</em> 阿里巴巴-W 港股通(深) 180613.00 -18003.78 -0.89 06651 五一视界 港股通(沪) 175858.49 3258.96 3.01 02476 胜宏科技 港股通"
+      },
+      {
+        "title": "港股通净卖出3.15亿港元",
+        "link": "http://finance.eastmoney.com/a/202606043760675040.html",
+        "published": "2026-06-04 21:29:00",
+        "summary": "-1.75 00700 腾讯控股 港股通(沪) 341597.94 -44527.00 -1.59 06869 长飞光纤光缆 港股通(沪) 288716.61 48253.35 -2.64 00981 中芯国际 港股通(深) 267362.00 -70667.93 -1.75 <em>09988</em>"
+      },
+      {
+        "title": "港股通净买入186.82亿港元",
+        "link": "http://finance.eastmoney.com/a/202606033759381352.html",
+        "published": "2026-06-03 23:21:00",
+        "summary": "571741.61 -1.44 00981 中芯国际 港股通(沪) 490192.52 105757.40 1.22 06869 长飞光纤光缆 港股通(沪) 454452.57 1568.93 10.65 00700 腾讯控股 港股通(深) 374434.00 -481.99 -3.16 <em>09988</em>"
+      }
+    ],
+    "00981": [
+      {
+        "title": "芯片龙头，00981 获南向资金爆买超70亿港元",
+        "link": "http://finance.eastmoney.com/a/202605313755145715.html",
+        "published": "2026-05-31 12:39:00",
+        "summary": "从成交净买入金额来看，中芯国际（<em>00981</em>.HK）获南向资金净买入73.52亿港元，本周南向资金对互联网巨头以卖出为主，阿里巴巴-W遭南向资金净卖出49.51亿港元，腾讯控股、小米集团-W分别遭南向资金净卖出20.23亿港元、0.71亿港元。"
+      },
+      {
+        "title": "大基金，减持00981、688126、688035",
+        "link": "http://finance.eastmoney.com/a/202605283753024932.html",
+        "published": "2026-05-28 21:13:00",
+        "summary": "5月28日晚间，据港交所文件披露，国家集成电路产业投资基金股份有限公司对中芯国际(HK:<em>00981</em>)的多头持仓比例于2026年5月26日从8.08%降至7.99%。"
+      },
+      {
+        "title": "6月5日港股通净卖出24.26亿港元",
+        "link": "http://finance.eastmoney.com/a/202606053762237576.html",
+        "published": "2026-06-05 21:18:00",
+        "summary": "（数据宝） 　　6月5日港股通成交活跃股 　　 代码 简称 类型 成交金额（万港元） 成交净买入（万港元） 日涨跌幅（%） <em>00981</em> 中芯国际 港股通(沪) 600382.58 94268.50 -7.18 <em>00981</em> 中芯国际 港股通(深) 577622.00 -372615.56"
+      }
+    ],
+    "00992": [
+      {
+        "title": "港股科技指数成份股多数走低 金蝶国际跌近6%",
+        "link": "http://finance.eastmoney.com/a/202606043760000914.html",
+        "published": "2026-06-04 09:54:26",
+        "summary": "截至发稿，金蝶国际(00268.HK)跌5.91%，联想集团(<em>00992</em>.HK)跌4.28%，商汤-W(00020.HK)跌4.05%。"
+      },
+      {
+        "title": "港股科技指数成分股多数走低 金蝶国际跌近6%",
+        "link": "http://finance.eastmoney.com/a/202606043760081994.html",
+        "published": "2026-06-04 10:03:29",
+        "summary": "截至发稿，金蝶国际(00268.HK)跌5.91%，联想集团(<em>00992</em>.HK)跌4.28%，商汤-W(00020.HK)跌4.05%。"
+      },
+      {
+        "title": "南向资金追踪｜本周累计买入约228亿港元 大举加仓中芯国际及泡泡玛特",
+        "link": "http://finance.eastmoney.com/a/202606053762108610.html",
+        "published": "2026-06-05 19:09:55",
+        "summary": "大幅净卖出：联想集团(<em>00992</em>.HK)17.60亿港元；阿里巴巴-W(09988.HK)15.78亿港元；美团-W(03690.HK)12.43亿港元；小米集团-W(01810.HK)12.28亿港元。"
+      }
+    ],
+    "03690": [
+      {
+        "title": "美团(03690.HK)2026年第一季度业绩电话会",
+        "link": "http://video.eastmoney.com/a/202606023757788330.html",
+        "published": "2026-06-02 20:47:53",
+        "summary": "美团(<em>03690</em>.HK)2026年第一季度业绩电话会"
+      },
+      {
+        "title": "美团提名姚建华为新任独立非执行董事",
+        "link": "http://finance.eastmoney.com/a/202606043760527195.html",
+        "published": "2026-06-04 17:53:00",
+        "summary": "6月4日，美团（<em>03690</em>/83690）发布公告，宣布独立非执行董事欧高敦将于股东周年大会后退任，并提名姚建华为新的独立非执行董事，待股东在会议上通过后生效。"
+      },
+      {
+        "title": "港股通成交活跃股追踪 这2股近一个月首次上榜",
+        "link": "http://finance.eastmoney.com/a/202606053762239154.html",
+        "published": "2026-06-05 21:19:00",
+        "summary": "36.72 -0.55 22 122.400 -0.89 01810 小米集团-W 14.31 4.78 17 27.800 -2.04 09992 泡泡玛特 9.77 4.10 16 176.400 -0.62 06651 五一视界 17.59 0.33 9 126.600 3.01 <em>03690</em>"
+      }
+    ]
+  },
+  "sector_news": {
+    "新能源车": [
+      {
+        "title": "新能源车，未来要“减肥”了？",
+        "link": "http://finance.eastmoney.com/a/202606073762658223.html",
+        "published": "2026-06-07 14:13:00",
+        "summary": "车好像在变大，车位好像在变窄？这不是一两个人的“错觉”。 　　■ 记者探访：新能源汽车车宽普遍接近甚至超2米 　　数据显示： 　　2000年前后，市场常见的家用新能源汽车，车宽多在1.7米。 　　2015年，宽度增加到1.8米。 　　如今，家用热门中大型SUV、MPV车型，新能源汽车普遍接近甚至超过"
+      },
+      {
+        "title": "新能源车ETF国泰（159806）盘中上涨1.2%，锂电排产与新能源车需求受关注",
+        "link": "http://stock.eastmoney.com/a/202606053761881471.html",
+        "published": "2026-06-05 14:13:58",
+        "summary": "6月5日，新能源车ETF国泰（159806）盘中上涨1.2%，锂电排产与新能源车需求受关注。 　　国信证券指出，锂电产业链排产持续向上，根据鑫椤锂电数据，2026年6月国内电池样本企业预排产175.7GWh，同比大幅增长68%。"
+      },
+      {
+        "title": "车规级存储芯片价格暴涨180% 多家新能源车企涨价",
+        "link": "http://finance.eastmoney.com/a/202606073762631029.html",
+        "published": "2026-06-07 07:43:25",
+        "summary": "据不完全统计，近期国内共有十余家新能源车企上调售价或收紧优惠，幅度一般在2000元到6000元不等。 　　在新能源车价格出现变化的时候，不少燃油车在调低价格，加大优惠力度。截至今年4月，燃油车促销力度已连续9个月维持在23%左右的高位。"
+      }
+    ]
+  },
+  "judgment": {}
+}

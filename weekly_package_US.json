@@ -1,0 +1,3719 @@
+{
+  "market": "US",
+  "market_name": "美股",
+  "week_start": "2026-06-01",
+  "week_end": "2026-06-05",
+  "trading_days": 5,
+  "generated_at": "2026-06-08 15:46",
+  "overview": {
+    "total_stocks": 453,
+    "total_etfs": 340,
+    "up_count": 174,
+    "down_count": 279,
+    "avg_change": -3.19,
+    "median_change": -1.84
+  },
+  "tier_overview": {
+    "L1": {
+      "count": 14,
+      "up_count": 1,
+      "down_count": 13,
+      "avg_chg": -5.05,
+      "median_chg": -7.73,
+      "top_code": "MU",
+      "top_name": "美光科技",
+      "top_chg": -11.02,
+      "amount_range": "114.7~527.6亿"
+    },
+    "L2": {
+      "count": 8,
+      "up_count": 1,
+      "down_count": 7,
+      "avg_chg": -5.21,
+      "median_chg": -4.86,
+      "top_code": "ORCL",
+      "top_name": "甲骨文",
+      "top_chg": -5.36,
+      "amount_range": "51.1~71.6亿"
+    },
+    "L3": {
+      "count": 107,
+      "up_count": 40,
+      "down_count": 67,
+      "avg_chg": -3.92,
+      "median_chg": -3.1,
+      "top_code": "QCOM",
+      "top_name": "高通",
+      "top_chg": -13.97,
+      "amount_range": "10.1~45.6亿"
+    },
+    "L4": {
+      "count": 324,
+      "up_count": 132,
+      "down_count": 192,
+      "avg_chg": -2.82,
+      "median_chg": -1.14,
+      "top_code": "NEE",
+      "top_name": "新纪元能源",
+      "top_chg": -1.34,
+      "amount_range": "3.0~10.0亿"
+    },
+    "L5": {
+      "count": 0
+    }
+  },
+  "tiers": {
+    "L1": [
+      {
+        "code": "MU",
+        "name": "美光科技",
+        "is_etf": false,
+        "base_close": 971.0,
+        "last_close": 864.01,
+        "weekly_chg": -11.02,
+        "avg_amount": 527.57,
+        "daily_changes": [
+          2.76,
+          1.45,
+          -7.74,
+          -13.25
+        ],
+        "rsi12": 63.0,
+        "roc_20": 0,
+        "ma20": 843.3,
+        "ma20_slope": 14.19,
+        "elasticity": 115.4,
+        "meets_amount": true
+      },
+      {
+        "code": "NVDA",
+        "name": "英伟达",
+        "is_etf": false,
+        "base_close": 211.14,
+        "last_close": 205.1,
+        "weekly_chg": -2.86,
+        "avg_amount": 414.53,
+        "daily_changes": [
+          -0.69,
+          -3.63,
+          1.94,
+          -6.2
+        ],
+        "rsi12": 37.0,
+        "roc_20": 0,
+        "ma20": 217.9,
+        "ma20_slope": 1.97,
+        "elasticity": 17.5,
+        "meets_amount": true
+      },
+      {
+        "code": "MRVL",
+        "name": "迈威尔科技",
+        "is_etf": false,
+        "base_close": 205.0,
+        "last_close": 263.47,
+        "weekly_chg": 28.52,
+        "avg_amount": 254.19,
+        "daily_changes": [
+          32.52,
+          3.73,
+          4.9,
+          -16.74
+        ],
+        "rsi12": 71.0,
+        "roc_20": 0,
+        "ma20": 207.6,
+        "ma20_slope": 16.7,
+        "elasticity": 120.9,
+        "meets_amount": true
+      },
+      {
+        "code": "AVGO",
+        "name": "博通",
+        "is_etf": false,
+        "base_close": 446.77,
+        "last_close": 385.73,
+        "weekly_chg": -13.66,
+        "avg_amount": 220.38,
+        "daily_changes": [
+          4.7,
+          -0.49,
+          -12.59,
+          -7.92
+        ],
+        "rsi12": 43.0,
+        "roc_20": 0,
+        "ma20": 427.7,
+        "ma20_slope": 1.39,
+        "elasticity": 16.8,
+        "meets_amount": true
+      },
+      {
+        "code": "SNDK",
+        "name": "闪迪",
+        "is_etf": false,
+        "base_close": 1694.98,
+        "last_close": 1559.32,
+        "weekly_chg": -8.0,
+        "avg_amount": 186.28,
+        "daily_changes": [
+          -2.56,
+          6.71,
+          0.0,
+          -14.86
+        ],
+        "rsi12": 57.0,
+        "roc_20": 0,
+        "ma20": 1535.2,
+        "ma20_slope": 10.66,
+        "elasticity": 183.1,
+        "meets_amount": true
+      },
+      {
+        "code": "TSLA",
+        "name": "特斯拉",
+        "is_etf": false,
+        "base_close": 435.79,
+        "last_close": 391.0,
+        "weekly_chg": -10.28,
+        "avg_amount": 186.11,
+        "daily_changes": [
+          1.89,
+          -0.01,
+          -1.24,
+          -6.56
+        ],
+        "rsi12": 40.0,
+        "roc_20": 0,
+        "ma20": 424.0,
+        "ma20_slope": 1.75,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "MSFT",
+        "name": "微软",
+        "is_etf": false,
+        "base_close": 450.24,
+        "last_close": 416.67,
+        "weekly_chg": -7.46,
+        "avg_amount": 167.46,
+        "daily_changes": [
+          -4.17,
+          -3.17,
+          0.17,
+          -2.66
+        ],
+        "rsi12": 50.0,
+        "roc_20": 0,
+        "ma20": 423.1,
+        "ma20_slope": 1.35,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "AMD",
+        "name": "超威半导体",
+        "is_etf": false,
+        "base_close": 516.1,
+        "last_close": 466.38,
+        "weekly_chg": -9.63,
+        "avg_amount": 165.44,
+        "daily_changes": [
+          2.24,
+          4.02,
+          -3.56,
+          -10.86
+        ],
+        "rsi12": 61.0,
+        "roc_20": 0,
+        "ma20": 471.9,
+        "ma20_slope": 8.39,
+        "elasticity": 86.7,
+        "meets_amount": true
+      },
+      {
+        "code": "GOOGL",
+        "name": "谷歌-A",
+        "is_etf": false,
+        "base_close": 380.34,
+        "last_close": 368.53,
+        "weekly_chg": -3.11,
+        "avg_amount": 158.28,
+        "daily_changes": [
+          -3.86,
+          -0.79,
+          3.68,
+          -0.98
+        ],
+        "rsi12": 35.0,
+        "roc_20": 0,
+        "ma20": 385.2,
+        "ma20_slope": -1.31,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "AAPL",
+        "name": "苹果",
+        "is_etf": false,
+        "base_close": 312.06,
+        "last_close": 307.34,
+        "weekly_chg": -1.51,
+        "avg_amount": 157.62,
+        "daily_changes": [
+          2.9,
+          -1.57,
+          0.31,
+          -1.25
+        ],
+        "rsi12": 61.0,
+        "roc_20": 0,
+        "ma20": 303.7,
+        "ma20_slope": 2.54,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "META",
+        "name": "Meta Platforms Inc-A",
+        "is_etf": false,
+        "base_close": 632.51,
+        "last_close": 593.0,
+        "weekly_chg": -6.25,
+        "avg_amount": 148.13,
+        "daily_changes": [
+          -0.47,
+          4.24,
+          0.74,
+          -5.51
+        ],
+        "rsi12": 46.0,
+        "roc_20": 0,
+        "ma20": 613.1,
+        "ma20_slope": -2.11,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "INTC",
+        "name": "英特尔",
+        "is_etf": false,
+        "base_close": 114.68,
+        "last_close": 99.17,
+        "weekly_chg": -13.52,
+        "avg_amount": 125.35,
+        "daily_changes": [
+          -1.28,
+          4.43,
+          -0.83,
+          -11.28
+        ],
+        "rsi12": 38.0,
+        "roc_20": 0,
+        "ma20": 115.6,
+        "ma20_slope": 1.31,
+        "elasticity": 115.3,
+        "meets_amount": true
+      },
+      {
+        "code": "AMZN",
+        "name": "亚马逊",
+        "is_etf": false,
+        "base_close": 270.64,
+        "last_close": 246.03,
+        "weekly_chg": -9.09,
+        "avg_amount": 120.6,
+        "daily_changes": [
+          -1.81,
+          -2.53,
+          1.51,
+          -3.06
+        ],
+        "rsi12": 38.0,
+        "roc_20": 0,
+        "ma20": 264.3,
+        "ma20_slope": -1.61,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "GOOG",
+        "name": "谷歌-C",
+        "is_etf": false,
+        "base_close": 376.43,
+        "last_close": 365.76,
+        "weekly_chg": -2.83,
+        "avg_amount": 114.68,
+        "daily_changes": [
+          -3.81,
+          -0.76,
+          3.82,
+          -0.95
+        ],
+        "rsi12": 34.0,
+        "roc_20": 0,
+        "ma20": 381.7,
+        "ma20_slope": -1.33,
+        "elasticity": 0,
+        "meets_amount": true
+      }
+    ],
+    "L2": [
+      {
+        "code": "ORCL",
+        "name": "甲骨文",
+        "is_etf": false,
+        "base_close": 225.78,
+        "last_close": 213.68,
+        "weekly_chg": -5.36,
+        "avg_amount": 71.58,
+        "daily_changes": [
+          -1.44,
+          -5.83,
+          2.61,
+          -9.59
+        ],
+        "rsi12": 64.0,
+        "roc_20": 0,
+        "ma20": 203.9,
+        "ma20_slope": 7.38,
+        "elasticity": 66.8,
+        "meets_amount": true
+      },
+      {
+        "code": "LITE",
+        "name": "Lumentum Holdings Inc",
+        "is_etf": false,
+        "base_close": 854.96,
+        "last_close": 863.66,
+        "weekly_chg": 1.02,
+        "avg_amount": 67.77,
+        "daily_changes": [
+          13.72,
+          -8.86,
+          0.0,
+          -7.93
+        ],
+        "rsi12": 48.0,
+        "roc_20": 0,
+        "ma20": 929.4,
+        "ma20_slope": 1.93,
+        "elasticity": 149.3,
+        "meets_amount": true
+      },
+      {
+        "code": "PLTR",
+        "name": "Palantir Technologies Inc-A",
+        "is_etf": false,
+        "base_close": 156.54,
+        "last_close": 135.53,
+        "weekly_chg": -13.42,
+        "avg_amount": 65.77,
+        "daily_changes": [
+          -5.28,
+          -6.55,
+          0.0,
+          -4.69
+        ],
+        "rsi12": 51.0,
+        "roc_20": 0,
+        "ma20": 139.4,
+        "ma20_slope": 1.41,
+        "elasticity": 30.5,
+        "meets_amount": true
+      },
+      {
+        "code": "DELL",
+        "name": "戴尔科技",
+        "is_etf": false,
+        "base_close": 420.91,
+        "last_close": 394.39,
+        "weekly_chg": -6.3,
+        "avg_amount": 64.41,
+        "daily_changes": [
+          -6.58,
+          -3.27,
+          0.23,
+          -6.55
+        ],
+        "rsi12": 76.0,
+        "roc_20": 0,
+        "ma20": 310.7,
+        "ma20_slope": 20.4,
+        "elasticity": 112.0,
+        "meets_amount": true
+      },
+      {
+        "code": "TSM",
+        "name": "台积电",
+        "is_etf": false,
+        "base_close": 418.45,
+        "last_close": 415.17,
+        "weekly_chg": -0.78,
+        "avg_amount": 59.81,
+        "daily_changes": [
+          2.54,
+          -2.24,
+          1.88,
+          -6.69
+        ],
+        "rsi12": 58.0,
+        "roc_20": 0,
+        "ma20": 415.9,
+        "ma20_slope": 2.41,
+        "elasticity": 29.5,
+        "meets_amount": true
+      },
+      {
+        "code": "ARM",
+        "name": "Arm Holdings plc ADR",
+        "is_etf": false,
+        "base_close": 353.29,
+        "last_close": 342.93,
+        "weekly_chg": -2.93,
+        "avg_amount": 58.74,
+        "daily_changes": [
+          -1.5,
+          2.26,
+          0.0,
+          -16.73
+        ],
+        "rsi12": 70.0,
+        "roc_20": 0,
+        "ma20": 284.7,
+        "ma20_slope": 18.39,
+        "elasticity": 152.7,
+        "meets_amount": true
+      },
+      {
+        "code": "IBM",
+        "name": "IBM国际商业机器",
+        "is_etf": false,
+        "base_close": 297.8,
+        "last_close": 284.84,
+        "weekly_chg": -4.35,
+        "avg_amount": 53.84,
+        "daily_changes": [
+          2.75,
+          -7.17,
+          -1.26,
+          -5.61
+        ],
+        "rsi12": 70.0,
+        "roc_20": 0,
+        "ma20": 256.2,
+        "ma20_slope": 8.34,
+        "elasticity": 32.7,
+        "meets_amount": true
+      },
+      {
+        "code": "NOW",
+        "name": "现在服务公司",
+        "is_etf": false,
+        "base_close": 124.37,
+        "last_close": 112.45,
+        "weekly_chg": -9.58,
+        "avg_amount": 51.14,
+        "daily_changes": [
+          -6.04,
+          -7.64,
+          1.24,
+          -5.79
+        ],
+        "rsi12": 57.0,
+        "roc_20": 0,
+        "ma20": 105.3,
+        "ma20_slope": 8.26,
+        "elasticity": 79.7,
+        "meets_amount": true
+      }
+    ],
+    "L3": [
+      {
+        "code": "QCOM",
+        "name": "高通",
+        "is_etf": false,
+        "base_close": 251.02,
+        "last_close": 215.94,
+        "weekly_chg": -13.97,
+        "avg_amount": 45.57,
+        "daily_changes": [
+          5.2,
+          3.82,
+          -2.62,
+          -10.98
+        ],
+        "rsi12": 54.0,
+        "roc_20": 0,
+        "ma20": 224.3,
+        "ma20_slope": 7.37,
+        "elasticity": 81.0,
+        "meets_amount": true
+      },
+      {
+        "code": "AMAT",
+        "name": "应用材料",
+        "is_etf": false,
+        "base_close": 450.06,
+        "last_close": 453.01,
+        "weekly_chg": 0.66,
+        "avg_amount": 42.81,
+        "daily_changes": [
+          6.96,
+          2.19,
+          0.19,
+          -9.71
+        ],
+        "rsi12": 65.0,
+        "roc_20": 0,
+        "ma20": 445.4,
+        "ma20_slope": 4.57,
+        "elasticity": 32.9,
+        "meets_amount": true
+      },
+      {
+        "code": "HPE",
+        "name": "慧与",
+        "is_etf": false,
+        "base_close": 43.04,
+        "last_close": 49.2,
+        "weekly_chg": 14.31,
+        "avg_amount": 42.02,
+        "daily_changes": [
+          19.47,
+          -1.78,
+          -2.65,
+          -8.36
+        ],
+        "rsi12": 76.0,
+        "roc_20": 0,
+        "ma20": 38.8,
+        "ma20_slope": 17.35,
+        "elasticity": 94.9,
+        "meets_amount": true
+      },
+      {
+        "code": "NBIS",
+        "name": "Nebius Group NV-A",
+        "is_etf": false,
+        "base_close": 231.09,
+        "last_close": 227.81,
+        "weekly_chg": -1.42,
+        "avg_amount": 41.62,
+        "daily_changes": [
+          -1.49,
+          -3.42,
+          0.0,
+          -9.48
+        ],
+        "rsi12": 60.0,
+        "roc_20": 0,
+        "ma20": 212.6,
+        "ma20_slope": 11.82,
+        "elasticity": 180.3,
+        "meets_amount": true
+      },
+      {
+        "code": "CRWV",
+        "name": "CoreWeave Inc-A",
+        "is_etf": false,
+        "base_close": 109.53,
+        "last_close": 100.39,
+        "weekly_chg": -8.34,
+        "avg_amount": 41.39,
+        "daily_changes": [
+          -4.45,
+          -6.99,
+          0.0,
+          -9.5
+        ],
+        "rsi12": 47.0,
+        "roc_20": 0,
+        "ma20": 111.1,
+        "ma20_slope": -1.47,
+        "elasticity": 118.1,
+        "meets_amount": true
+      },
+      {
+        "code": "PANW",
+        "name": "派拓网络",
+        "is_etf": false,
+        "base_close": 281.69,
+        "last_close": 272.05,
+        "weekly_chg": -3.42,
+        "avg_amount": 38.58,
+        "daily_changes": [
+          -1.1,
+          -5.64,
+          -0.42,
+          -2.58
+        ],
+        "rsi12": 64.0,
+        "roc_20": 0,
+        "ma20": 251.3,
+        "ma20_slope": 11.46,
+        "elasticity": 41.0,
+        "meets_amount": true
+      },
+      {
+        "code": "WDC",
+        "name": "西部数据",
+        "is_etf": false,
+        "base_close": 531.21,
+        "last_close": 511.72,
+        "weekly_chg": -3.67,
+        "avg_amount": 38.48,
+        "daily_changes": [
+          3.09,
+          5.51,
+          -3.13,
+          -11.06
+        ],
+        "rsi12": 62.0,
+        "roc_20": 0,
+        "ma20": 505.4,
+        "ma20_slope": 7.66,
+        "elasticity": 83.5,
+        "meets_amount": true
+      },
+      {
+        "code": "IREN",
+        "name": "IREN Ltd",
+        "is_etf": false,
+        "base_close": 63.54,
+        "last_close": 54.35,
+        "weekly_chg": -14.46,
+        "avg_amount": 37.17,
+        "daily_changes": [
+          1.94,
+          -1.68,
+          0.0,
+          -17.0
+        ],
+        "rsi12": 54.0,
+        "roc_20": 0,
+        "ma20": 58.6,
+        "ma20_slope": 7.04,
+        "elasticity": 150.3,
+        "meets_amount": true
+      },
+      {
+        "code": "CRWD",
+        "name": "CrowdStrike Holdings Inc-A",
+        "is_etf": false,
+        "base_close": 731.0,
+        "last_close": 671.02,
+        "weekly_chg": -8.21,
+        "avg_amount": 35.98,
+        "daily_changes": [
+          -1.69,
+          -2.78,
+          0.0,
+          -10.24
+        ],
+        "rsi12": 58.0,
+        "roc_20": 0,
+        "ma20": 631.6,
+        "ma20_slope": 12.48,
+        "elasticity": 47.3,
+        "meets_amount": true
+      },
+      {
+        "code": "MSTR",
+        "name": "Strategy Inc-A",
+        "is_etf": false,
+        "base_close": 159.09,
+        "last_close": 120.44,
+        "weekly_chg": -24.29,
+        "avg_amount": 35.62,
+        "daily_changes": [
+          -9.15,
+          -7.01,
+          2.23,
+          -6.9
+        ],
+        "rsi12": 17.0,
+        "roc_20": 0,
+        "ma20": 160.6,
+        "ma20_slope": -6.9,
+        "elasticity": 40.5,
+        "meets_amount": true
+      },
+      {
+        "code": "LLY",
+        "name": "礼来",
+        "is_etf": false,
+        "base_close": 1105.0,
+        "last_close": 1131.42,
+        "weekly_chg": 2.39,
+        "avg_amount": 35.13,
+        "daily_changes": [
+          -1.67,
+          1.37,
+          4.31,
+          0.55
+        ],
+        "rsi12": 73.0,
+        "roc_20": 0,
+        "ma20": 1046.2,
+        "ma20_slope": 5.39,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "CRM",
+        "name": "赛富时",
+        "is_etf": false,
+        "base_close": 191.1,
+        "last_close": 185.66,
+        "weekly_chg": -2.85,
+        "avg_amount": 35.03,
+        "daily_changes": [
+          -4.18,
+          -5.09,
+          -0.98,
+          -1.64
+        ],
+        "rsi12": 54.0,
+        "roc_20": 0,
+        "ma20": 182.6,
+        "ma20_slope": 1.71,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "CSCO",
+        "name": "思科",
+        "is_etf": false,
+        "base_close": 120.42,
+        "last_close": 121.64,
+        "weekly_chg": 1.01,
+        "avg_amount": 34.31,
+        "daily_changes": [
+          5.5,
+          -1.17,
+          2.77,
+          -6.43
+        ],
+        "rsi12": 59.0,
+        "roc_20": 0,
+        "ma20": 114.9,
+        "ma20_slope": 7.76,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "WMT",
+        "name": "沃尔玛",
+        "is_etf": false,
+        "base_close": 115.75,
+        "last_close": 118.88,
+        "weekly_chg": 2.7,
+        "avg_amount": 33.97,
+        "daily_changes": [
+          -1.34,
+          3.39,
+          0.73,
+          0.97
+        ],
+        "rsi12": 23.0,
+        "roc_20": 0,
+        "ma20": 123.7,
+        "ma20_slope": -2.58,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "SNOW",
+        "name": "Snowflake Inc",
+        "is_etf": false,
+        "base_close": 255.55,
+        "last_close": 238.26,
+        "weekly_chg": -6.77,
+        "avg_amount": 32.93,
+        "daily_changes": [
+          -6.79,
+          -7.61,
+          0.0,
+          -1.25
+        ],
+        "rsi12": 73.0,
+        "roc_20": 0,
+        "ma20": 186.9,
+        "ma20_slope": 18.03,
+        "elasticity": 80.4,
+        "meets_amount": true
+      },
+      {
+        "code": "NFLX",
+        "name": "奈飞",
+        "is_etf": false,
+        "base_close": 86.02,
+        "last_close": 82.18,
+        "weekly_chg": -4.46,
+        "avg_amount": 32.33,
+        "daily_changes": [
+          -2.94,
+          -2.17,
+          0.05,
+          0.76
+        ],
+        "rsi12": 17.0,
+        "roc_20": 0,
+        "ma20": 86.5,
+        "ma20_slope": -2.17,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "UNH",
+        "name": "联合健康",
+        "is_etf": false,
+        "base_close": 380.31,
+        "last_close": 399.47,
+        "weekly_chg": 5.04,
+        "avg_amount": 31.84,
+        "daily_changes": [
+          -0.51,
+          -0.24,
+          5.16,
+          0.76
+        ],
+        "rsi12": 57.0,
+        "roc_20": 0,
+        "ma20": 384.6,
+        "ma20_slope": 1.13,
+        "elasticity": 21.5,
+        "meets_amount": true
+      },
+      {
+        "code": "ASML",
+        "name": "阿斯麦",
+        "is_etf": false,
+        "base_close": 1612.76,
+        "last_close": 1641.74,
+        "weekly_chg": 1.8,
+        "avg_amount": 31.73,
+        "daily_changes": [
+          4.72,
+          1.23,
+          1.8,
+          -6.59
+        ],
+        "rsi12": 69.0,
+        "roc_20": 0,
+        "ma20": 1594.7,
+        "ma20_slope": 3.98,
+        "elasticity": 27.4,
+        "meets_amount": true
+      },
+      {
+        "code": "LRCX",
+        "name": "拉姆研究",
+        "is_etf": false,
+        "base_close": 318.18,
+        "last_close": 303.28,
+        "weekly_chg": -4.68,
+        "avg_amount": 30.45,
+        "daily_changes": [
+          5.45,
+          2.78,
+          -2.12,
+          -9.85
+        ],
+        "rsi12": 62.0,
+        "roc_20": 0,
+        "ma20": 301.6,
+        "ma20_slope": 6.16,
+        "elasticity": 55.0,
+        "meets_amount": true
+      },
+      {
+        "code": "RKLB",
+        "name": "Rocket Lab Corp",
+        "is_etf": false,
+        "base_close": 143.48,
+        "last_close": 110.08,
+        "weekly_chg": -23.28,
+        "avg_amount": 29.09,
+        "daily_changes": [
+          0.76,
+          -6.99,
+          0.0,
+          -4.03
+        ],
+        "rsi12": 41.0,
+        "roc_20": 0,
+        "ma20": 120.7,
+        "ma20_slope": 9.87,
+        "elasticity": 135.1,
+        "meets_amount": true
+      }
+    ],
+    "L4": [
+      {
+        "code": "NEE",
+        "name": "新纪元能源",
+        "is_etf": false,
+        "base_close": 87.01,
+        "last_close": 85.84,
+        "weekly_chg": -1.34,
+        "avg_amount": 9.99,
+        "daily_changes": [
+          2.43,
+          -1.29,
+          1.31,
+          0.92
+        ],
+        "rsi12": 36.0,
+        "roc_20": 0,
+        "ma20": 89.1,
+        "ma20_slope": -3.21,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "SHOP",
+        "name": "Shopify Inc-A",
+        "is_etf": false,
+        "base_close": 118.71,
+        "last_close": 109.54,
+        "weekly_chg": -7.72,
+        "avg_amount": 9.98,
+        "daily_changes": [
+          -5.73,
+          -3.48,
+          2.74,
+          -5.6
+        ],
+        "rsi12": 58.0,
+        "roc_20": 0,
+        "ma20": 108.3,
+        "ma20_slope": -1.17,
+        "elasticity": 38.8,
+        "meets_amount": true
+      },
+      {
+        "code": "FCX",
+        "name": "自由港麦克莫兰",
+        "is_etf": false,
+        "base_close": 65.71,
+        "last_close": 63.37,
+        "weekly_chg": -3.56,
+        "avg_amount": 9.95,
+        "daily_changes": [
+          6.98,
+          -1.51,
+          -1.34,
+          -9.07
+        ],
+        "rsi12": 60.0,
+        "roc_20": 0,
+        "ma20": 64.5,
+        "ma20_slope": 4.37,
+        "elasticity": 32.8,
+        "meets_amount": true
+      },
+      {
+        "code": "PH",
+        "name": "派克汉尼汾",
+        "is_etf": false,
+        "base_close": 844.63,
+        "last_close": 882.34,
+        "weekly_chg": 4.46,
+        "avg_amount": 9.88,
+        "daily_changes": [
+          1.58,
+          1.73,
+          2.52,
+          1.16
+        ],
+        "rsi12": 61.0,
+        "roc_20": 0,
+        "ma20": 865.3,
+        "ma20_slope": -1.23,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "TMUS",
+        "name": "T-Mobile US Inc",
+        "is_etf": false,
+        "base_close": 187.53,
+        "last_close": 178.1,
+        "weekly_chg": -5.03,
+        "avg_amount": 9.85,
+        "daily_changes": [
+          1.12,
+          -3.91,
+          -2.44,
+          0.61
+        ],
+        "rsi12": 21.0,
+        "roc_20": 0,
+        "ma20": 188.7,
+        "ma20_slope": -1.73,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "NKE",
+        "name": "耐克",
+        "is_etf": false,
+        "base_close": 46.23,
+        "last_close": 42.98,
+        "weekly_chg": -7.03,
+        "avg_amount": 9.7,
+        "daily_changes": [
+          -4.79,
+          0.18,
+          -0.43,
+          -1.47
+        ],
+        "rsi12": 53.0,
+        "roc_20": 0,
+        "ma20": 44.0,
+        "ma20_slope": 0.15,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "FSLR",
+        "name": "第一太阳能",
+        "is_etf": false,
+        "base_close": 306.79,
+        "last_close": 279.01,
+        "weekly_chg": -9.06,
+        "avg_amount": 9.48,
+        "daily_changes": [
+          2.64,
+          2.33,
+          0.0,
+          -12.33
+        ],
+        "rsi12": 65.0,
+        "roc_20": 0,
+        "ma20": 257.3,
+        "ma20_slope": 10.36,
+        "elasticity": 36.9,
+        "meets_amount": true
+      },
+      {
+        "code": "ACN",
+        "name": "埃森哲",
+        "is_etf": false,
+        "base_close": 187.07,
+        "last_close": 178.25,
+        "weekly_chg": -4.71,
+        "avg_amount": 9.46,
+        "daily_changes": [
+          -5.27,
+          -4.72,
+          0.81,
+          -0.34
+        ],
+        "rsi12": 51.0,
+        "roc_20": 0,
+        "ma20": 177.9,
+        "ma20_slope": 0.71,
+        "elasticity": 22.9,
+        "meets_amount": true
+      },
+      {
+        "code": "AXTI",
+        "name": "AXT Inc",
+        "is_etf": false,
+        "base_close": 103.16,
+        "last_close": 89.04,
+        "weekly_chg": -13.69,
+        "avg_amount": 9.28,
+        "daily_changes": [
+          1.19,
+          -3.74,
+          0.0,
+          -16.55
+        ],
+        "rsi12": 43.0,
+        "roc_20": 0,
+        "ma20": 110.7,
+        "ma20_slope": 7.68,
+        "elasticity": 309.2,
+        "meets_amount": true
+      },
+      {
+        "code": "RDW",
+        "name": "Redwire Corp",
+        "is_etf": false,
+        "base_close": 24.57,
+        "last_close": 18.45,
+        "weekly_chg": -24.91,
+        "avg_amount": 9.17,
+        "daily_changes": [
+          -0.48,
+          -9.52,
+          0.0,
+          -0.91
+        ],
+        "rsi12": 61.0,
+        "roc_20": 0,
+        "ma20": 16.2,
+        "ma20_slope": 21.83,
+        "elasticity": 213.0,
+        "meets_amount": true
+      },
+      {
+        "code": "ETN",
+        "name": "伊顿",
+        "is_etf": false,
+        "base_close": 400.6,
+        "last_close": 395.94,
+        "weekly_chg": -1.16,
+        "avg_amount": 9.01,
+        "daily_changes": [
+          4.38,
+          0.86,
+          -0.62,
+          -5.42
+        ],
+        "rsi12": 64.0,
+        "roc_20": 0,
+        "ma20": 400.0,
+        "ma20_slope": -0.74,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "CMG",
+        "name": "墨式烧烤",
+        "is_etf": false,
+        "base_close": 31.86,
+        "last_close": 29.34,
+        "weekly_chg": -7.91,
+        "avg_amount": 9.01,
+        "daily_changes": [
+          -4.22,
+          -1.78,
+          -1.95,
+          4.12
+        ],
+        "rsi12": 23.0,
+        "roc_20": 0,
+        "ma20": 31.8,
+        "ma20_slope": -2.74,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "TWLO",
+        "name": "Twilio Inc-A",
+        "is_etf": false,
+        "base_close": 190.64,
+        "last_close": 225.99,
+        "weekly_chg": 18.54,
+        "avg_amount": 9.0,
+        "daily_changes": [
+          0.77,
+          -0.89,
+          0.0,
+          -0.56
+        ],
+        "rsi12": 67.0,
+        "roc_20": 0,
+        "ma20": 199.1,
+        "ma20_slope": 8.05,
+        "elasticity": 62.0,
+        "meets_amount": true
+      },
+      {
+        "code": "PDD",
+        "name": "拼多多",
+        "is_etf": false,
+        "base_close": 84.44,
+        "last_close": 85.07,
+        "weekly_chg": 0.75,
+        "avg_amount": 8.98,
+        "daily_changes": [
+          1.08,
+          -3.15,
+          0.0,
+          -0.39
+        ],
+        "rsi12": 34.0,
+        "roc_20": 0,
+        "ma20": 93.6,
+        "ma20_slope": -3.18,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "ICE",
+        "name": "洲际交易所",
+        "is_etf": false,
+        "base_close": 147.85,
+        "last_close": 141.5,
+        "weekly_chg": -4.29,
+        "avg_amount": 8.97,
+        "daily_changes": [
+          -1.78,
+          -2.76,
+          2.61,
+          -0.39
+        ],
+        "rsi12": 22.0,
+        "roc_20": 0,
+        "ma20": 150.3,
+        "ma20_slope": -2.23,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "RTX",
+        "name": "雷神技术",
+        "is_etf": false,
+        "base_close": 179.66,
+        "last_close": 180.99,
+        "weekly_chg": 0.74,
+        "avg_amount": 8.89,
+        "daily_changes": [
+          -0.09,
+          -0.98,
+          3.98,
+          0.88
+        ],
+        "rsi12": 60.0,
+        "roc_20": 0,
+        "ma20": 176.8,
+        "ma20_slope": 0.37,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "LULU",
+        "name": "lululemon athletica inc",
+        "is_etf": false,
+        "base_close": 131.18,
+        "last_close": 114.23,
+        "weekly_chg": -12.92,
+        "avg_amount": 8.83,
+        "daily_changes": [
+          -4.25,
+          -0.35,
+          -0.88,
+          -8.56
+        ],
+        "rsi12": 42.0,
+        "roc_20": 0,
+        "ma20": 126.4,
+        "ma20_slope": -3.26,
+        "elasticity": 0,
+        "meets_amount": true
+      },
+      {
+        "code": "SPOT",
+        "name": "Spotify Technology SA",
+        "is_etf": false,
+        "base_close": 497.68,
+        "last_close": 496.95,
+        "weekly_chg": -0.15,
+        "avg_amount": 8.79,
+        "daily_changes": [
+          -1.23,
+          -2.78,
+          0.0,
+          1.93
+        ],
+        "rsi12": 65.0,
+        "roc_20": 0,
+        "ma20": 467.4,
+        "ma20_slope": 3.17,
+        "elasticity": 25.1,
+        "meets_amount": true
+      },
+      {
+        "code": "OKTA",
+        "name": "Okta Inc-A",
+        "is_etf": false,
+        "base_close": 123.27,
+        "last_close": 118.72,
+        "weekly_chg": -3.69,
+        "avg_amount": 8.77,
+        "daily_changes": [
+          -3.2,
+          -7.89,
+          0.0,
+          -4.76
+        ],
+        "rsi12": 69.0,
+        "roc_20": 0,
+        "ma20": 96.4,
+        "ma20_slope": 15.68,
+        "elasticity": 72.4,
+        "meets_amount": true
+      },
+      {
+        "code": "AXP",
+        "name": "美国运通",
+        "is_etf": false,
+        "base_close": 316.47,
+        "last_close": 310.66,
+        "weekly_chg": -1.84,
+        "avg_amount": 8.72,
+        "daily_changes": [
+          -0.82,
+          -3.34,
+          3.98,
+          -0.6
+        ],
+        "rsi12": 52.0,
+        "roc_20": 0,
+        "ma20": 312.8,
+        "ma20_slope": -0.62,
+        "elasticity": 0,
+        "meets_amount": true
+      }
+    ],
+    "L5": []
+  },
+  "daily_summary": {
+    "daily_by_tier": {
+      "L1": [
+        {
+          "date_range": "2026-06-01→2026-06-02",
+          "avg_chg": 2.03,
+          "min_chg": -4.17,
+          "max_chg": 32.52,
+          "count": 14
+        },
+        {
+          "date_range": "2026-06-02→2026-06-03",
+          "avg_chg": 0.83,
+          "min_chg": -3.63,
+          "max_chg": 6.71,
+          "count": 14
+        },
+        {
+          "date_range": "2026-06-03→2026-06-04",
+          "avg_chg": -0.64,
+          "min_chg": -12.59,
+          "max_chg": 4.9,
+          "count": 14
+        },
+        {
+          "date_range": "2026-06-04→2026-06-05",
+          "avg_chg": -7.29,
+          "min_chg": -16.74,
+          "max_chg": -0.95,
+          "count": 14
+        }
+      ],
+      "L2": [
+        {
+          "date_range": "2026-06-01→2026-06-02",
+          "avg_chg": -0.23,
+          "min_chg": -6.58,
+          "max_chg": 13.72,
+          "count": 8
+        },
+        {
+          "date_range": "2026-06-02→2026-06-03",
+          "avg_chg": -4.91,
+          "min_chg": -8.86,
+          "max_chg": 2.26,
+          "count": 8
+        },
+        {
+          "date_range": "2026-06-03→2026-06-04",
+          "avg_chg": 0.59,
+          "min_chg": -1.26,
+          "max_chg": 2.61,
+          "count": 8
+        },
+        {
+          "date_range": "2026-06-04→2026-06-05",
+          "avg_chg": -7.95,
+          "min_chg": -16.73,
+          "max_chg": -4.69,
+          "count": 8
+        }
+      ],
+      "L3": [
+        {
+          "date_range": "2026-06-01→2026-06-02",
+          "avg_chg": 1.68,
+          "min_chg": -9.15,
+          "max_chg": 19.47,
+          "count": 107
+        },
+        {
+          "date_range": "2026-06-02→2026-06-03",
+          "avg_chg": -1.62,
+          "min_chg": -14.51,
+          "max_chg": 19.26,
+          "count": 107
+        },
+        {
+          "date_range": "2026-06-03→2026-06-04",
+          "avg_chg": 0.15,
+          "min_chg": -13.66,
+          "max_chg": 5.16,
+          "count": 107
+        },
+        {
+          "date_range": "2026-06-04→2026-06-05",
+          "avg_chg": -4.67,
+          "min_chg": -18.68,
+          "max_chg": 4.09,
+          "count": 107
+        }
+      ],
+      "L4": [
+        {
+          "date_range": "2026-06-01→2026-06-02",
+          "avg_chg": -0.0,
+          "min_chg": -44.1,
+          "max_chg": 15.72,
+          "count": 324
+        },
+        {
+          "date_range": "2026-06-02→2026-06-03",
+          "avg_chg": -0.98,
+          "min_chg": -14.51,
+          "max_chg": 24.34,
+          "count": 324
+        },
+        {
+          "date_range": "2026-06-03→2026-06-04",
+          "avg_chg": 0.73,
+          "min_chg": -7.53,
+          "max_chg": 10.02,
+          "count": 324
+        },
+        {
+          "date_range": "2026-06-04→2026-06-05",
+          "avg_chg": -2.77,
+          "min_chg": -25.3,
+          "max_chg": 12.62,
+          "count": 324
+        }
+      ],
+      "L5": [
+        {
+          "date_range": "2026-06-01→2026-06-02",
+          "avg_chg": 0,
+          "count": 0
+        },
+        {
+          "date_range": "2026-06-02→2026-06-03",
+          "avg_chg": 0,
+          "count": 0
+        },
+        {
+          "date_range": "2026-06-03→2026-06-04",
+          "avg_chg": 0,
+          "count": 0
+        },
+        {
+          "date_range": "2026-06-04→2026-06-05",
+          "avg_chg": 0,
+          "count": 0
+        }
+      ]
+    },
+    "turning_point": {
+      "date_range": "2026-06-04→2026-06-05",
+      "avg_chg": -7.29,
+      "day_index": 3
+    }
+  },
+  "top_gainers": [
+    {
+      "code": "MRVL",
+      "name": "迈威尔科技",
+      "is_etf": false,
+      "base_close": 205.0,
+      "last_close": 263.47,
+      "weekly_chg": 28.52,
+      "avg_amount": 254.19,
+      "daily_changes": [
+        32.52,
+        3.73,
+        4.9,
+        -16.74
+      ],
+      "rsi12": 71.0,
+      "roc_20": 0,
+      "ma20": 207.6,
+      "ma20_slope": 16.7,
+      "elasticity": 120.9,
+      "meets_amount": true
+    },
+    {
+      "code": "TMHC",
+      "name": "Taylor Morrison Home Corp",
+      "is_etf": false,
+      "base_close": 58.5,
+      "last_close": 71.53,
+      "weekly_chg": 22.27,
+      "avg_amount": 7.81,
+      "daily_changes": [
+        -0.07,
+        0.06,
+        0.0,
+        -0.01
+      ],
+      "rsi12": 76.0,
+      "roc_20": 0,
+      "ma20": 61.2,
+      "ma20_slope": 2.19,
+      "elasticity": 33.5,
+      "meets_amount": true
+    },
+    {
+      "code": "FLNC",
+      "name": "Fluence Energy Inc-A",
+      "is_etf": false,
+      "base_close": 18.88,
+      "last_close": 22.91,
+      "weekly_chg": 21.35,
+      "avg_amount": 5.74,
+      "daily_changes": [
+        2.8,
+        -10.96,
+        0.0,
+        -7.81
+      ],
+      "rsi12": 58.0,
+      "roc_20": 0,
+      "ma20": 21.5,
+      "ma20_slope": 16.38,
+      "elasticity": 169.4,
+      "meets_amount": true
+    },
+    {
+      "code": "TWLO",
+      "name": "Twilio Inc-A",
+      "is_etf": false,
+      "base_close": 190.64,
+      "last_close": 225.99,
+      "weekly_chg": 18.54,
+      "avg_amount": 9.0,
+      "daily_changes": [
+        0.77,
+        -0.89,
+        0.0,
+        -0.56
+      ],
+      "rsi12": 67.0,
+      "roc_20": 0,
+      "ma20": 199.1,
+      "ma20_slope": 8.05,
+      "elasticity": 62.0,
+      "meets_amount": true
+    },
+    {
+      "code": "HUM",
+      "name": "哈门那",
+      "is_etf": false,
+      "base_close": 305.42,
+      "last_close": 350.08,
+      "weekly_chg": 14.62,
+      "avg_amount": 5.15,
+      "daily_changes": [
+        -2.26,
+        2.08,
+        6.8,
+        0.08
+      ],
+      "rsi12": 73.0,
+      "roc_20": 0,
+      "ma20": 306.6,
+      "ma20_slope": 8.54,
+      "elasticity": 47.0,
+      "meets_amount": true
+    },
+    {
+      "code": "HPE",
+      "name": "慧与",
+      "is_etf": false,
+      "base_close": 43.04,
+      "last_close": 49.2,
+      "weekly_chg": 14.31,
+      "avg_amount": 42.02,
+      "daily_changes": [
+        19.47,
+        -1.78,
+        -2.65,
+        -8.36
+      ],
+      "rsi12": 76.0,
+      "roc_20": 0,
+      "ma20": 38.8,
+      "ma20_slope": 17.35,
+      "elasticity": 94.9,
+      "meets_amount": true
+    },
+    {
+      "code": "AAOI",
+      "name": "应用光电",
+      "is_etf": false,
+      "base_close": 158.41,
+      "last_close": 177.0,
+      "weekly_chg": 11.74,
+      "avg_amount": 25.78,
+      "daily_changes": [
+        8.99,
+        -9.04,
+        0.0,
+        -3.84
+      ],
+      "rsi12": 52.0,
+      "roc_20": 0,
+      "ma20": 178.7,
+      "ma20_slope": 1.51,
+      "elasticity": 250.1,
+      "meets_amount": true
+    },
+    {
+      "code": "MDT",
+      "name": "美敦力",
+      "is_etf": false,
+      "base_close": 73.81,
+      "last_close": 81.67,
+      "weekly_chg": 10.65,
+      "avg_amount": 13.15,
+      "daily_changes": [
+        -0.31,
+        5.69,
+        5.11,
+        -0.32
+      ],
+      "rsi12": 61.0,
+      "roc_20": 0,
+      "ma20": 77.5,
+      "ma20_slope": -1.22,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "COO",
+      "name": "库珀医疗",
+      "is_etf": false,
+      "base_close": 61.21,
+      "last_close": 67.34,
+      "weekly_chg": 10.01,
+      "avg_amount": 3.22,
+      "daily_changes": [
+        -1.16,
+        1.43,
+        2.78,
+        8.58
+      ],
+      "rsi12": 72.0,
+      "roc_20": 0,
+      "ma20": 61.2,
+      "ma20_slope": 0.02,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "VSH",
+      "name": "威世科技",
+      "is_etf": false,
+      "base_close": 52.05,
+      "last_close": 57.2,
+      "weekly_chg": 9.89,
+      "avg_amount": 6.75,
+      "daily_changes": [
+        11.61,
+        2.37,
+        -0.47,
+        -10.16
+      ],
+      "rsi12": 77.0,
+      "roc_20": 0,
+      "ma20": 45.6,
+      "ma20_slope": 21.67,
+      "elasticity": 108.3,
+      "meets_amount": true
+    },
+    {
+      "code": "DOCN",
+      "name": "DigitalOcean Holdings Inc",
+      "is_etf": false,
+      "base_close": 155.95,
+      "last_close": 169.87,
+      "weekly_chg": 8.93,
+      "avg_amount": 6.06,
+      "daily_changes": [
+        -0.22,
+        0.35,
+        0.0,
+        -2.19
+      ],
+      "rsi12": 70.0,
+      "roc_20": 0,
+      "ma20": 159.6,
+      "ma20_slope": 9.93,
+      "elasticity": 158.3,
+      "meets_amount": true
+    },
+    {
+      "code": "MGM",
+      "name": "美高梅",
+      "is_etf": false,
+      "base_close": 43.67,
+      "last_close": 47.51,
+      "weekly_chg": 8.79,
+      "avg_amount": 4.99,
+      "daily_changes": [
+        -4.6,
+        -0.12,
+        -0.75,
+        -0.9
+      ],
+      "rsi12": 82.0,
+      "roc_20": 0,
+      "ma20": 41.1,
+      "ma20_slope": 5.75,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "AXON",
+      "name": "Axon Enterprise Inc",
+      "is_etf": false,
+      "base_close": 448.72,
+      "last_close": 486.12,
+      "weekly_chg": 8.33,
+      "avg_amount": 6.72,
+      "daily_changes": [
+        2.78,
+        -1.76,
+        0.0,
+        0.96
+      ],
+      "rsi12": 80.0,
+      "roc_20": 0,
+      "ma20": 414.9,
+      "ma20_slope": 4.85,
+      "elasticity": 35.0,
+      "meets_amount": true
+    },
+    {
+      "code": "FPS",
+      "name": "Forgent Power Solutions Inc-A",
+      "is_etf": false,
+      "base_close": 54.66,
+      "last_close": 59.13,
+      "weekly_chg": 8.18,
+      "avg_amount": 4.47,
+      "daily_changes": [
+        0.94,
+        5.1,
+        0.0,
+        -1.09
+      ],
+      "rsi12": 82.0,
+      "roc_20": 0,
+      "ma20": 47.9,
+      "ma20_slope": 10.53,
+      "elasticity": 68.3,
+      "meets_amount": true
+    },
+    {
+      "code": "ODFL",
+      "name": "Old Dominion Freight Line Inc",
+      "is_etf": false,
+      "base_close": 225.15,
+      "last_close": 242.57,
+      "weekly_chg": 7.74,
+      "avg_amount": 5.04,
+      "daily_changes": [
+        0.24,
+        3.18,
+        4.01,
+        -1.2
+      ],
+      "rsi12": 89.0,
+      "roc_20": 0,
+      "ma20": 213.7,
+      "ma20_slope": 4.24,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "DE",
+      "name": "迪尔",
+      "is_etf": false,
+      "base_close": 542.18,
+      "last_close": 583.44,
+      "weekly_chg": 7.61,
+      "avg_amount": 11.07,
+      "daily_changes": [
+        6.79,
+        1.56,
+        0.59,
+        -1.4
+      ],
+      "rsi12": 62.0,
+      "roc_20": 0,
+      "ma20": 562.2,
+      "ma20_slope": -0.25,
+      "elasticity": 17.9,
+      "meets_amount": true
+    },
+    {
+      "code": "AJG",
+      "name": "安睿嘉尔",
+      "is_etf": false,
+      "base_close": 201.11,
+      "last_close": 216.14,
+      "weekly_chg": 7.47,
+      "avg_amount": 3.35,
+      "daily_changes": [
+        -0.16,
+        -1.59,
+        4.21,
+        2.78
+      ],
+      "rsi12": 70.0,
+      "roc_20": 0,
+      "ma20": 203.2,
+      "ma20_slope": 0.36,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "ALL",
+      "name": "好事达保险",
+      "is_etf": false,
+      "base_close": 206.09,
+      "last_close": 221.01,
+      "weekly_chg": 7.24,
+      "avg_amount": 3.61,
+      "daily_changes": [
+        1.57,
+        -0.53,
+        0.72,
+        4.82
+      ],
+      "rsi12": 46.0,
+      "roc_20": 0,
+      "ma20": 214.1,
+      "ma20_slope": -0.73,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "URI",
+      "name": "联合租赁",
+      "is_etf": false,
+      "base_close": 995.67,
+      "last_close": 1067.77,
+      "weekly_chg": 7.24,
+      "avg_amount": 5.92,
+      "daily_changes": [
+        -0.3,
+        6.21,
+        2.65,
+        -1.55
+      ],
+      "rsi12": 83.0,
+      "roc_20": 0,
+      "ma20": 976.2,
+      "ma20_slope": 2.53,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "PGR",
+      "name": "前进保险",
+      "is_etf": false,
+      "base_close": 190.4,
+      "last_close": 204.02,
+      "weekly_chg": 7.15,
+      "avg_amount": 6.5,
+      "daily_changes": [
+        2.15,
+        -1.71,
+        0.99,
+        4.42
+      ],
+      "rsi12": 50.0,
+      "roc_20": 0,
+      "ma20": 197.3,
+      "ma20_slope": -0.4,
+      "elasticity": 0,
+      "meets_amount": true
+    }
+  ],
+  "top_losers": [
+    {
+      "code": "ADBE",
+      "name": "奥多比",
+      "is_etf": false,
+      "base_close": 259.21,
+      "last_close": 125.72,
+      "weekly_chg": -51.5,
+      "avg_amount": 7.68,
+      "daily_changes": [
+        -4.35,
+        -2.24,
+        0.85,
+        -2.7
+      ],
+      "rsi12": 13.0,
+      "roc_20": 0,
+      "ma20": 218.2,
+      "ma20_slope": -2.29,
+      "elasticity": 109.7,
+      "meets_amount": true
+    },
+    {
+      "code": "PL",
+      "name": "Planet Labs PBC-A",
+      "is_etf": false,
+      "base_close": 51.14,
+      "last_close": 32.22,
+      "weekly_chg": -37.0,
+      "avg_amount": 7.97,
+      "daily_changes": [
+        3.51,
+        -10.31,
+        0.0,
+        -25.3
+      ],
+      "rsi12": 36.0,
+      "roc_20": 0,
+      "ma20": 42.9,
+      "ma20_slope": 4.83,
+      "elasticity": 140.3,
+      "meets_amount": true
+    },
+    {
+      "code": "TTWO",
+      "name": "Take-Two Interactive Software I",
+      "is_etf": false,
+      "base_close": 224.16,
+      "last_close": 142.93,
+      "weekly_chg": -36.24,
+      "avg_amount": 3.35,
+      "daily_changes": [
+        -2.03,
+        -2.96,
+        0.39,
+        -1.04
+      ],
+      "rsi12": 7.0,
+      "roc_20": 0,
+      "ma20": 207.0,
+      "ma20_slope": 0.04,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "CELC",
+      "name": "Celcuity LLC",
+      "is_etf": false,
+      "base_close": 132.88,
+      "last_close": 88.28,
+      "weekly_chg": -33.56,
+      "avg_amount": 3.78,
+      "daily_changes": [
+        -25.65,
+        -2.7,
+        0.0,
+        -0.75
+      ],
+      "rsi12": 19.0,
+      "roc_20": 0,
+      "ma20": 126.1,
+      "ma20_slope": -4.84,
+      "elasticity": 59.8,
+      "meets_amount": true
+    },
+    {
+      "code": "LUNR",
+      "name": "Intuitive Machines Inc-A",
+      "is_etf": false,
+      "base_close": 43.83,
+      "last_close": 29.36,
+      "weekly_chg": -33.01,
+      "avg_amount": 5.21,
+      "daily_changes": [
+        3.56,
+        -14.51,
+        0.0,
+        -13.21
+      ],
+      "rsi12": 45.0,
+      "roc_20": 0,
+      "ma20": 33.7,
+      "ma20_slope": 9.07,
+      "elasticity": 188.1,
+      "meets_amount": true
+    },
+    {
+      "code": "SPCE",
+      "name": "维珍银河",
+      "is_etf": false,
+      "base_close": 6.18,
+      "last_close": 4.38,
+      "weekly_chg": -29.13,
+      "avg_amount": 6.98,
+      "daily_changes": [
+        -38.96,
+        -6.54,
+        10.02,
+        -7.2
+      ],
+      "rsi12": 59.0,
+      "roc_20": 0,
+      "ma20": 3.7,
+      "ma20_slope": 21.93,
+      "elasticity": 214.0,
+      "meets_amount": true
+    },
+    {
+      "code": "CRCL",
+      "name": "Circle Internet Group Inc-A",
+      "is_etf": false,
+      "base_close": 113.0,
+      "last_close": 80.28,
+      "weekly_chg": -28.96,
+      "avg_amount": 16.17,
+      "daily_changes": [
+        -3.92,
+        -10.63,
+        0.0,
+        -10.93
+      ],
+      "rsi12": 24.0,
+      "roc_20": 0,
+      "ma20": 110.6,
+      "ma20_slope": -1.37,
+      "elasticity": 111.2,
+      "meets_amount": true
+    },
+    {
+      "code": "RDW",
+      "name": "Redwire Corp",
+      "is_etf": false,
+      "base_close": 24.57,
+      "last_close": 18.45,
+      "weekly_chg": -24.91,
+      "avg_amount": 9.17,
+      "daily_changes": [
+        -0.48,
+        -9.52,
+        0.0,
+        -0.91
+      ],
+      "rsi12": 61.0,
+      "roc_20": 0,
+      "ma20": 16.2,
+      "ma20_slope": 21.83,
+      "elasticity": 213.0,
+      "meets_amount": true
+    },
+    {
+      "code": "MSTR",
+      "name": "Strategy Inc-A",
+      "is_etf": false,
+      "base_close": 159.09,
+      "last_close": 120.44,
+      "weekly_chg": -24.29,
+      "avg_amount": 35.62,
+      "daily_changes": [
+        -9.15,
+        -7.01,
+        2.23,
+        -6.9
+      ],
+      "rsi12": 17.0,
+      "roc_20": 0,
+      "ma20": 160.6,
+      "ma20_slope": -6.9,
+      "elasticity": 40.5,
+      "meets_amount": true
+    },
+    {
+      "code": "ABVX",
+      "name": "Abivax SA ADR",
+      "is_etf": false,
+      "base_close": 132.63,
+      "last_close": 101.53,
+      "weekly_chg": -23.45,
+      "avg_amount": 7.2,
+      "daily_changes": [
+        -44.1,
+        24.34,
+        0.0,
+        12.62
+      ],
+      "rsi12": 45.0,
+      "roc_20": 0,
+      "ma20": 118.0,
+      "ma20_slope": -2.3,
+      "elasticity": 72.7,
+      "meets_amount": true
+    },
+    {
+      "code": "RKLB",
+      "name": "Rocket Lab Corp",
+      "is_etf": false,
+      "base_close": 143.48,
+      "last_close": 110.08,
+      "weekly_chg": -23.28,
+      "avg_amount": 29.09,
+      "daily_changes": [
+        0.76,
+        -6.99,
+        0.0,
+        -4.03
+      ],
+      "rsi12": 41.0,
+      "roc_20": 0,
+      "ma20": 120.7,
+      "ma20_slope": 9.87,
+      "elasticity": 135.1,
+      "meets_amount": true
+    },
+    {
+      "code": "FLY",
+      "name": "Firefly Aerospace Inc",
+      "is_etf": false,
+      "base_close": 46.49,
+      "last_close": 36.1,
+      "weekly_chg": -22.35,
+      "avg_amount": 3.62,
+      "daily_changes": [
+        -1.97,
+        -8.28,
+        3.9,
+        -12.65
+      ],
+      "rsi12": 43.0,
+      "roc_20": 0,
+      "ma20": 43.5,
+      "ma20_slope": 4.44,
+      "elasticity": 171.9,
+      "meets_amount": true
+    },
+    {
+      "code": "IONQ",
+      "name": "IonQ Inc",
+      "is_etf": false,
+      "base_close": 72.07,
+      "last_close": 56.78,
+      "weekly_chg": -21.22,
+      "avg_amount": 20.21,
+      "daily_changes": [
+        3.06,
+        -4.44,
+        0.0,
+        -16.78
+      ],
+      "rsi12": 58.0,
+      "roc_20": 0,
+      "ma20": 59.0,
+      "ma20_slope": 10.35,
+      "elasticity": 129.2,
+      "meets_amount": true
+    },
+    {
+      "code": "ONDS",
+      "name": "Ondas Holdings Inc",
+      "is_etf": false,
+      "base_close": 13.22,
+      "last_close": 10.43,
+      "weekly_chg": -21.1,
+      "avg_amount": 10.78,
+      "daily_changes": [
+        0.89,
+        -14.51,
+        0.0,
+        -10.16
+      ],
+      "rsi12": 54.0,
+      "roc_20": 0,
+      "ma20": 10.4,
+      "ma20_slope": 6.89,
+      "elasticity": 121.2,
+      "meets_amount": true
+    },
+    {
+      "code": "QBTS",
+      "name": "D-Wave Quantum Inc",
+      "is_etf": false,
+      "base_close": 30.14,
+      "last_close": 23.85,
+      "weekly_chg": -20.87,
+      "avg_amount": 11.9,
+      "daily_changes": [
+        2.5,
+        -7.89,
+        0.33,
+        -13.71
+      ],
+      "rsi12": 60.0,
+      "roc_20": 0,
+      "ma20": 25.2,
+      "ma20_slope": 7.85,
+      "elasticity": 138.7,
+      "meets_amount": true
+    },
+    {
+      "code": "USAR",
+      "name": "USA Rare Earth Inc",
+      "is_etf": false,
+      "base_close": 28.01,
+      "last_close": 22.47,
+      "weekly_chg": -19.78,
+      "avg_amount": 6.08,
+      "daily_changes": [
+        4.32,
+        -8.86,
+        0.0,
+        -19.69
+      ],
+      "rsi12": 46.0,
+      "roc_20": 0,
+      "ma20": 26.3,
+      "ma20_slope": 3.12,
+      "elasticity": 159.4,
+      "meets_amount": true
+    },
+    {
+      "code": "JOBY",
+      "name": "Joby Aviation Inc",
+      "is_etf": false,
+      "base_close": 11.9,
+      "last_close": 9.55,
+      "weekly_chg": -19.75,
+      "avg_amount": 3.5,
+      "daily_changes": [
+        -0.84,
+        -3.71,
+        0.0,
+        -16.45
+      ],
+      "rsi12": 43.0,
+      "roc_20": 0,
+      "ma20": 10.9,
+      "ma20_slope": 5.85,
+      "elasticity": 59.8,
+      "meets_amount": true
+    },
+    {
+      "code": "FDX",
+      "name": "联邦快递",
+      "is_etf": false,
+      "base_close": 411.75,
+      "last_close": 331.0,
+      "weekly_chg": -19.61,
+      "avg_amount": 8.06,
+      "daily_changes": [
+        -2.8,
+        -1.38,
+        1.09,
+        0.91
+      ],
+      "rsi12": 33.0,
+      "roc_20": 0,
+      "ma20": 372.8,
+      "ma20_slope": -3.17,
+      "elasticity": 0,
+      "meets_amount": true
+    },
+    {
+      "code": "COIN",
+      "name": "Coinbase Global Inc-A",
+      "is_etf": false,
+      "base_close": 189.03,
+      "last_close": 152.4,
+      "weekly_chg": -19.38,
+      "avg_amount": 17.93,
+      "daily_changes": [
+        -4.72,
+        -6.19,
+        0.0,
+        -6.63
+      ],
+      "rsi12": 27.0,
+      "roc_20": 0,
+      "ma20": 188.2,
+      "ma20_slope": -2.59,
+      "elasticity": 39.6,
+      "meets_amount": true
+    },
+    {
+      "code": "RGTI",
+      "name": "Rigetti Computing Inc",
+      "is_etf": false,
+      "base_close": 25.54,
+      "last_close": 20.68,
+      "weekly_chg": -19.03,
+      "avg_amount": 17.53,
+      "daily_changes": [
+        4.88,
+        -10.36,
+        0.0,
+        -14.17
+      ],
+      "rsi12": 56.0,
+      "roc_20": 0,
+      "ma20": 21.6,
+      "ma20_slope": 9.54,
+      "elasticity": 132.4,
+      "meets_amount": true
+    }
+  ],
+  "top_etf": [
+    {
+      "code": "MSTZ",
+      "name": "2倍做空MSTR ETF-T-Rex",
+      "is_etf": true,
+      "base_close": 6.04,
+      "last_close": 9.87,
+      "weekly_chg": 63.41,
+      "avg_amount": 2.75,
+      "daily_changes": [
+        18.2,
+        14.02,
+        -4.17,
+        13.06
+      ],
+      "rsi12": 83.0,
+      "roc_20": 0,
+      "ma20": 6.3,
+      "ma20_slope": 15.39,
+      "elasticity": 164.8,
+      "meets_amount": true
+    },
+    {
+      "code": "MVLL",
+      "name": "2倍做多MRVL ETF-GraniteShares",
+      "is_etf": true,
+      "base_close": 100.57,
+      "last_close": 148.59,
+      "weekly_chg": 47.75,
+      "avg_amount": 11.03,
+      "daily_changes": [
+        65.0,
+        7.14,
+        0.0,
+        -26.78
+      ],
+      "rsi12": 69.0,
+      "roc_20": 0,
+      "ma20": 98.7,
+      "ma20_slope": 26.86,
+      "elasticity": 312.6,
+      "meets_amount": true
+    },
+    {
+      "code": "BTCZ",
+      "name": "T-Rex 2X Inverse Bitcoin Daily Target ETF",
+      "is_etf": true,
+      "base_close": 4.5,
+      "last_close": 6.52,
+      "weekly_chg": 44.89,
+      "avg_amount": 1.85,
+      "daily_changes": [
+        11.93,
+        5.28,
+        5.56,
+        10.7
+      ],
+      "rsi12": 96.0,
+      "roc_20": 0,
+      "ma20": 4.4,
+      "ma20_slope": 8.56,
+      "elasticity": 71.2,
+      "meets_amount": true
+    },
+    {
+      "code": "TSDD",
+      "name": "2倍做空TSLA ETF-GraniteShares",
+      "is_etf": true,
+      "base_close": 7.04,
+      "last_close": 8.58,
+      "weekly_chg": 21.88,
+      "avg_amount": 2.21,
+      "daily_changes": [
+        -3.78,
+        0.14,
+        2.57,
+        13.04
+      ],
+      "rsi12": 58.0,
+      "roc_20": 0,
+      "ma20": 7.5,
+      "ma20_slope": -5.03,
+      "elasticity": 80.3,
+      "meets_amount": true
+    },
+    {
+      "code": "TSLQ",
+      "name": "2倍做空TSLA ETF-Tradr",
+      "is_etf": true,
+      "base_close": 16.64,
+      "last_close": 20.27,
+      "weekly_chg": 21.81,
+      "avg_amount": 1.31,
+      "daily_changes": [
+        -3.75,
+        0.06,
+        2.46,
+        13.18
+      ],
+      "rsi12": 59.0,
+      "roc_20": 0,
+      "ma20": 17.7,
+      "ma20_slope": -4.97,
+      "elasticity": 80.3,
+      "meets_amount": true
+    },
+    {
+      "code": "AAOX",
+      "name": "2倍做多AAOI ETF-Tradr",
+      "is_etf": true,
+      "base_close": 45.5,
+      "last_close": 52.53,
+      "weekly_chg": 15.45,
+      "avg_amount": 4.13,
+      "daily_changes": [
+        17.21,
+        -18.15,
+        0.0,
+        -10.24
+      ],
+      "rsi12": 48.0,
+      "roc_20": 0,
+      "ma20": 59.9,
+      "ma20_slope": -1.65,
+      "elasticity": 392.1,
+      "meets_amount": true
+    },
+    {
+      "code": "TECS",
+      "name": "三倍做空科技ETF-Direxion",
+      "is_etf": true,
+      "base_close": 6.67,
+      "last_close": 7.7,
+      "weekly_chg": 15.44,
+      "avg_amount": 1.04,
+      "daily_changes": [
+        -3.56,
+        2.85,
+        4.57,
+        20.12
+      ],
+      "rsi12": 38.0,
+      "roc_20": 0,
+      "ma20": 7.8,
+      "ma20_slope": -13.35,
+      "elasticity": 38.5,
+      "meets_amount": true
+    },
+    {
+      "code": "PLTD",
+      "name": "1倍做空PLTR ETF-Direxion",
+      "is_etf": true,
+      "base_close": 6.77,
+      "last_close": 7.75,
+      "weekly_chg": 14.48,
+      "avg_amount": 2.62,
+      "daily_changes": [
+        5.07,
+        6.63,
+        0.35,
+        4.36
+      ],
+      "rsi12": 47.0,
+      "roc_20": 0,
+      "ma20": 7.7,
+      "ma20_slope": -1.47,
+      "elasticity": 39.3,
+      "meets_amount": true
+    },
+    {
+      "code": "SQQQ",
+      "name": "三倍做空纳指ETF-ProShares",
+      "is_etf": true,
+      "base_close": 38.08,
+      "last_close": 43.19,
+      "weekly_chg": 13.42,
+      "avg_amount": 27.09,
+      "daily_changes": [
+        -1.36,
+        0.76,
+        1.53,
+        14.38
+      ],
+      "rsi12": 49.0,
+      "roc_20": 0,
+      "ma20": 41.1,
+      "ma20_slope": -6.97,
+      "elasticity": 24.1,
+      "meets_amount": true
+    },
+    {
+      "code": "AMZD",
+      "name": "1倍做空AMZN ETF-Direxion",
+      "is_etf": true,
+      "base_close": 8.43,
+      "last_close": 9.26,
+      "weekly_chg": 9.85,
+      "avg_amount": 1.2,
+      "daily_changes": [
+        1.89,
+        2.47,
+        -1.59,
+        3.18
+      ],
+      "rsi12": 62.0,
+      "roc_20": 0,
+      "ma20": 8.6,
+      "ma20_slope": 1.68,
+      "elasticity": 0,
+      "meets_amount": true
+    }
+  ],
+  "bottom_etf": [
+    {
+      "code": "SNXX",
+      "name": "2倍做多SNDK ETF-Tradr",
+      "is_etf": true,
+      "base_close": 220.0,
+      "last_close": 22.79,
+      "weekly_chg": -89.64,
+      "avg_amount": 6.43,
+      "daily_changes": [
+        -4.5,
+        10.21,
+        -4.86,
+        -22.98
+      ],
+      "rsi12": 31.0,
+      "roc_20": 0,
+      "ma20": 139.7,
+      "ma20_slope": -14.25,
+      "elasticity": 387.0,
+      "meets_amount": true
+    },
+    {
+      "code": "MSTX",
+      "name": "2倍做多MSTR ETF-Defiance",
+      "is_etf": true,
+      "base_close": 28.14,
+      "last_close": 15.54,
+      "weekly_chg": -44.78,
+      "avg_amount": 1.15,
+      "daily_changes": [
+        -18.07,
+        -14.41,
+        4.32,
+        -14.14
+      ],
+      "rsi12": 17.0,
+      "roc_20": 0,
+      "ma20": 29.5,
+      "ma20_slope": -13.67,
+      "elasticity": 1038.3,
+      "meets_amount": true
+    },
+    {
+      "code": "MSTU",
+      "name": "2倍做多MSTR ETF-T-Rex",
+      "is_etf": true,
+      "base_close": 6.13,
+      "last_close": 3.41,
+      "weekly_chg": -44.37,
+      "avg_amount": 2.26,
+      "daily_changes": [
+        -18.3,
+        -14.03,
+        3.95,
+        -13.67
+      ],
+      "rsi12": 16.0,
+      "roc_20": 0,
+      "ma20": 6.4,
+      "ma20_slope": -13.57,
+      "elasticity": 164.8,
+      "meets_amount": true
+    },
+    {
+      "code": "KORU",
+      "name": "Direxion Daily South Korea Bull 3X Shares",
+      "is_etf": true,
+      "base_close": 1090.0,
+      "last_close": 610.01,
+      "weekly_chg": -44.04,
+      "avg_amount": 7.54,
+      "daily_changes": [
+        -3.17,
+        -2.29,
+        -12.29,
+        -41.89
+      ],
+      "rsi12": 47.0,
+      "roc_20": 0,
+      "ma20": 887.7,
+      "ma20_slope": 17.42,
+      "elasticity": 315.2,
+      "meets_amount": true
+    },
+    {
+      "code": "RKLX",
+      "name": "2倍做多RKLB ETF-Defiance",
+      "is_etf": true,
+      "base_close": 103.1,
+      "last_close": 57.86,
+      "weekly_chg": -43.88,
+      "avg_amount": 2.41,
+      "daily_changes": [
+        1.48,
+        -14.06,
+        9.06,
+        -16.39
+      ],
+      "rsi12": 37.0,
+      "roc_20": 0,
+      "ma20": 78.3,
+      "ma20_slope": 10.85,
+      "elasticity": 345.8,
+      "meets_amount": true
+    },
+    {
+      "code": "ETHU",
+      "name": "2倍以太币期货ETF-Volatility Shares",
+      "is_etf": true,
+      "base_close": 19.7,
+      "last_close": 11.75,
+      "weekly_chg": -40.36,
+      "avg_amount": 1.55,
+      "daily_changes": [
+        -9.25,
+        -11.44,
+        -2.88,
+        -22.6
+      ],
+      "rsi12": 6.0,
+      "roc_20": 0,
+      "ma20": 21.2,
+      "ma20_slope": -11.44,
+      "elasticity": 71.5,
+      "meets_amount": true
+    },
+    {
+      "code": "IONX",
+      "name": "2倍做多IONQ ETF-Defiance",
+      "is_etf": true,
+      "base_close": 104.07,
+      "last_close": 62.24,
+      "weekly_chg": -40.19,
+      "avg_amount": 1.12,
+      "daily_changes": [
+        5.6,
+        -8.85,
+        -7.7,
+        -26.97
+      ],
+      "rsi12": 56.0,
+      "roc_20": 0,
+      "ma20": 73.9,
+      "ma20_slope": 14.25,
+      "elasticity": 322.2,
+      "meets_amount": true
+    },
+    {
+      "code": "RGTX",
+      "name": "2倍做多RGTI ETF-Defiance",
+      "is_etf": true,
+      "base_close": 36.95,
+      "last_close": 22.94,
+      "weekly_chg": -37.92,
+      "avg_amount": 1.0,
+      "daily_changes": [
+        9.91,
+        -20.63,
+        -0.12,
+        -29.09
+      ],
+      "rsi12": 51.0,
+      "roc_20": 0,
+      "ma20": 29.8,
+      "ma20_slope": 12.82,
+      "elasticity": 288.9,
+      "meets_amount": true
+    },
+    {
+      "code": "GDXU",
+      "name": "三倍做多黄金矿业ETN-MicroSectors",
+      "is_etf": true,
+      "base_close": 163.35,
+      "last_close": 104.19,
+      "weekly_chg": -36.22,
+      "avg_amount": 2.09,
+      "daily_changes": [
+        3.73,
+        -10.63,
+        3.9,
+        -26.76
+      ],
+      "rsi12": 40.0,
+      "roc_20": 0,
+      "ma20": 161.7,
+      "ma20_slope": -4.39,
+      "elasticity": 184.6,
+      "meets_amount": true
+    },
+    {
+      "code": "CONL",
+      "name": "2倍做多COIN ETF-GraniteShares",
+      "is_etf": true,
+      "base_close": 7.5,
+      "last_close": 4.8,
+      "weekly_chg": -36.0,
+      "avg_amount": 1.42,
+      "daily_changes": [
+        -9.57,
+        -12.32,
+        1.08,
+        -14.44
+      ],
+      "rsi12": 23.0,
+      "roc_20": 0,
+      "ma20": 7.4,
+      "ma20_slope": -7.83,
+      "elasticity": 144.5,
+      "meets_amount": true
+    }
+  ],
+  "sector_stats": [
+    {
+      "sector": "金融",
+      "count": 2,
+      "avg_chg": 1.76,
+      "top_code": "JPM",
+      "top_name": "摩根大通",
+      "top_chg": 4.36
+    },
+    {
+      "sector": "医药/生物",
+      "count": 3,
+      "avg_chg": 0.56,
+      "top_code": "UNH",
+      "top_name": "联合健康",
+      "top_chg": 5.04
+    },
+    {
+      "sector": "其他",
+      "count": 428,
+      "avg_chg": -3.14,
+      "top_code": "TMHC",
+      "top_name": "Taylor Morrison Home Corp",
+      "top_chg": 22.27
+    },
+    {
+      "sector": "AI/芯片",
+      "count": 18,
+      "avg_chg": -5.09,
+      "top_code": "MRVL",
+      "top_name": "迈威尔科技",
+      "top_chg": 28.52
+    }
+  ],
+  "news": {
+    "MRVL": [
+      {
+        "title": "Investors Are Still Underestimating Marvell's AI Opportunity",
+        "link": "https://seekingalpha.com/article/4912678-investors-are-still-underestimating-marvells-ai-opportunity?source=feed_symbol_MRVL",
+        "published": "Sun, 07 Jun 2026 08:04:35 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Marvell and Flex set to replace Pool and Campbell’s in S&P 500",
+        "link": "https://seekingalpha.com/symbol/MRVL/news?source=feed_symbol_MRVL",
+        "published": "Sat, 06 Jun 2026 12:27:37 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Tech stocks drag down Nasdaq for the week; Intel, Qualcomm among losers",
+        "link": "https://seekingalpha.com/symbol/MRVL/news?source=feed_symbol_MRVL",
+        "published": "Fri, 05 Jun 2026 16:25:44 -0400",
+        "summary": ""
+      }
+    ],
+    "TMHC": [
+      {
+        "title": "A Comparative Analysis Of Taylor Morrison, Green Brick And Smith Douglas",
+        "link": "https://seekingalpha.com/article/4911253-a-comparative-analysis-of-taylor-morrison-green-brick-and-smith-douglas-stock?source=feed_symbol_TMHC",
+        "published": "Wed, 03 Jun 2026 00:52:15 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Taylor Morrison: Berkshire Hathaway's Buyout Is A Win-Win",
+        "link": "https://seekingalpha.com/article/4910928-taylor-morrison-berkshire-hathaway-buyout-win-win?source=feed_symbol_TMHC",
+        "published": "Tue, 02 Jun 2026 08:50:43 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Taylor Morrison Home Finds A Home At Berkshire Hathaway",
+        "link": "https://seekingalpha.com/article/4910786-taylor-morrison-home-stock-acquisition-berkshire-hathaway-valuation-fair?source=feed_symbol_TMHC",
+        "published": "Mon, 01 Jun 2026 22:01:29 -0400",
+        "summary": ""
+      }
+    ],
+    "FLNC": [
+      {
+        "title": "EOSE, FLNC among top losers: Electrical industrial stocks fall as market blinks red",
+        "link": "https://seekingalpha.com/symbol/FLNC/news?source=feed_symbol_FLNC",
+        "published": "Wed, 03 Jun 2026 17:37:49 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Fluence Energy skyrockets on tie-up with Siemens, Nvidia for AI data center design",
+        "link": "https://seekingalpha.com/symbol/FLNC/news?source=feed_symbol_FLNC",
+        "published": "Mon, 01 Jun 2026 12:39:21 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Fluence Energy: The Unpriced AI Power Moat Awaiting Liftoff",
+        "link": "https://seekingalpha.com/article/4909120-fluence-energy-stock-the-unpriced-ai-power-moat-awaiting-liftoff?source=feed_symbol_FLNC",
+        "published": "Wed, 27 May 2026 08:03:16 -0400",
+        "summary": ""
+      }
+    ],
+    "TWLO": [
+      {
+        "title": "Twilio: AI Demand And Margin Expansion Support Further Upside",
+        "link": "https://seekingalpha.com/article/4911808-twilio-stock-ai-demand-and-margin-expansion-support-further-upside?source=feed_symbol_TWLO",
+        "published": "Thu, 04 Jun 2026 03:32:45 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Twilio: Voice AI Is Fueling Optimism, But I Still Have Some Unanswered Questions",
+        "link": "https://seekingalpha.com/article/4911769-twilio-voice-ai-is-fueling-optimism-but-i-still-have-some-unanswered-questions?source=feed_symbol_TWLO",
+        "published": "Thu, 04 Jun 2026 00:18:04 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Twilio Inc. (TWLO) Presents at 46th Annual William Blair Growth Stock Conference Transcript",
+        "link": "https://seekingalpha.com/article/4911173-twilio-inc-twlo-presents-at-46th-annual-william-blair-growth-stock-conference-transcript?source=feed_symbol_TWLO",
+        "published": "Tue, 02 Jun 2026 17:21:51 -0400",
+        "summary": ""
+      }
+    ],
+    "HUM": [
+      {
+        "title": "Market momentum: The S&P 500 stocks that crushed it and crashed this week",
+        "link": "https://seekingalpha.com/symbol/HUM/news?source=feed_symbol_HUM",
+        "published": "Sun, 07 Jun 2026 06:32:51 -0400",
+        "summary": ""
+      },
+      {
+        "title": "It’s not just UnitedHealth, its Medicare peers are also rallying",
+        "link": "https://seekingalpha.com/symbol/HUM/news?source=feed_symbol_HUM",
+        "published": "Fri, 05 Jun 2026 12:52:54 -0400",
+        "summary": ""
+      },
+      {
+        "title": "SA analyst upgrades/downgrades: AAPL, HOOD, HUM, MU",
+        "link": "https://seekingalpha.com/symbol/HUM/news?source=feed_symbol_HUM",
+        "published": "Tue, 19 May 2026 11:46:28 -0400",
+        "summary": ""
+      }
+    ],
+    "HPE": [
+      {
+        "title": "Market momentum: The S&P 500 stocks that crushed it and crashed this week",
+        "link": "https://seekingalpha.com/symbol/HPE/news?source=feed_symbol_HPE",
+        "published": "Sun, 07 Jun 2026 06:32:51 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Earnings Scoreboard: 100% of reporting S&P 500 firms beat earnings expectations, 91% deliver Y/Y growth",
+        "link": "https://seekingalpha.com/symbol/HPE/news?source=feed_symbol_HPE",
+        "published": "Sat, 06 Jun 2026 09:30:15 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Wall Street Roundup: AI Trade Passes The Baton",
+        "link": "https://seekingalpha.com/article/4912456-wall-street-roundup-ai-trade-passes-the-baton?source=feed_symbol_HPE",
+        "published": "Fri, 05 Jun 2026 13:18:00 -0400",
+        "summary": ""
+      }
+    ],
+    "AAOI": [
+      {
+        "title": "Applied Optoelectronics: The 800G And 1.6T Ramp Can Keep Driving The Stock Higher",
+        "link": "https://seekingalpha.com/article/4911255-applied-optoelectronics-800g-and-1_6t-ramp-can-keep-driving-stock-higher?source=feed_symbol_AAOI",
+        "published": "Wed, 03 Jun 2026 01:31:16 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Lumentum, Corning among gainers in optical networking as Nvidia praises Marvell",
+        "link": "https://seekingalpha.com/symbol/AAOI/news?source=feed_symbol_AAOI",
+        "published": "Tue, 02 Jun 2026 14:06:19 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Applied Optoelectronics: Despite A Risk On Guidance, It's Bullish From Here",
+        "link": "https://seekingalpha.com/article/4910866-applied-optoelectronics-stock-attractive-valuation-despite-margin-compression-significant-dilution?source=feed_symbol_AAOI",
+        "published": "Tue, 02 Jun 2026 08:30:16 -0400",
+        "summary": ""
+      }
+    ],
+    "MDT": [
+      {
+        "title": "Earnings Scoreboard: 100% of reporting S&P 500 firms beat earnings expectations, 91% deliver Y/Y growth",
+        "link": "https://seekingalpha.com/symbol/MDT/news?source=feed_symbol_MDT",
+        "published": "Sat, 06 Jun 2026 09:30:15 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Medtronic: The Turnaround Is Quietly Working",
+        "link": "https://seekingalpha.com/article/4912584-medtronic-the-turnaround-is-quietly-working?source=feed_symbol_MDT",
+        "published": "Sat, 06 Jun 2026 04:30:06 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Medtronic: Signs Of Sunshine Through Dark Clouds",
+        "link": "https://seekingalpha.com/article/4911928-medtronic-signs-of-sunshine-through-dark-clouds?source=feed_symbol_MDT",
+        "published": "Thu, 04 Jun 2026 09:04:11 -0400",
+        "summary": ""
+      }
+    ],
+    "COO": [
+      {
+        "title": "Earnings Scoreboard: 100% of reporting S&P 500 firms beat earnings expectations, 91% deliver Y/Y growth",
+        "link": "https://seekingalpha.com/symbol/COO/news?source=feed_symbol_COO",
+        "published": "Sat, 06 Jun 2026 09:30:15 -0400",
+        "summary": ""
+      },
+      {
+        "title": "CooperCompanies rises on Q2 beat despite net loss",
+        "link": "https://seekingalpha.com/symbol/COO/news?source=feed_symbol_COO",
+        "published": "Fri, 05 Jun 2026 07:52:19 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Cooper Companies forecasts $4.28B-$4.32B fiscal 2026 revenue while advancing CooperSurgical review",
+        "link": "https://seekingalpha.com/symbol/COO/news?source=feed_symbol_COO",
+        "published": "Fri, 05 Jun 2026 00:23:43 -0400",
+        "summary": ""
+      }
+    ],
+    "VSH": [
+      {
+        "title": "Vishay Intertechnology, Inc. (VSH) Presents at J.P. Morgan 54th Annual Global Technology, Media and Communications Conference - Slideshow",
+        "link": "https://seekingalpha.com/article/4908189-vishay-intertechnology-inc-vsh-presents-at-j-p-morgan-54th-annual-global-technology-media-and?source=feed_symbol_VSH",
+        "published": "Fri, 22 May 2026 19:32:56 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Vishay Intertechnology, Inc. (VSH) Presents at J.P. Morgan 54th Annual Global Technology, Media and Communications Conference Transcript",
+        "link": "https://seekingalpha.com/article/4907641-vishay-intertechnology-inc-vsh-presents-at-j-p-morgan-54th-annual-global-technology-media-and?source=feed_symbol_VSH",
+        "published": "Thu, 21 May 2026 13:20:46 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Vishay Intertechnology declares $0.10 dividend",
+        "link": "https://seekingalpha.com/symbol/VSH/news?source=feed_symbol_VSH",
+        "published": "Tue, 19 May 2026 00:43:39 -0400",
+        "summary": ""
+      }
+    ],
+    "LUNR": [
+      {
+        "title": "Space stocks tumble as investors take profits ahead of SpaceX IPO",
+        "link": "https://seekingalpha.com/symbol/LUNR/news?source=feed_symbol_LUNR",
+        "published": "Wed, 03 Jun 2026 13:08:14 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Why You Should Buy Intuitive Machines And Not Rocket Lab Before The SpaceX IPO",
+        "link": "https://seekingalpha.com/article/4911480-why-you-should-buy-intuitive-machines-and-not-rocket-lab-before-the-spacex-ipo?source=feed_symbol_LUNR",
+        "published": "Wed, 03 Jun 2026 11:30:41 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Biggest stock movers Wednesday: GME, MRVL, INTC, and more",
+        "link": "https://seekingalpha.com/symbol/LUNR/news?source=feed_symbol_LUNR",
+        "published": "Wed, 03 Jun 2026 10:14:45 -0400",
+        "summary": ""
+      }
+    ],
+    "CELC": [
+      {
+        "title": "Celcuity Inc. (CELC) Discusses VIKTORIA-1 Trial Results for PIK3CA Mutant Advanced Breast Cancer and Gedatolisib Efficacy - Slideshow",
+        "link": "https://seekingalpha.com/article/4912192-celcuity-inc-celc-discusses-viktoriaminus-1-trial-results-for-pik3ca-mutant-advanced-breast?source=feed_symbol_CELC",
+        "published": "Thu, 04 Jun 2026 19:19:10 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Celcuity raises $500M in upsized 0.25% convertible notes sale",
+        "link": "https://seekingalpha.com/symbol/CELC/news?source=feed_symbol_CELC",
+        "published": "Thu, 04 Jun 2026 05:56:26 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Celcuity: Selloff On Yesterday's Data Unwarranted; Buy Rating Upheld",
+        "link": "https://seekingalpha.com/article/4911391-celcuity-selloff-on-yesterdays-data-unwarranted-buy-rating-upheld?source=feed_symbol_CELC",
+        "published": "Wed, 03 Jun 2026 09:33:26 -0400",
+        "summary": ""
+      }
+    ],
+    "TTWO": [
+      {
+        "title": "Piper says 'buy the hype' and 'buy the news' on Take-Two Interactive's GTA 6",
+        "link": "https://seekingalpha.com/symbol/TTWO/news?source=feed_symbol_TTWO",
+        "published": "Tue, 02 Jun 2026 14:16:35 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Take-Two Is Building More Than Just A Blockbuster Launch",
+        "link": "https://seekingalpha.com/article/4910610-take-two-is-building-more-than-just-a-blockbuster-launch?source=feed_symbol_TTWO",
+        "published": "Mon, 01 Jun 2026 09:45:37 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Take-Two Interactive Software, Inc. (TTWO) Presents at TD Cowen's 54th Annual Technology, Media & Telecom Conference Transcript",
+        "link": "https://seekingalpha.com/article/4909261-take-two-interactive-software-inc-ttwo-presents-at-td-cowens-54th-annual-technology-media-and?source=feed_symbol_TTWO",
+        "published": "Wed, 27 May 2026 12:57:05 -0400",
+        "summary": ""
+      }
+    ],
+    "PL": [
+      {
+        "title": "Sell-the-news hits space stocks after Starfighters Space Russell 3000 entry",
+        "link": "https://seekingalpha.com/symbol/PL/news?source=feed_symbol_PL",
+        "published": "Fri, 05 Jun 2026 17:38:22 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Planet Labs enters up to $1.5B equity distribution deal",
+        "link": "https://seekingalpha.com/symbol/PL/news?source=feed_symbol_PL",
+        "published": "Fri, 05 Jun 2026 08:04:26 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Planet forecasts FY2027 revenue of $425M-$441M as it targets Rule of 40",
+        "link": "https://seekingalpha.com/symbol/PL/news?source=feed_symbol_PL",
+        "published": "Fri, 05 Jun 2026 00:43:38 -0400",
+        "summary": ""
+      }
+    ],
+    "ADBE": [
+      {
+        "title": "Quant snapshot: United Natural Foods, Designer Brands lead top-rated names as MIND Technology, BARK lag",
+        "link": "https://seekingalpha.com/symbol/ADBE/news?source=feed_symbol_ADBE",
+        "published": "Sun, 07 Jun 2026 09:30:31 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Earnings week ahead: ORCL, ADBE, FCEL, ACB, CHWY, and more",
+        "link": "https://seekingalpha.com/symbol/ADBE/news?source=feed_symbol_ADBE",
+        "published": "Sun, 07 Jun 2026 08:07:12 -0400",
+        "summary": ""
+      },
+      {
+        "title": "SA Asks: Can Adobe thrive in the age of AI?",
+        "link": "https://seekingalpha.com/symbol/ADBE/news?source=feed_symbol_ADBE",
+        "published": "Sat, 06 Jun 2026 10:30:19 -0400",
+        "summary": ""
+      }
+    ],
+    "MU": [
+      {
+        "title": "Micron: Robotics Supercycle Meets Fed Rate Hike Risks",
+        "link": "https://seekingalpha.com/article/4912671-micron-robotics-supercycle-meets-fed-rate-hike-risks-rating-downgrade?source=feed_symbol_MU",
+        "published": "Sun, 07 Jun 2026 05:38:51 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Over $1T wiped out as chip selloff impacts Nvidia, Broadcom, Micron",
+        "link": "https://seekingalpha.com/symbol/MU/news?source=feed_symbol_MU",
+        "published": "Sat, 06 Jun 2026 11:15:24 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Nasdaq-100 falls more than 4% as Arm, AMD, and Micron lead the broad tech selloff",
+        "link": "https://seekingalpha.com/symbol/MU/news?source=feed_symbol_MU",
+        "published": "Fri, 05 Jun 2026 13:10:05 -0400",
+        "summary": ""
+      }
+    ],
+    "NVDA": [
+      {
+        "title": "Tech sell-off can be a buying opportunity, says Nvidia CEO Jensen Huang",
+        "link": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+        "published": "Mon, 08 Jun 2026 02:51:43 -0400",
+        "summary": ""
+      },
+      {
+        "title": "UK AI start-up PhysicsX hits $2.4B valuation following $300M Temasek-led deal",
+        "link": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+        "published": "Mon, 08 Jun 2026 02:01:36 -0400",
+        "summary": ""
+      },
+      {
+        "title": "South Korea's Naver will build AI factories using Nvidia's DSX platform",
+        "link": "https://seekingalpha.com/symbol/NVDA/news?source=feed_symbol_NVDA",
+        "published": "Mon, 08 Jun 2026 01:06:01 -0400",
+        "summary": ""
+      }
+    ],
+    "AVGO": [
+      {
+        "title": "Broadcom: Slight Crack In AI Story Overblown",
+        "link": "https://seekingalpha.com/article/4912677-broadcom-slight-crack-in-ai-story-overblown?source=feed_symbol_AVGO",
+        "published": "Sun, 07 Jun 2026 20:00:00 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Broadcom: Market's Guidance Fears Create A Massive Opening",
+        "link": "https://seekingalpha.com/article/4912685-broadcom-markets-guidance-fears-create-a-massive-opening?source=feed_symbol_AVGO",
+        "published": "Sun, 07 Jun 2026 09:30:00 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Over $1T wiped out as chip selloff impacts Nvidia, Broadcom, Micron",
+        "link": "https://seekingalpha.com/symbol/AVGO/news?source=feed_symbol_AVGO",
+        "published": "Sat, 06 Jun 2026 11:15:24 -0400",
+        "summary": ""
+      }
+    ],
+    "SNDK": [
+      {
+        "title": "Sandisk's AI Storage Moment Is Just Getting Started",
+        "link": "https://seekingalpha.com/article/4912272-sandisk-ai-storage-moment-is-just-getting-started?source=feed_symbol_SNDK",
+        "published": "Fri, 05 Jun 2026 04:31:37 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Sandisk: The Valuation Gap With Micron Looks Excessive",
+        "link": "https://seekingalpha.com/article/4911838-sandisk-the-valuation-gap-with-micron-looks-excessive?source=feed_symbol_SNDK",
+        "published": "Thu, 04 Jun 2026 04:58:10 -0400",
+        "summary": ""
+      },
+      {
+        "title": "Sandisk: Data Center Growth, Margin Power, And A Cheap PEG Support More Upside",
+        "link": "https://seekingalpha.com/article/4910884-sandisk-datacenter-growth-margin-power-and-a-cheap-peg-support-more-upside?source=feed_symbol_SNDK",
+        "published": "Tue, 02 Jun 2026 06:40:16 -0400",
+        "summary": ""
+      }
+    ]
+  },
+  "sector_news": {
+    "金融": [
+      {
+        "title": "Stock Market Could Crash In June (NYSEARCA:SPY)",
+        "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBJV1dIMUtfQTdBZlhKbl9KWGpjRDdpYjk5SXlSZU1BcDAtUjJjSWJyNTN4T1RGUklEU0FNYVJIcm1MakZia3o5dVNfVEhjbjdMdlNLc2NhSlBuN3pFQXlLR29QMG85UDUyVE5wNmZpMldZTnlQYVRvdUE2OWpVUQ?oc=5",
+        "published": "Tue, 02 Jun 2026 12:13:11 GMT",
+        "summary": "来源: Seeking Alpha"
+      },
+      {
+        "title": "阿里雲發布金融級智能體平台點金",
+        "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVjhWNmNiYjJqY0FGOEQwVFBBYXV4UUs1LTJTTllHVzZ6cUlRZ1BpMVNERW5TWEFVSDZQV3hQU3N4eTExalFiMmhOUWVrRW5BUFFmUno2OHJveGd0VWVYeFlLNVdLVFhzRkJQUjB6X1d6Zl9KQnZSMmJXS29CZmM0QjRoUHhfcmVUc0dFd3NnVnBoNjJFcXhLcnZR?oc=5",
+        "published": "Thu, 21 May 2026 07:00:00 GMT",
+        "summary": "来源: AASTOCKS.com"
+      },
+      {
+        "title": "Silver’s Explosive Rally: What Drove the Metal From $29 to $70 and What Happens Next",
+        "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdGlsUTRyT1FRbWxiejdIYjFzZ09TVHQ3Q3M1Qk1kZ1RxcXBfTjFNbG1HWkdZaVY1QTNjdEl5aVhYazJyaTQyTXNaWTZnME1odlI0eUpXbTd5LVZOTzBlNWlBTE5WYkpOMURCNUZSMmFpdmJCVkxsaUhjaWcwR0c2R1dSM3dheVk?oc=5",
+        "published": "Mon, 16 Feb 2026 08:00:00 GMT",
+        "summary": "来源: Yahoo Finance"
+      }
+    ],
+    "医药/生物": [
+      {
+        "title": "《大行》大摩對中國生物科技股投資評級及目標價(表)",
+        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNUHRfTk41ZEVZb2ljXzRLRzJfN1BvU0N6VWVlU3JHNlFKXzc0cU5vcUlaWlJBUmZSTy1zbUpFRWNkSjAwZFluZ1ZIV2ZZQjl2bk5FSHY5NTFLVkVSNmltT0paUy04Y3AwTkpqQW9GcVlldXJwaDZlR3Njc2xSeWJZal90T3F0UWF5LXNfVXBNTEcxZE9sUXVsV3VwODMtMFpmSE1aSm5WajA?oc=5",
+        "published": "Fri, 29 May 2026 07:00:00 GMT",
+        "summary": "来源: AASTOCKS.com"
+      },
+      {
+        "title": "Impressive Performance Yet Low Stock Price, Can Eli Lilly Usher in a Turning Point with Medicare Coverage?",
+        "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOYWFCX2ZLYkNDUWVIT3lKa2k1SXRScFNoYUs5R25jNU9BSXA0U1BfVUZQcHUwOEc4V2pQYUZKbXB4bTMtbXBhbW1IRGxYaDBma0pQenB6STNXV0tXYXA5UV9iQjJfMlJ6Q0V5LWZjNjhFUEtuUEJZUl9rTXg4N0VYcWczWGl0Y1pHTTFoaC0xV1ZqN05xUXB1NjJqNnd1dVJqTVdyYTdScHNyU3hFSzhNQ2UwUjJfUDBLbEpORFVPNXRiSlBwcXNXeTJMWEtvbnBlODdF?oc=5",
+        "published": "Tue, 31 Mar 2026 07:00:00 GMT",
+        "summary": "来源: NAI500"
+      },
+      {
+        "title": "In March, the Hong Kong stock Yinhua CSI Innovative Drugs Industry ETF led the gains, while the A500 ETF Fund (512050) showed considerable resilience.",
+        "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdWxEUGotcXcxMnQyc1ZGMjhwMlloYU9LRVJiNzRxQzNZbHpJYUlXekhTZWxzdF9RT0xJLTBENlAtRHRsZUpaRHVMZzgtV2t2R2VXckxuc285ZlRvVUFaMzgwY3p0c1NPVlZPc2VHZlFVWUNDTVc5YTQ2V0NhalpuT2NUZ0IxV1l0NlVrS2xhR2FLMXVqVkJRQ3BJaVhZSlE?oc=5",
+        "published": "Mon, 31 Mar 2025 07:00:00 GMT",
+        "summary": "来源: Moomoo"
+      }
+    ],
+    "AI/芯片": [
+      {
+        "title": "How a few AI chip giants warped Asia's stock picking game",
+        "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNYmNiMTlqYkhPWFM0SnV6Wkd3d3l5cmJfU19MeVUtNUJQdmFHd052SEF2eGZvdXpoME14dmhFRUU0eXdYbWMzRHB6RXBFNVdVYlMyUXpPdW5YUHZWWmxRck9lcUhGQW5vSnJzanMzOE5rb3Mwak5zTFltLUZXMjBwazJvd0dBc3dFR3p4UmV0cEV6b3RId1kyOURrZWFnandoTEtJTnFhdjVRdkE?oc=5",
+        "published": "Mon, 08 Jun 2026 04:27:00 GMT",
+        "summary": "来源: Reuters"
+      },
+      {
+        "title": "Is AMD or Broadcom the Best AI Chip Stock After Nvidia?",
+        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQbnU2eG13R3l2SUpTRkI3ZEUtbzY1R0dOTnNmTnhtbTRBbURuZV91TXlwbV9CTURPMWkyVEVjNDV4c2RjeHlGRjFKcm9LU3RaOVhUbGg1a1c0dlJoTXFQWHBFclBiY1RXZlVBSzg4NGZkVy1yb25SdWJtcmVKWHpETTJRbkhGUlJqSTdQZHBBeDY3eEg3?oc=5",
+        "published": "Sat, 06 Jun 2026 05:50:00 GMT",
+        "summary": "来源: Yahoo Finance"
+      },
+      {
+        "title": "Marvell Technology and Flex Officially Join the S&P 500",
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPajVzaFZFUHJ1VldOZ0ZHenNPb0FCUm82c3BsSnh6aUtpUUhzYXUzNUdSdmxpbHA1Qlp5a0RFdGVXLVJNN1M1emRLUVdacks1dkVfLV9JN3EyODdpVXNSWmVXZDZDejhMaUxxVnlDZ2xaN3hjNzlvUldGUnQ1ejgweVYzQUFDNlktRDkwR2Zmb0s?oc=5",
+        "published": "Sat, 06 Jun 2026 05:05:55 GMT",
+        "summary": "来源: NAI500"
+      }
+    ]
+  },
+  "judgment": {
+    "MRVL": {
+      "record_count": 5,
+      "latest_judgment": "BULLISH",
+      "latest_date": "2026-06-03",
+      "focus_points": [
+        "1.6T光模块DSP份额、CPO趋势",
+        "AI瓶颈从算力向连接迁移、NVLink Fusion合作深度、定制芯片vs GPU增速",
+        "MRVL估值框架从边缘受益者升级为AI基建核心",
+        "英伟达投资MRVL确认其AI基础设施核心地位",
+        "GTC催化"
+      ],
+      "reasoning_chains": [
+        "AI数据中心从GPU转向光电互连 → 光模块DSP是价值之王（单颗100-200美元）→ MRVL通过收购Inphi成为全球DSP龙头 → 800G→1.6T→CPO趋势下MRVL卡位不可替代 → 81美元入场至今258%回报",
+        "AI从单GPU竞争进入数据中心协同计算 → 瓶颈从算力转向连接 → MRVL是定制芯片+光互连+交换芯片全栈连接方案 → 黄仁勋公开背书 → NVLink Fusion战略绑定 → AI基础设施瓶颈迁移是MRVL投资价值基础",
+        "[推导] 市场在把MRVL从边缘受益者重新往AI基础设施核心储备标的上定价 → 看好",
+        "[推导] 康宁作为AI基础设施底层卖水人迎来订单爆发期 → 英伟达投资MRVL确认其AI基础设施核心地位 → 看好",
+        "[推导] 资金将涌向光通信、ASIC、存储三大板块 → GTC催化 → 看好"
+      ],
+      "core_judgments": [
+        "MRVL在1.6T光模块DSP领域是绝对龙头（Broadcom是老二）。2021年收购Inphi是AI时代最成功并购之一。单颗DSP价值100-200美元，800G→1.6T→CPO趋势下卡位不可替代。81美元入场至今258%回报。",
+        "黄仁勋公开称MRVL为下一家万亿美元公司。AI瓶颈从算力转向连接，MRVL在定制芯片(ASIC)、光互连DSP、数据中心交换全栈布局。数据中心占比74%，毛利率51%，NVLink Fusion战略绑定。不是普通站台，是AI基础设施层战略整合。",
+        "市场在把MRVL从边缘受益者重新往AI基础设施核心储备标的上定价。今年以来上涨64%预期市盈率已接近Broadcom反映估值框架切换。",
+        "英伟达向MRVL投资20亿美元扩大AI基础设施合作直接催化股价大涨。康宁作为AI基础设施底层卖水人迎来订单爆发期。MRVL从算力互联龙头升级为英伟达战略合作伙伴。",
+        "英伟达GTC大会即将召开，资金将涌向光通信、ASIC、存储三大板块。MRVL同时受益。"
+      ]
+    },
+    "AAOI": {
+      "record_count": 1,
+      "latest_judgment": "",
+      "latest_date": "2025-12-11",
+      "focus_points": [
+        "美联储决议全文：降息25个基点，2026年出现严重分歧！"
+      ],
+      "reasoning_chains": [
+        "除利率宣示外，本次决议还伴随着对工具箱的微调：美联储计划重启或扩大对短期国库券（Treasury bills）的购买，以缓解隔夜资金市场压力，并通过每月规模化的票据购买来稳定回购市场与短端利率，目标是将联邦基金利率维持在目标区间内。市场普遍将这类“买票据”举措视为一种**技术性且隐蔽的宽松**，它通过增加央行对短端国债的需求来抑制短期利率的波动，从而在不显著改变政策利率路径的情况下，提供流动性支持并降低系统性风险。路透与多家研究机构均强调，这类票据购买与将到期 MBS 收入再投资入票据相结合，是美联储平衡表“正常化”新阶段的重要组成部分。 → 经济与通胀：为何美联储选择“减速而非停止”？ → ---------------------- → 主席鲍威尔在会后表述了谨慎乐观的基调：美联储注意到经济仍具韧性，且当前政策已接近中性区间，但由于近期政府停摆导致关键宏观数据（就业、通胀、产出等）延迟发布，令决策面临“信息不足”的挑战。因此，货币政策将以每次会议的最新数据为依据，而非事先设定的路径。换言之，委员会已经把“下一个动作”从确定性转为高度依赖数据披露的条件性路径。 → 市场与资产配置的四种可能路径（投资者视角）"
+      ],
+      "core_judgments": [
+        "美联储决议全文：降息25个基点，2026年出现严重分歧！"
+      ]
+    },
+    "DOCN": {
+      "record_count": 2,
+      "latest_judgment": "BULLISH",
+      "latest_date": "2026-05-06",
+      "focus_points": [
+        "DOCN财报炸裂验证AI智能体平台逻辑",
+        "AI Agent商业化推动云基础设施需求爆发"
+      ],
+      "reasoning_chains": [
+        "[推导] DOCN财报展示极高盈利质量EPS超预期67%宣布2027年营收增速.. → DOCN财报炸裂验证AI智能体平台逻辑 → 看好",
+        "[推导] DOCN作为云基础设施公司AI客户ARR增长150%已写进财报 → AI Agent商业化推动云基础设施需求爆发 → 看好"
+      ],
+      "core_judgments": [
+        "DOCN财报展示极高盈利质量EPS超预期67%宣布2027年营收增速突破50%。最深层增长源于向原生AI智能体推理平台成功转型。从Cloudflare模式切换到AI Agent基础设施。",
+        "AI产业进入第二阶段从'卖算力'转向'卖执行'。DOCN作为云基础设施公司AI客户ARR增长150%已写进财报，一旦市场按AI Agent逻辑给估值重新定价空间巨大。"
+      ]
+    },
+    "ALL": {
+      "record_count": 1,
+      "latest_judgment": "",
+      "latest_date": "2025-12-22",
+      "focus_points": [
+        "真实记录，华人在美国如何赚大钱致富的途径"
+      ],
+      "reasoning_chains": [
+        "E：中西部一对普通夫妻的首个100万 → 根据美股投资网调研，一对普通的中西部夫妻在结婚后开启了房地产投资之路。当他们结婚后并没有马上放弃工作或追求高额回报，而是稳扎稳打地购买并翻修旧公寓楼。他们第一次选择的是一处状况较差的多户住宅，通过自己动手监督翻修和租金提升，成功在一年后增值，随后用重贷和现金流购买了第二处资产。经过多年累积，这对夫妻拥有了12处物业，靠现金流和资产增值在50多岁时实现了净资产超过100万美元，并计划提前退休。他们的故事强调了在普通收入环境下坚持长期投资和利用杠杆如何产生财富。 → F：Ricardo Ulivi：年薪不高却用杠杆房地产致富 → Ricardo Ulivi 是另一个很好的例子，他的一生都没赚过超过大约9万美元年薪，但就是靠精明运用杠杆投资房地产积累了约280万美元的净资产。Ulivi 并非金融奇才或高收入专业人士，而是靠理解数字和市场机会，在南加州把别人的钱（银行贷款）用于购买出租房，通过租金现金流和资本增值逐步扩大资产组合，最终每年被动现金流高达十几万美元。他曾形容房地产是“懒人赚钱的方式”，但关键是要懂得如何用别人的钱高效运作资产。 → G：Anne Scheiber：普通联邦员工靠股息投资积累2200万美元"
+      ],
+      "core_judgments": [
+        "真实记录，华人在美国如何赚大钱致富的途径"
+      ]
+    }
+  },
+  "signals_summary": {
+    "rsi_extremes": {
+      "oversold": [
+        {
+          "code": "CME",
+          "name": "芝加哥商业交易所",
+          "rsi12": 14.0,
+          "weekly_chg": -5.9,
+          "avg_amount": 13.77,
+          "tier": "L3"
+        },
+        {
+          "code": "COST",
+          "name": "开市客",
+          "rsi12": 15.0,
+          "weekly_chg": 1.63,
+          "avg_amount": 24.31,
+          "tier": "L3"
+        },
+        {
+          "code": "MSTR",
+          "name": "Strategy Inc-A",
+          "rsi12": 17.0,
+          "weekly_chg": -24.29,
+          "avg_amount": 35.62,
+          "tier": "L3"
+        },
+        {
+          "code": "NFLX",
+          "name": "奈飞",
+          "rsi12": 17.0,
+          "weekly_chg": -4.46,
+          "avg_amount": 32.33,
+          "tier": "L3"
+        },
+        {
+          "code": "BSX",
+          "name": "波士顿科学",
+          "rsi12": 18.0,
+          "weekly_chg": 0.5,
+          "avg_amount": 11.41,
+          "tier": "L3"
+        },
+        {
+          "code": "WMT",
+          "name": "沃尔玛",
+          "rsi12": 23.0,
+          "weekly_chg": 2.7,
+          "avg_amount": 33.97,
+          "tier": "L3"
+        },
+        {
+          "code": "CRCL",
+          "name": "Circle Internet Group Inc-A",
+          "rsi12": 24.0,
+          "weekly_chg": -28.96,
+          "avg_amount": 16.17,
+          "tier": "L3"
+        },
+        {
+          "code": "BABA",
+          "name": "阿里巴巴",
+          "rsi12": 24.0,
+          "weekly_chg": -2.54,
+          "avg_amount": 13.42,
+          "tier": "L3"
+        }
+      ],
+      "overbought": [
+        {
+          "code": "GE",
+          "name": "GE航空航天",
+          "rsi12": 84.0,
+          "weekly_chg": 1.31,
+          "avg_amount": 14.05,
+          "tier": "L3"
+        },
+        {
+          "code": "WFC",
+          "name": "富国银行",
+          "rsi12": 80.0,
+          "weekly_chg": 5.67,
+          "avg_amount": 13.54,
+          "tier": "L3"
+        },
+        {
+          "code": "DELL",
+          "name": "戴尔科技",
+          "rsi12": 76.0,
+          "weekly_chg": -6.3,
+          "avg_amount": 64.41,
+          "tier": "L2"
+        },
+        {
+          "code": "HPE",
+          "name": "慧与",
+          "rsi12": 76.0,
+          "weekly_chg": 14.31,
+          "avg_amount": 42.02,
+          "tier": "L3"
+        }
+      ]
+    },
+    "sector_anomalies": [
+      {
+        "sector": "AI/芯片",
+        "count": 18,
+        "avg_chg": -5.09,
+        "top_code": "MRVL",
+        "top_name": "迈威尔科技",
+        "top_chg": 28.52
+      }
+    ],
+    "l1_daily": [
+      {
+        "date_range": "2026-06-01→2026-06-02",
+        "avg_chg": 2.03,
+        "min_chg": -4.17,
+        "max_chg": 32.52,
+        "count": 14
+      },
+      {
+        "date_range": "2026-06-02→2026-06-03",
+        "avg_chg": 0.83,
+        "min_chg": -3.63,
+        "max_chg": 6.71,
+        "count": 14
+      },
+      {
+        "date_range": "2026-06-03→2026-06-04",
+        "avg_chg": -0.64,
+        "min_chg": -12.59,
+        "max_chg": 4.9,
+        "count": 14
+      },
+      {
+        "date_range": "2026-06-04→2026-06-05",
+        "avg_chg": -7.29,
+        "min_chg": -16.74,
+        "max_chg": -0.95,
+        "count": 14
+      }
+    ],
+    "is_abnormal_week": true,
+    "l2_notable": [
+      {
+        "code": "PLTR",
+        "name": "Palantir Technologies Inc-A",
+        "weekly_chg": -13.42,
+        "avg_amount": 65.77,
+        "rsi12": 51.0,
+        "daily_changes": [
+          -5.28,
+          -6.55,
+          0.0,
+          -4.69
+        ],
+        "reason": "涨跌幅大"
+      },
+      {
+        "code": "DELL",
+        "name": "戴尔科技",
+        "weekly_chg": -6.3,
+        "avg_amount": 64.41,
+        "rsi12": 76.0,
+        "daily_changes": [
+          -6.58,
+          -3.27,
+          0.23,
+          -6.55
+        ],
+        "reason": "RSI极端"
+      }
+    ]
+  },
+  "upcoming_events": {
+    "earnings": [
+      {
+        "name": "甲骨文(ORCL.N)",
+        "date": "2026-06-10",
+        "time_show": "盘后",
+        "datename": "2026财年Q4",
+        "previous": "159",
+        "consensus": null,
+        "star": 4
+      }
+    ],
+    "macro": [
+      {
+        "title": "美国5月未季调CPI年率",
+        "date": "2026-06-10",
+        "time_show": "20:30",
+        "star": 5,
+        "country": "美国",
+        "previous": "3.80",
+        "consensus": "4.20"
+      },
+      {
+        "title": "美国至6月17日美联储利率决定(上限)",
+        "date": "2026-06-18",
+        "time_show": "02:00",
+        "star": 5,
+        "country": "美国",
+        "previous": "3.75",
+        "consensus": "3.75"
+      },
+      {
+        "title": "美国5月季调后CPI月率",
+        "date": "2026-06-10",
+        "time_show": "20:30",
+        "star": 4,
+        "country": "美国",
+        "previous": "0.60",
+        "consensus": "0.50"
+      },
+      {
+        "title": "美国至6月5日当周EIA原油库存(万桶)",
+        "date": "2026-06-10",
+        "time_show": "22:30",
+        "star": 4,
+        "country": "美国",
+        "previous": "-797.4",
+        "consensus": null
+      },
+      {
+        "title": "美国至6月6日当周初请失业金人数(万人)",
+        "date": "2026-06-11",
+        "time_show": "20:30",
+        "star": 4,
+        "country": "美国",
+        "previous": "22.5",
+        "consensus": "21.9"
+      },
+      {
+        "title": "美国5月零售销售月率",
+        "date": "2026-06-17",
+        "time_show": "20:30",
+        "star": 4,
+        "country": "美国",
+        "previous": "0.50",
+        "consensus": null
+      },
+      {
+        "title": "美国至6月12日当周EIA原油库存(万桶)",
+        "date": "2026-06-17",
+        "time_show": "22:30",
+        "star": 4,
+        "country": "美国",
+        "previous": null,
+        "consensus": null
+      },
+      {
+        "title": "美国至6月13日当周初请失业金人数(万人)",
+        "date": "2026-06-18",
+        "time_show": "20:30",
+        "star": 4,
+        "country": "美国",
+        "previous": null,
+        "consensus": null
+      },
+      {
+        "title": "美国5月纽约联储1年通胀预期",
+        "date": "2026-06-08",
+        "time_show": "23:00",
+        "star": 3,
+        "country": "美国",
+        "previous": "3.64",
+        "consensus": null
+      },
+      {
+        "title": "中国5月贸易帐(亿元)",
+        "date": "2026-06-09",
+        "time_show": "待定",
+        "star": 3,
+        "country": "中国",
+        "previous": "5856.9",
+        "consensus": null
+      },
+      {
+        "title": "中国5月以美元计算贸易帐(亿美元)",
+        "date": "2026-06-09",
+        "time_show": "待定",
+        "star": 3,
+        "country": "中国",
+        "previous": "848.2",
+        "consensus": "921"
+      },
+      {
+        "title": "美国5月NFIB小型企业信心指数",
+        "date": "2026-06-09",
+        "time_show": "18:00",
+        "star": 3,
+        "country": "美国",
+        "previous": "95.9",
+        "consensus": null
+      },
+      {
+        "title": "美国至5月23日当周ADP就业人数周度变动(万人)",
+        "date": "2026-06-09",
+        "time_show": "20:15",
+        "star": 3,
+        "country": "美国",
+        "previous": "3.575",
+        "consensus": null
+      },
+      {
+        "title": "美国4月贸易帐(亿美元)",
+        "date": "2026-06-09",
+        "time_show": "20:30",
+        "star": 3,
+        "country": "美国",
+        "previous": "-603",
+        "consensus": "-564"
+      },
+      {
+        "title": "美国5月成屋销售总数年化(万户)",
+        "date": "2026-06-09",
+        "time_show": "22:00",
+        "star": 3,
+        "country": "美国",
+        "previous": "402",
+        "consensus": "406"
+      },
+      {
+        "title": "美国4月批发销售月率",
+        "date": "2026-06-09",
+        "time_show": "22:00",
+        "star": 3,
+        "country": "美国",
+        "previous": "2.80",
+        "consensus": null
+      },
+      {
+        "title": "中国5月M2货币供应年率",
+        "date": "2026-06-10",
+        "time_show": "待定",
+        "star": 3,
+        "country": "中国",
+        "previous": "8.6",
+        "consensus": null
+      },
+      {
+        "title": "美国至6月5日当周API原油库存(万桶)",
+        "date": "2026-06-10",
+        "time_show": "04:30",
+        "star": 3,
+        "country": "美国",
+        "previous": "-675.7",
+        "consensus": null
+      },
+      {
+        "title": "中国5月CPI年率",
+        "date": "2026-06-10",
+        "time_show": "09:30",
+        "star": 3,
+        "country": "中国",
+        "previous": "1.20",
+        "consensus": "1.30"
+      },
+      {
+        "title": "美国5月季调后核心CPI月率",
+        "date": "2026-06-10",
+        "time_show": "20:30",
+        "star": 3,
+        "country": "美国",
+        "previous": "0.40",
+        "consensus": "0.30"
+      }
+    ],
+    "source_file": "upcoming_events_20260608.json"
+  }
+}
