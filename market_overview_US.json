@@ -1,0 +1,59 @@
+{
+  "market": "US",
+  "date": "2026-07-16",
+  "generated_at": "2026-07-17 06:04:52",
+  "overview": [
+    {
+      "tier": "100亿以上",
+      "total": 13,
+      "strong_count": 13,
+      "strong_ratio": 100.0,
+      "avg_drawdown": -17.6,
+      "count_10": 8,
+      "count_20": 4,
+      "count_30": 3,
+      "avg_daily_change": -4.27,
+      "avg_roc_5": -7.01,
+      "avg_roc_20": -7.6
+    },
+    {
+      "tier": "50-100亿",
+      "total": 7,
+      "strong_count": 7,
+      "strong_ratio": 100.0,
+      "avg_drawdown": -15.9,
+      "count_10": 5,
+      "count_20": 2,
+      "count_30": 1,
+      "avg_daily_change": -3.6,
+      "avg_roc_5": -6.8,
+      "avg_roc_20": -7.22
+    },
+    {
+      "tier": "10-50亿",
+      "total": 82,
+      "strong_count": 82,
+      "strong_ratio": 100.0,
+      "avg_drawdown": -15.5,
+      "count_10": 41,
+      "count_20": 26,
+      "count_30": 18,
+      "avg_daily_change": -1.95,
+      "avg_roc_5": 9.68,
+      "avg_roc_20": 9.57
+    },
+    {
+      "tier": "10亿以下",
+      "total": 1111,
+      "strong_count": 1111,
+      "strong_ratio": 100.0,
+      "avg_drawdown": -9.9,
+      "count_10": 379,
+      "count_20": 200,
+      "count_30": 94,
+      "avg_daily_change": 0.27,
+      "avg_roc_5": 2.74,
+      "avg_roc_20": 6.86
+    }
+  ]
+}
