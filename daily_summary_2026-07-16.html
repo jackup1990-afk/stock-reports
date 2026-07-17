@@ -1,0 +1,2454 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日速看 - 2026-07-16</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            padding: 24px 40px;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #1a73e8, #4285f4);
+            border-radius: 10px;
+            color: #fff;
+        }
+        .header h1 { font-size: 22px; letter-spacing: 1px; }
+        .header .meta { font-size: 16px; opacity: 0.85; }
+
+        /* Tabs */
+        .tab-bar {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 16px;
+            background: #fff;
+            border-radius: 10px;
+            padding: 4px;
+            border: 1px solid #e0e0e0;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover { background: #f0f0f0; }
+        .tab-btn.active {
+            background: #1a73e8;
+            color: #fff;
+        }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        /* Market summary strip */
+        .market-summary {
+            display: flex;
+            gap: 16px;
+            padding: 14px 18px;
+            background: #fff;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+        .ms-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 80px;
+        }
+        .ms-label { font-size: 15px; color: #888; margin-bottom: 2px; }
+        .ms-val { font-size: 20px; font-weight: 800; }
+        .ms-val.up { color: #dc3545; }
+        .ms-val.down { color: #22c55e; }
+        .ms-val.flat { color: #6b7280; }
+        .ms-sub { font-size: 15px; color: #666; margin-top: 2px; }
+
+        /* Commentary box */
+        .commentary-box {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #f59e0b;
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+        }
+        .commentary-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #f59e0b;
+            margin-bottom: 6px;
+        }
+        .commentary-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Section */
+        .section {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+        .section-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #444;
+            padding: 10px 16px;
+            background: #fafafa;
+            border-bottom: 1px solid #e8e8e8;
+            letter-spacing: 0.5px;
+        }
+        .section-body {
+            padding: 14px 20px;
+        }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; font-size: 16px; }
+        th {
+            text-align: left;
+            padding: 6px 8px;
+            border-bottom: 2px solid #e0e0e0;
+            font-size: 15px;
+            color: #888;
+            font-weight: 600;
+        }
+        td {
+            padding: 5px 8px;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        tr:hover { background: #f8f9fa; }
+        .name-cell {
+            font-weight: 600;
+            color: #333;
+            max-width: 120px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .num { text-align: right; font-variant-numeric: tabular-nums; }
+        .num.up { color: #dc3545; }
+        .num.down { color: #22c55e; }
+        .num.flat { color: #6b7280; }
+        .badge {
+            display: inline-block;
+            padding: 1px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        /* ETF direction cards */
+        .etf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        .etf-card {
+            padding: 12px 14px;
+            background: #fafafa;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        .etf-code { font-size: 15px; font-weight: 800; color: #333; }
+        .etf-name { font-size: 10px; color: #888; margin: 2px 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .etf-chg { font-size: 18px; font-weight: 700; }
+        .etf-chg.up { color: #dc3545; }
+        .etf-chg.down { color: #22c55e; }
+        .etf-chg.flat { color: #6b7280; }
+
+        /* Amount layer grid */
+        .layer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+        .layer-card {
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .layer-title { font-size: 16px; color: #666; font-weight: 600; margin-bottom: 4px; }
+        .layer-chg { font-size: 22px; font-weight: 800; margin: 4px 0; }
+        .layer-chg.up { color: #dc3545; }
+        .layer-chg.down { color: #22c55e; }
+        .layer-chg.flat { color: #6b7280; }
+        .layer-bar {
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 6px 0;
+        }
+        .layer-bar-up {
+            height: 100%;
+            background: #dc3545;
+            border-radius: 3px;
+        }
+        .layer-detail {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 15px;
+            color: #666;
+        }
+        .layer-detail .up { color: #dc3545; }
+        .layer-detail .down { color: #22c55e; }
+
+        /* Empty hint */
+        .empty-hint {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .market-summary { gap: 14px; }
+            .ms-item { min-width: 60px; }
+            .ms-val { font-size: 16px; }
+            .layer-grid { grid-template-columns: 1fr; }
+            .etf-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>每日速看</h1>
+        <div class="meta">数据日期: 2026-07-16 | 生成: 2026-07-17 09:54</div>
+    </div>
+
+    <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab(0)">A股 + ETF</button><button class="tab-btn " onclick="switchTab(1)">港股</button><button class="tab-btn " onclick="switchTab(2)">美股</button>
+    </div>
+
+    <div class="tab-panel active" id="tab-0"><div class="market-summary">
+        <div class="ms-item"><span class="ms-label">A股</span><span class="ms-val down">-0.65%</span><span class="ms-sub">2469涨/2867跌</span></div>
+        <div class="ms-item"><span class="ms-label">ETF</span><span class="ms-val down">-1.47%</span><span class="ms-sub">28涨/94跌</span></div>
+        <div class="ms-item"><span class="ms-label">涨停/强势</span><span class="ms-val up">30</span></div>
+    </div><div class="commentary-box">
+        <div class="commentary-title">🎯 一针见血</div>
+        <div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">📊</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">A股回调-0.65%，空头增强。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">📈</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">涨跌比2469:2867，下跌占多数，亏钱效应明显。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">📉</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">ETF最强板块：港股通互联网ETF(+3.3%)、港股消费ETF易方达(+2.8%)、恒生互联网ETF(+2.8%)。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">🔥</span><span style="color:#22c55e;font-size:12px;line-height:1.5;">最弱板块：中韩半导体ETF(-7.6%)、半导体设备ETF(-7.6%)、科创半导体ETF(-7.2%)。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">⚠️</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">涨停/强势主升30只。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">💡</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">大资金层(>10亿)上涨仅27%，主力撤退。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">🎯</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">资金关注亮点：紫光股份(量171.2亿)、瑞芯微(量72.4亿)、昭衍新药(量66.4亿)。</span></div>
+    </div><div class="section ">
+        <div class="section-title">ETF板块轮动 TOP10</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC5</th><th>ROC20</th><th>成交额</th><th>信号</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">港股通互联网ETF</td>
+            <td class="num up">+3.30%</td>
+            <td class="num">+4.9%</td>
+            <td class="num">+7.1%</td>
+            <td class="num">52.9亿</td>
+            <td><span class="badge" style="background:#dc3545">多头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">港股消费ETF易方达</td>
+            <td class="num up">+2.80%</td>
+            <td class="num">+1.5%</td>
+            <td class="num">-21.0%</td>
+            <td class="num">3.0亿</td>
+            <td><span class="badge" style="background:#22c55e">弱势探底</span></td>
+        </tr><tr>
+            <td class="name-cell">恒生互联网ETF</td>
+            <td class="num up">+2.80%</td>
+            <td class="num">+4.5%</td>
+            <td class="num">+5.6%</td>
+            <td class="num">33.9亿</td>
+            <td><span class="badge" style="background:#22c55e">空头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">现金流ETF南方</td>
+            <td class="num up">+2.60%</td>
+            <td class="num">+1.1%</td>
+            <td class="num">-7.0%</td>
+            <td class="num">2.1亿</td>
+            <td><span class="badge" style="background:#22c55e">弱势探底</span></td>
+        </tr><tr>
+            <td class="name-cell">中概互联ETF</td>
+            <td class="num up">+2.60%</td>
+            <td class="num">+4.5%</td>
+            <td class="num">+6.2%</td>
+            <td class="num">5.6亿</td>
+            <td><span class="badge" style="background:#dc3545">多头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">港股通科技30ETF</td>
+            <td class="num up">+2.30%</td>
+            <td class="num">+4.2%</td>
+            <td class="num">+9.5%</td>
+            <td class="num">6.3亿</td>
+            <td><span class="badge" style="background:#dc3545">多头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">中概互联网ETF</td>
+            <td class="num up">+2.20%</td>
+            <td class="num">+5.2%</td>
+            <td class="num">+8.4%</td>
+            <td class="num">41.9亿</td>
+            <td><span class="badge" style="background:#dc3545">多头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">养殖ETF</td>
+            <td class="num up">+1.90%</td>
+            <td class="num">+5.6%</td>
+            <td class="num">+0.0%</td>
+            <td class="num">3.5亿</td>
+            <td><span class="badge" style="background:#22c55e">弱势探底</span></td>
+        </tr><tr>
+            <td class="name-cell">大数据ETF</td>
+            <td class="num up">+1.80%</td>
+            <td class="num">-4.0%</td>
+            <td class="num">-11.6%</td>
+            <td class="num">2.5亿</td>
+            <td><span class="badge" style="background:#22c55e">空头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">恒生科技指数ETF</td>
+            <td class="num up">+1.70%</td>
+            <td class="num">+1.8%</td>
+            <td class="num">+3.7%</td>
+            <td class="num">49.6亿</td>
+            <td><span class="badge" style="background:#dc3545">多头排列</span></td>
+        </tr></tbody>
+    </table></div>
+    </div><div class="section ">
+        <div class="section-title">ETF板块轮动 BOTTOM10</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC5</th><th>ROC20</th><th>成交额</th><th>信号</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">中韩半导体ETF</td>
+            <td class="num down">-7.60%</td>
+            <td class="num">-16.2%</td>
+            <td class="num">-16.7%</td>
+            <td class="num">126.7亿</td>
+            <td><span class="badge" style="background:#22c55e">空头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">半导体设备ETF</td>
+            <td class="num down">-7.60%</td>
+            <td class="num">-61.9%</td>
+            <td class="num">-50.4%</td>
+            <td class="num">63.2亿</td>
+            <td><span class="badge" style="background:#22c55e">空头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">科创半导体ETF</td>
+            <td class="num down">-7.20%</td>
+            <td class="num">-25.5%</td>
+            <td class="num">-66.1%</td>
+            <td class="num">50.6亿</td>
+            <td><span class="badge" style="background:#22c55e">空头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">半导体设备ETF</td>
+            <td class="num down">-6.10%</td>
+            <td class="num">-21.0%</td>
+            <td class="num">-79.6%</td>
+            <td class="num">5.7亿</td>
+            <td><span class="badge" style="background:#22c55e">空头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">芯片ETF基金</td>
+            <td class="num down">-6.10%</td>
+            <td class="num">-20.5%</td>
+            <td class="num">-1.8%</td>
+            <td class="num">2.9亿</td>
+            <td><span class="badge" style="background:#f59e0b">趋势转弱</span></td>
+        </tr><tr>
+            <td class="name-cell">芯片ETF</td>
+            <td class="num down">-6.00%</td>
+            <td class="num">-19.9%</td>
+            <td class="num">-1.5%</td>
+            <td class="num">7.5亿</td>
+            <td><span class="badge" style="background:#f59e0b">趋势转弱</span></td>
+        </tr><tr>
+            <td class="name-cell">半导体ETF</td>
+            <td class="num down">-5.90%</td>
+            <td class="num">-21.2%</td>
+            <td class="num">-51.4%</td>
+            <td class="num">18.1亿</td>
+            <td><span class="badge" style="background:#22c55e">空头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">芯片ETF</td>
+            <td class="num down">-5.70%</td>
+            <td class="num">-19.8%</td>
+            <td class="num">-51.0%</td>
+            <td class="num">13.7亿</td>
+            <td><span class="badge" style="background:#22c55e">空头排列</span></td>
+        </tr><tr>
+            <td class="name-cell">半导体ETF南方</td>
+            <td class="num down">-5.60%</td>
+            <td class="num">-20.1%</td>
+            <td class="num">+12.6%</td>
+            <td class="num">2.3亿</td>
+            <td><span class="badge" style="background:#dc3545">回调</span></td>
+        </tr><tr>
+            <td class="name-cell">科创芯片ETF</td>
+            <td class="num down">-5.10%</td>
+            <td class="num">-19.8%</td>
+            <td class="num">-0.5%</td>
+            <td class="num">68.8亿</td>
+            <td><span class="badge" style="background:#f59e0b">趋势转弱</span></td>
+        </tr></tbody>
+    </table></div>
+    </div><div class="section ">
+        <div class="section-title">涨停/强势主升 (30只)</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC20</th><th>信号</th><th>操作</th><th>成交额</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">紫光股份</td>
+            <td class="num up">+8.60%</td>
+            <td class="num">+41.8%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">171.2亿</td>
+        </tr><tr>
+            <td class="name-cell">瑞芯微</td>
+            <td class="num up">+5.60%</td>
+            <td class="num">+26.3%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">72.4亿</td>
+        </tr><tr>
+            <td class="name-cell">昭衍新药</td>
+            <td class="num up">+5.20%</td>
+            <td class="num">+64.3%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">66.4亿</td>
+        </tr><tr>
+            <td class="name-cell">埃斯顿</td>
+            <td class="num up">+3.70%</td>
+            <td class="num">+27.9%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">49.9亿</td>
+        </tr><tr>
+            <td class="name-cell">星网锐捷</td>
+            <td class="num up">+3.60%</td>
+            <td class="num">+43.8%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">49.0亿</td>
+        </tr><tr>
+            <td class="name-cell">万邦医药</td>
+            <td class="num up">+13.40%</td>
+            <td class="num">+175.6%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">11.3亿</td>
+        </tr><tr>
+            <td class="name-cell">哈药股份</td>
+            <td class="num up">+10.00%</td>
+            <td class="num">+60.9%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">14.6亿</td>
+        </tr><tr>
+            <td class="name-cell">传音控股</td>
+            <td class="num up">+6.60%</td>
+            <td class="num">+17.0%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">22.1亿</td>
+        </tr><tr>
+            <td class="name-cell">海思科</td>
+            <td class="num up">+6.80%</td>
+            <td class="num">+65.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">18.9亿</td>
+        </tr><tr>
+            <td class="name-cell">百合花</td>
+            <td class="num up">+6.80%</td>
+            <td class="num">+48.6%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">18.2亿</td>
+        </tr><tr>
+            <td class="name-cell">逸豪新材</td>
+            <td class="num up">+20.00%</td>
+            <td class="num">-27.1%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">6.1亿</td>
+        </tr><tr>
+            <td class="name-cell">锐捷网络</td>
+            <td class="num up">+3.30%</td>
+            <td class="num">+59.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">29.1亿</td>
+        </tr><tr>
+            <td class="name-cell">香江控股</td>
+            <td class="num up">+9.90%</td>
+            <td class="num">-14.5%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">9.1亿</td>
+        </tr><tr>
+            <td class="name-cell">新赣江</td>
+            <td class="num up">+20.60%</td>
+            <td class="num">+135.6%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">4.2亿</td>
+        </tr><tr>
+            <td class="name-cell">陇神戎发</td>
+            <td class="num up">+7.20%</td>
+            <td class="num">+56.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">10.4亿</td>
+        </tr><tr>
+            <td class="name-cell">沐曦股份-U</td>
+            <td class="num up">+3.00%</td>
+            <td class="num">+21.5%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">24.4亿</td>
+        </tr><tr>
+            <td class="name-cell">至正股份</td>
+            <td class="num up">+5.50%</td>
+            <td class="num">+32.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">12.7亿</td>
+        </tr><tr>
+            <td class="name-cell">泽璟制药-U</td>
+            <td class="num up">+4.00%</td>
+            <td class="num">+58.6%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">17.0亿</td>
+        </tr><tr>
+            <td class="name-cell">贤丰控股</td>
+            <td class="num up">+5.30%</td>
+            <td class="num">+38.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">11.8亿</td>
+        </tr><tr>
+            <td class="name-cell">百奥赛图</td>
+            <td class="num up">+7.90%</td>
+            <td class="num">+61.3%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">7.0亿</td>
+        </tr><tr>
+            <td class="name-cell">雷神科技</td>
+            <td class="num up">+13.00%</td>
+            <td class="num">+19.8%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">4.2亿</td>
+        </tr><tr>
+            <td class="name-cell">科伦药业</td>
+            <td class="num up">+1.70%</td>
+            <td class="num">+40.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">31.1亿</td>
+        </tr><tr>
+            <td class="name-cell">浪潮信息</td>
+            <td class="num up">+0.40%</td>
+            <td class="num">+31.8%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">126.9亿</td>
+        </tr><tr>
+            <td class="name-cell">天海电子</td>
+            <td class="num up">+10.00%</td>
+            <td class="num">+7.6%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">4.6亿</td>
+        </tr><tr>
+            <td class="name-cell">北京科锐</td>
+            <td class="num up">+10.00%</td>
+            <td class="num">+5.4%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">4.5亿</td>
+        </tr><tr>
+            <td class="name-cell">大元泵业</td>
+            <td class="num up">+3.20%</td>
+            <td class="num">+49.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">14.0亿</td>
+        </tr><tr>
+            <td class="name-cell">天安新材</td>
+            <td class="num up">+7.40%</td>
+            <td class="num">+35.0%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">5.9亿</td>
+        </tr><tr>
+            <td class="name-cell">迪安诊断</td>
+            <td class="num up">+3.20%</td>
+            <td class="num">+16.6%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">13.6亿</td>
+        </tr><tr>
+            <td class="name-cell">南极电商</td>
+            <td class="num up">+9.90%</td>
+            <td class="num">+20.5%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">3.9亿</td>
+        </tr><tr>
+            <td class="name-cell">江南水务</td>
+            <td class="num up">+9.50%</td>
+            <td class="num">+6.3%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">2.9亿</td>
+        </tr></tbody>
+    </table></div>
+    </div><div class="section ">
+        <div class="section-title">成交额分层分析</div>
+        <div class="section-body"><div class="layer-grid"><div class="layer-card" style="border-top: 3px solid #1a73e8">
+            <div class="layer-title">>10亿</div>
+            <div class="layer-chg down">-2.59%</div>
+            <div class="layer-bar">
+                <div class="layer-bar-up" style="width:27%"></div>
+            </div>
+            <div class="layer-detail">
+                <span class="up">134涨</span>
+                <span class="down">359跌</span>
+                <span>494只</span>
+            </div>
+        </div><div class="layer-card" style="border-top: 3px solid #f59e0b">
+            <div class="layer-title">5-10亿</div>
+            <div class="layer-chg down">-2.47%</div>
+            <div class="layer-bar">
+                <div class="layer-bar-up" style="width:28%"></div>
+            </div>
+            <div class="layer-detail">
+                <span class="up">134涨</span>
+                <span class="down">343跌</span>
+                <span>480只</span>
+            </div>
+        </div><div class="layer-card" style="border-top: 3px solid #6b7280">
+            <div class="layer-title"><5亿</div>
+            <div class="layer-chg down">-0.24%</div>
+            <div class="layer-bar">
+                <div class="layer-bar-up" style="width:49%"></div>
+            </div>
+            <div class="layer-detail">
+                <span class="up">2201涨</span>
+                <span class="down">2165跌</span>
+                <span>4534只</span>
+            </div>
+        </div></div></div>
+    </div><div class="section ">
+        <div class="section-title">资金关注亮点 (量大+上涨+正面信号)</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC20</th><th>信号</th><th>操作</th><th>成交额</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">紫光股份</td>
+            <td class="num up">+8.60%</td>
+            <td class="num">+41.8%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">171.2亿</td>
+        </tr><tr>
+            <td class="name-cell">瑞芯微</td>
+            <td class="num up">+5.60%</td>
+            <td class="num">+26.3%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">72.4亿</td>
+        </tr><tr>
+            <td class="name-cell">昭衍新药</td>
+            <td class="num up">+5.20%</td>
+            <td class="num">+64.3%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">66.4亿</td>
+        </tr><tr>
+            <td class="name-cell">拓维信息</td>
+            <td class="num up">+6.50%</td>
+            <td class="num">+1.5%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">41.1亿</td>
+        </tr><tr>
+            <td class="name-cell">昆仑万维</td>
+            <td class="num up">+4.60%</td>
+            <td class="num">+24.5%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">56.8亿</td>
+        </tr><tr>
+            <td class="name-cell">光线传媒</td>
+            <td class="num up">+9.50%</td>
+            <td class="num">+19.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">27.0亿</td>
+        </tr><tr>
+            <td class="name-cell">埃斯顿</td>
+            <td class="num up">+3.70%</td>
+            <td class="num">+27.9%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">49.9亿</td>
+        </tr><tr>
+            <td class="name-cell">信立泰</td>
+            <td class="num up">+7.00%</td>
+            <td class="num">+37.2%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">26.1亿</td>
+        </tr><tr>
+            <td class="name-cell">星网锐捷</td>
+            <td class="num up">+3.60%</td>
+            <td class="num">+43.8%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">49.0亿</td>
+        </tr><tr>
+            <td class="name-cell">海南海药</td>
+            <td class="num up">+10.10%</td>
+            <td class="num">+50.0%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">16.1亿</td>
+        </tr><tr>
+            <td class="name-cell">万邦医药</td>
+            <td class="num up">+13.40%</td>
+            <td class="num">+175.6%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">11.3亿</td>
+        </tr><tr>
+            <td class="name-cell">哈药股份</td>
+            <td class="num up">+10.00%</td>
+            <td class="num">+60.9%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">14.6亿</td>
+        </tr><tr>
+            <td class="name-cell">传音控股</td>
+            <td class="num up">+6.60%</td>
+            <td class="num">+17.0%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">22.1亿</td>
+        </tr><tr>
+            <td class="name-cell">巨人网络</td>
+            <td class="num up">+2.40%</td>
+            <td class="num">+25.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">60.6亿</td>
+        </tr><tr>
+            <td class="name-cell">舒泰神</td>
+            <td class="num up">+5.40%</td>
+            <td class="num">+37.6%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">24.7亿</td>
+        </tr></tbody>
+    </table></div>
+    </div></div><div class="tab-panel " id="tab-1"><div class="market-summary">
+        <div class="ms-item"><span class="ms-label">港股</span><span class="ms-val up">+1.09%</span><span class="ms-sub">341涨/183跌</span></div>
+        <div class="ms-item"><span class="ms-label">标的数</span><span class="ms-val">533</span></div>
+        <div class="ms-item"><span class="ms-label">成交额</span><span class="ms-val">2957.4亿</span></div>
+    </div><div class="commentary-box">
+        <div class="commentary-title">🎯 一针见血</div>
+        <div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">📊</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">港股强势上涨+1.09%，氛围偏暖。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">📈</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">涨跌比341:183，共533只标的。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">📉</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">最强个股：阿里巴巴-W(+3.1%)、小米集团-W(+6.3%)、迈富时(+30.6%)。</span></div>
+    </div><div class="section ">
+        <div class="section-title">强势异动 (远超均值)</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC20</th><th>信号</th><th>操作</th><th>成交额</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">阿里巴巴-W</td>
+            <td class="num up">+3.10%</td>
+            <td class="num">+9.3%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">181.4亿</td>
+        </tr><tr>
+            <td class="name-cell">小米集团-W</td>
+            <td class="num up">+6.30%</td>
+            <td class="num">+7.2%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">87.1亿</td>
+        </tr><tr>
+            <td class="name-cell">迈富时</td>
+            <td class="num up">+30.60%</td>
+            <td class="num">+17.8%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">13.6亿</td>
+        </tr><tr>
+            <td class="name-cell">美团-W</td>
+            <td class="num up">+4.60%</td>
+            <td class="num">+15.8%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">87.6亿</td>
+        </tr><tr>
+            <td class="name-cell">快手-W</td>
+            <td class="num up">+5.00%</td>
+            <td class="num">+5.6%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">66.6亿</td>
+        </tr><tr>
+            <td class="name-cell">泡泡玛特</td>
+            <td class="num up">+6.90%</td>
+            <td class="num">-3.8%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">45.2亿</td>
+        </tr><tr>
+            <td class="name-cell">量化派</td>
+            <td class="num up">+19.10%</td>
+            <td class="num">+47.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">8.5亿</td>
+        </tr><tr>
+            <td class="name-cell">比亚迪股份</td>
+            <td class="num up">+4.60%</td>
+            <td class="num">+8.2%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">31.2亿</td>
+        </tr><tr>
+            <td class="name-cell">小鹏汽车-W</td>
+            <td class="num up">+7.60%</td>
+            <td class="num">+2.7%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">14.6亿</td>
+        </tr><tr>
+            <td class="name-cell">东方甄选</td>
+            <td class="num up">+14.30%</td>
+            <td class="num">+12.5%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">5.5亿</td>
+        </tr><tr>
+            <td class="name-cell">南方两倍做多恒生科技</td>
+            <td class="num up">+4.00%</td>
+            <td class="num">+6.6%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">15.5亿</td>
+        </tr><tr>
+            <td class="name-cell">吉利汽车</td>
+            <td class="num up">+5.40%</td>
+            <td class="num">-1.0%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">11.1亿</td>
+        </tr><tr>
+            <td class="name-cell">埃斯顿</td>
+            <td class="num up">+7.60%</td>
+            <td class="num">+23.2%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">5.9亿</td>
+        </tr><tr>
+            <td class="name-cell">哔哩哔哩-W</td>
+            <td class="num up">+5.30%</td>
+            <td class="num">+8.8%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">8.2亿</td>
+        </tr><tr>
+            <td class="name-cell">地平线机器人-W</td>
+            <td class="num up">+4.30%</td>
+            <td class="num">+2.2%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">9.9亿</td>
+        </tr><tr>
+            <td class="name-cell">滴普科技</td>
+            <td class="num up">+9.30%</td>
+            <td class="num">-13.2%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">4.5亿</td>
+        </tr><tr>
+            <td class="name-cell">金山云</td>
+            <td class="num up">+5.80%</td>
+            <td class="num">-1.8%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">7.2亿</td>
+        </tr><tr>
+            <td class="name-cell">中兴通讯</td>
+            <td class="num up">+3.10%</td>
+            <td class="num">-1.7%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">11.5亿</td>
+        </tr><tr>
+            <td class="name-cell">紫金黄金国际</td>
+            <td class="num up">+4.30%</td>
+            <td class="num">-13.5%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">7.5亿</td>
+        </tr><tr>
+            <td class="name-cell">贝壳-W</td>
+            <td class="num up">+4.30%</td>
+            <td class="num">+8.3%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">7.4亿</td>
+        </tr></tbody>
+    </table></div>
+    </div><div class="section ">
+        <div class="section-title">港股 ETF TOP50</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC20</th><th>信号</th><th>操作</th><th>成交额</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">XL二南方海力士</td>
+            <td class="num down">-21.30%</td>
+            <td class="num">-56.0%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">112.5亿</td>
+        </tr><tr>
+            <td class="name-cell">XL二南三星</td>
+            <td class="num down">-19.70%</td>
+            <td class="num">-55.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">20.6亿</td>
+        </tr><tr>
+            <td class="name-cell">南方恒生科技</td>
+            <td class="num up">+2.20%</td>
+            <td class="num">+4.1%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">165.3亿</td>
+        </tr><tr>
+            <td class="name-cell">盈富基金</td>
+            <td class="num up">+1.40%</td>
+            <td class="num">+2.4%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">176.9亿</td>
+        </tr><tr>
+            <td class="name-cell">恒生中国企业</td>
+            <td class="num up">+1.70%</td>
+            <td class="num">+1.0%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">88.7亿</td>
+        </tr><tr>
+            <td class="name-cell">南方两倍做多恒生科技</td>
+            <td class="num up">+4.00%</td>
+            <td class="num">+6.6%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">15.5亿</td>
+        </tr><tr>
+            <td class="name-cell">南方两倍做空恒生科技</td>
+            <td class="num down">-3.90%</td>
+            <td class="num">-9.4%</td>
+            <td><span class="badge" style="background:#6b7280">下跌已企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">14.7亿</td>
+        </tr><tr>
+            <td class="name-cell">南方两倍看空恒指</td>
+            <td class="num down">-2.80%</td>
+            <td class="num">-5.7%</td>
+            <td><span class="badge" style="background:#6b7280">下跌已企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">5.0亿</td>
+        </tr><tr>
+            <td class="name-cell">GX中国半导</td>
+            <td class="num down">-10.30%</td>
+            <td class="num">+4.1%</td>
+            <td><span class="badge" style="background:#6b7280">下跌已企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">1.3亿</td>
+        </tr><tr>
+            <td class="name-cell">南方两倍看多恒指</td>
+            <td class="num up">+2.90%</td>
+            <td class="num">+4.7%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">4.4亿</td>
+        </tr><tr>
+            <td class="name-cell">XI二南三星</td>
+            <td class="num up">+15.80%</td>
+            <td class="num">+2596.0%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">6480万</td>
+        </tr><tr>
+            <td class="name-cell">安硕恒生科技</td>
+            <td class="num up">+1.90%</td>
+            <td class="num">+3.8%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">5.3亿</td>
+        </tr><tr>
+            <td class="name-cell">恒生科技ETF</td>
+            <td class="num up">+1.90%</td>
+            <td class="num">+4.0%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">3.0亿</td>
+        </tr><tr>
+            <td class="name-cell">安硕A50</td>
+            <td class="num down">-2.10%</td>
+            <td class="num">-4.2%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">1.6亿</td>
+        </tr><tr>
+            <td class="name-cell">领展房产基金</td>
+            <td class="num up">+0.70%</td>
+            <td class="num">+5.4%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">3.5亿</td>
+        </tr><tr>
+            <td class="name-cell">南方港韩科技</td>
+            <td class="num down">-2.40%</td>
+            <td class="num">-13.4%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">8311万</td>
+        </tr><tr>
+            <td class="name-cell">南方A50</td>
+            <td class="num down">-2.20%</td>
+            <td class="num">-3.9%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">7639万</td>
+        </tr><tr>
+            <td class="name-cell">恒生高息股</td>
+            <td class="num up">+1.20%</td>
+            <td class="num">-2.9%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">1.2亿</td>
+        </tr><tr>
+            <td class="name-cell">华夏沪深三百</td>
+            <td class="num down">-1.50%</td>
+            <td class="num">-2.6%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">9466万</td>
+        </tr><tr>
+            <td class="name-cell">博时两倍做多中国创业板</td>
+            <td class="num down">-5.80%</td>
+            <td class="num">-15.5%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">2316万</td>
+        </tr><tr>
+            <td class="name-cell">华夏恒生生科</td>
+            <td class="num down">-0.50%</td>
+            <td class="num">+21.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">1.6亿</td>
+        </tr><tr>
+            <td class="name-cell">安硕A50-R</td>
+            <td class="num down">-2.20%</td>
+            <td class="num">-2.3%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">3133万</td>
+        </tr><tr>
+            <td class="name-cell">GX亚洲半导体</td>
+            <td class="num down">-2.00%</td>
+            <td class="num">+0.6%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">3294万</td>
+        </tr><tr>
+            <td class="name-cell">安硕亚洲除日</td>
+            <td class="num down">-2.50%</td>
+            <td class="num">-7.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">2043万</td>
+        </tr><tr>
+            <td class="name-cell">华夏沪深三百-R</td>
+            <td class="num down">-1.70%</td>
+            <td class="num">-1.0%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">2663万</td>
+        </tr><tr>
+            <td class="name-cell">华夏亚洲高息股</td>
+            <td class="num up">+1.70%</td>
+            <td class="num">-4.3%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">2063万</td>
+        </tr><tr>
+            <td class="name-cell">A GX恒指备兑</td>
+            <td class="num up">+0.80%</td>
+            <td class="num">-1.6%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">4014万</td>
+        </tr><tr>
+            <td class="name-cell">A GX国指备兑</td>
+            <td class="num up">+0.20%</td>
+            <td class="num">-5.3%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">9049万</td>
+        </tr><tr>
+            <td class="name-cell">SPDR金</td>
+            <td class="num up">+0.30%</td>
+            <td class="num">-6.8%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">3556万</td>
+        </tr><tr>
+            <td class="name-cell">A南方国指备兑</td>
+            <td class="num up">+0.10%</td>
+            <td class="num">-5.8%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">6379万</td>
+        </tr></tbody>
+    </table></div>
+    </div><div class="section ">
+        <div class="section-title">港股个股 TOP50</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC20</th><th>信号</th><th>操作</th><th>成交额</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">智谱</td>
+            <td class="num down">-9.30%</td>
+            <td class="num">+5.0%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">94.7亿</td>
+        </tr><tr>
+            <td class="name-cell">建滔积层板</td>
+            <td class="num down">-13.20%</td>
+            <td class="num">-43.0%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">53.6亿</td>
+        </tr><tr>
+            <td class="name-cell">澜起科技</td>
+            <td class="num down">-23.00%</td>
+            <td class="num">-26.4%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">29.9亿</td>
+        </tr><tr>
+            <td class="name-cell">阿里巴巴-W</td>
+            <td class="num up">+3.10%</td>
+            <td class="num">+9.3%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">181.4亿</td>
+        </tr><tr>
+            <td class="name-cell">小米集团-W</td>
+            <td class="num up">+6.30%</td>
+            <td class="num">+7.2%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">87.1亿</td>
+        </tr><tr>
+            <td class="name-cell">华虹半导体</td>
+            <td class="num down">-7.00%</td>
+            <td class="num">+7.3%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">65.6亿</td>
+        </tr><tr>
+            <td class="name-cell">腾讯控股</td>
+            <td class="num up">+2.10%</td>
+            <td class="num">+8.2%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">208.1亿</td>
+        </tr><tr>
+            <td class="name-cell">迈富时</td>
+            <td class="num up">+30.60%</td>
+            <td class="num">+17.8%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">13.6亿</td>
+        </tr><tr>
+            <td class="name-cell">美团-W</td>
+            <td class="num up">+4.60%</td>
+            <td class="num">+15.8%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">87.6亿</td>
+        </tr><tr>
+            <td class="name-cell">快手-W</td>
+            <td class="num up">+5.00%</td>
+            <td class="num">+5.6%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">66.6亿</td>
+        </tr><tr>
+            <td class="name-cell">泡泡玛特</td>
+            <td class="num up">+6.90%</td>
+            <td class="num">-3.8%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">45.2亿</td>
+        </tr><tr>
+            <td class="name-cell">兆易创新</td>
+            <td class="num down">-8.70%</td>
+            <td class="num">-18.5%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">31.5亿</td>
+        </tr><tr>
+            <td class="name-cell">长飞光纤光缆</td>
+            <td class="num down">-6.10%</td>
+            <td class="num">-38.3%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">40.5亿</td>
+        </tr><tr>
+            <td class="name-cell">建滔集团</td>
+            <td class="num down">-9.50%</td>
+            <td class="num">-42.6%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">19.3亿</td>
+        </tr><tr>
+            <td class="name-cell">联想集团</td>
+            <td class="num down">-6.70%</td>
+            <td class="num">-12.6%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">24.9亿</td>
+        </tr><tr>
+            <td class="name-cell">量化派</td>
+            <td class="num up">+19.10%</td>
+            <td class="num">+47.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">8.5亿</td>
+        </tr><tr>
+            <td class="name-cell">比亚迪股份</td>
+            <td class="num up">+4.60%</td>
+            <td class="num">+8.2%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">31.2亿</td>
+        </tr><tr>
+            <td class="name-cell">小鹏汽车-W</td>
+            <td class="num up">+7.60%</td>
+            <td class="num">+2.7%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">14.6亿</td>
+        </tr><tr>
+            <td class="name-cell">中芯国际</td>
+            <td class="num down">-1.40%</td>
+            <td class="num">+1.6%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">77.8亿</td>
+        </tr><tr>
+            <td class="name-cell">昭衍新药</td>
+            <td class="num down">-6.00%</td>
+            <td class="num">+58.2%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">17.8亿</td>
+        </tr><tr>
+            <td class="name-cell">TCL电子</td>
+            <td class="num down">-11.90%</td>
+            <td class="num">-7.9%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">6.7亿</td>
+        </tr><tr>
+            <td class="name-cell">东方甄选</td>
+            <td class="num up">+14.30%</td>
+            <td class="num">+12.5%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">5.5亿</td>
+        </tr><tr>
+            <td class="name-cell">剑桥科技</td>
+            <td class="num down">-8.80%</td>
+            <td class="num">-19.5%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">8.5亿</td>
+        </tr><tr>
+            <td class="name-cell">吉利汽车</td>
+            <td class="num up">+5.40%</td>
+            <td class="num">-1.0%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">11.1亿</td>
+        </tr><tr>
+            <td class="name-cell">信达生物</td>
+            <td class="num down">-2.90%</td>
+            <td class="num">+23.3%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">19.6亿</td>
+        </tr><tr>
+            <td class="name-cell">ASMPT</td>
+            <td class="num down">-6.80%</td>
+            <td class="num">-8.7%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">8.3亿</td>
+        </tr><tr>
+            <td class="name-cell">经纬天地</td>
+            <td class="num down">-16.40%</td>
+            <td class="num">-51.5%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">2.9亿</td>
+        </tr><tr>
+            <td class="name-cell">埃斯顿</td>
+            <td class="num up">+7.60%</td>
+            <td class="num">+23.2%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">5.9亿</td>
+        </tr><tr>
+            <td class="name-cell">哔哩哔哩-W</td>
+            <td class="num up">+5.30%</td>
+            <td class="num">+8.8%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">8.2亿</td>
+        </tr><tr>
+            <td class="name-cell">地平线机器人-W</td>
+            <td class="num up">+4.30%</td>
+            <td class="num">+2.2%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">9.9亿</td>
+        </tr><tr>
+            <td class="name-cell">MINIMAX-WP</td>
+            <td class="num down">-1.80%</td>
+            <td class="num">-38.6%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">23.3亿</td>
+        </tr><tr>
+            <td class="name-cell">滴普科技</td>
+            <td class="num up">+9.30%</td>
+            <td class="num">-13.2%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">4.5亿</td>
+        </tr><tr>
+            <td class="name-cell">金山云</td>
+            <td class="num up">+5.80%</td>
+            <td class="num">-1.8%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">7.2亿</td>
+        </tr><tr>
+            <td class="name-cell">百度集团-SW</td>
+            <td class="num up">+2.60%</td>
+            <td class="num">-0.4%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">13.8亿</td>
+        </tr><tr>
+            <td class="name-cell">中兴通讯</td>
+            <td class="num up">+3.10%</td>
+            <td class="num">-1.7%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">11.5亿</td>
+        </tr><tr>
+            <td class="name-cell">紫金矿业</td>
+            <td class="num up">+2.20%</td>
+            <td class="num">-7.4%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">15.6亿</td>
+        </tr><tr>
+            <td class="name-cell">英矽智能</td>
+            <td class="num down">-3.90%</td>
+            <td class="num">+49.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">8.6亿</td>
+        </tr><tr>
+            <td class="name-cell">紫金黄金国际</td>
+            <td class="num up">+4.30%</td>
+            <td class="num">-13.5%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">7.5亿</td>
+        </tr><tr>
+            <td class="name-cell">贝壳-W</td>
+            <td class="num up">+4.30%</td>
+            <td class="num">+8.3%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">7.4亿</td>
+        </tr><tr>
+            <td class="name-cell">银河娱乐</td>
+            <td class="num up">+3.50%</td>
+            <td class="num">+6.2%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">8.4亿</td>
+        </tr><tr>
+            <td class="name-cell">福耀玻璃</td>
+            <td class="num up">+5.70%</td>
+            <td class="num">+2.5%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">5.0亿</td>
+        </tr><tr>
+            <td class="name-cell">龙翼航空科技</td>
+            <td class="num up">+68.70%</td>
+            <td class="num">+68.7%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">4112万</td>
+        </tr><tr>
+            <td class="name-cell">映美控股</td>
+            <td class="num down">-29.40%</td>
+            <td class="num">+104.5%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">9499万</td>
+        </tr><tr>
+            <td class="name-cell">美图公司</td>
+            <td class="num up">+6.10%</td>
+            <td class="num">-5.6%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">4.4亿</td>
+        </tr><tr>
+            <td class="name-cell">申洲国际</td>
+            <td class="num up">+4.50%</td>
+            <td class="num">+3.8%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">6.0亿</td>
+        </tr><tr>
+            <td class="name-cell">京东健康</td>
+            <td class="num up">+4.50%</td>
+            <td class="num">+7.0%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">5.7亿</td>
+        </tr><tr>
+            <td class="name-cell">洛阳钼业</td>
+            <td class="num up">+2.90%</td>
+            <td class="num">-14.8%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">8.8亿</td>
+        </tr><tr>
+            <td class="name-cell">瑞声科技</td>
+            <td class="num up">+6.50%</td>
+            <td class="num">-14.2%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">3.9亿</td>
+        </tr><tr>
+            <td class="name-cell">携程集团-S</td>
+            <td class="num up">+2.00%</td>
+            <td class="num">-6.3%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">12.2亿</td>
+        </tr><tr>
+            <td class="name-cell">中国石油化工股份</td>
+            <td class="num up">+2.40%</td>
+            <td class="num">-0.9%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">10.1亿</td>
+        </tr></tbody>
+    </table></div>
+    </div></div><div class="tab-panel " id="tab-2"><div class="market-summary">
+        <div class="ms-item"><span class="ms-label">美股</span><span class="ms-val up">+0.16%</span><span class="ms-sub">1059涨/966跌</span></div>
+        <div class="ms-item"><span class="ms-label">标的数</span><span class="ms-val">2121</span></div>
+        <div class="ms-item"><span class="ms-label">成交额</span><span class="ms-val">9694.8亿</span></div>
+    </div><div class="commentary-box">
+        <div class="commentary-title">🎯 一针见血</div>
+        <div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">📊</span><span style="color:#22c55e;font-size:12px;line-height:1.5;">SPY跌-0.5%，小幅回调。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">📈</span><span style="color:#555;font-size:12px;line-height:1.5;">标普跑赢纳指，价值占优。</span></div><div style="display:flex;gap:8px;align-items:flex-start;padding:6px 0;border-bottom:1px solid #f0f0f0;"><span style="font-size:14px;">📉</span><span style="color:#ef4444;font-size:12px;line-height:1.5;">领涨个股：雅培(+10.7%)、Atai Beckley NV(+26.1%)、IBM国际商业机器(+3.7%)。</span></div>
+    </div><div class="section ">
+        <div class="section-title">ETF方向指标</div>
+        <div class="section-body"><div style="margin-bottom:14px;"><div style="font-size:13px;font-weight:600;color:#555;margin-bottom:8px;">📊 大盘指数</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;"><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">IWM</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">罗素2000ETF-iS</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-0.10%</div>
+            <div style="height:3px;background:#22c55e;width:2.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">DIA</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">道琼斯工业平均指数ETF</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-0.20%</div>
+            <div style="height:3px;background:#22c55e;width:4.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">SPY</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">标普500ETF-SPD</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-0.50%</div>
+            <div style="height:3px;background:#22c55e;width:10.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">VOO</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">标普500ETF-Van</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-0.50%</div>
+            <div style="height:3px;background:#22c55e;width:10.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">IVV</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">标普500ETF-iSh</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-0.50%</div>
+            <div style="height:3px;background:#22c55e;width:10.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">QQQ</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">纳指100ETF-Inv</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-1.60%</div>
+            <div style="height:3px;background:#22c55e;width:32.0%;border-radius:2px;margin-top:4px;"></div>
+        </div></div></div><div style="margin-bottom:14px;"><div style="font-size:13px;font-weight:600;color:#555;margin-bottom:8px;">🏭 行业板块</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;"><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">XLV</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">医疗保健精选行业指数ET</div>
+            <div style="font-size:16px;font-weight:700;" class="up">+2.20%</div>
+            <div style="height:3px;background:#ef4444;width:44.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">XLE</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">能源指数ETF-SPDR</div>
+            <div style="font-size:16px;font-weight:700;" class="up">+0.90%</div>
+            <div style="height:3px;background:#ef4444;width:18.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">XLF</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">金融行业ETF-SPDR</div>
+            <div style="font-size:16px;font-weight:700;" class="up">+0.30%</div>
+            <div style="height:3px;background:#ef4444;width:6.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">XLK</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">科技行业精选指数ETF-</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-2.20%</div>
+            <div style="height:3px;background:#22c55e;width:44.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">SMH</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">半导体指数ETF-Van</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-3.70%</div>
+            <div style="height:3px;background:#22c55e;width:74.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">SOXL</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">三倍做多半导体ETF-D</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-13.90%</div>
+            <div style="height:3px;background:#22c55e;width:100%;border-radius:2px;margin-top:4px;"></div>
+        </div></div></div><div style="margin-bottom:14px;"><div style="font-size:13px;font-weight:600;color:#555;margin-bottom:8px;">💎 另类资产</div><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;"><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">TLT</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">20+年以上美国国债ET</div>
+            <div style="font-size:16px;font-weight:700;" class="flat">+0.00%</div>
+            <div style="height:3px;background:#ccc;width:0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">BITO</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">比特币期货ETF-Pro</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-0.90%</div>
+            <div style="height:3px;background:#22c55e;width:18.0%;border-radius:2px;margin-top:4px;"></div>
+        </div><div style="background:#fff;border:1px solid #e8e8e8;border-radius:8px;padding:10px;text-align:center;">
+            <div style="font-size:12px;font-weight:800;letter-spacing:1px;">GLD</div>
+            <div style="font-size:11px;color:#888;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">黄金ETF-SPDR</div>
+            <div style="font-size:16px;font-weight:700;" class="down">-2.00%</div>
+            <div style="height:3px;background:#22c55e;width:40.0%;border-radius:2px;margin-top:4px;"></div>
+        </div></div></div></div>
+    </div><div class="section ">
+        <div class="section-title">强势异动</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC20</th><th>信号</th><th>操作</th><th>成交额</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">雅培</td>
+            <td class="num up">+10.70%</td>
+            <td class="num">+9.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">31.1亿</td>
+        </tr><tr>
+            <td class="name-cell">Atai Beckley NV</td>
+            <td class="num up">+26.10%</td>
+            <td class="num">+65.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">11.8亿</td>
+        </tr><tr>
+            <td class="name-cell">IBM国际商业机器</td>
+            <td class="num up">+3.70%</td>
+            <td class="num">-19.1%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">47.8亿</td>
+        </tr><tr>
+            <td class="name-cell">CareDx</td>
+            <td class="num up">+102.00%</td>
+            <td class="num">+139.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">1.7亿</td>
+        </tr><tr>
+            <td class="name-cell">万宝盛华</td>
+            <td class="num up">+32.40%</td>
+            <td class="num">+98.9%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">2.8亿</td>
+        </tr><tr>
+            <td class="name-cell">开市客</td>
+            <td class="num up">+3.20%</td>
+            <td class="num">-4.2%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">25.3亿</td>
+        </tr><tr>
+            <td class="name-cell">财捷</td>
+            <td class="num up">+5.40%</td>
+            <td class="num">+4.9%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">14.7亿</td>
+        </tr><tr>
+            <td class="name-cell">直觉外科</td>
+            <td class="num up">+3.40%</td>
+            <td class="num">-3.5%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">22.2亿</td>
+        </tr><tr>
+            <td class="name-cell">埃森哲</td>
+            <td class="num up">+5.50%</td>
+            <td class="num">-12.6%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">13.5亿</td>
+        </tr><tr>
+            <td class="name-cell">赛富时</td>
+            <td class="num up">+3.40%</td>
+            <td class="num">+6.8%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">20.7亿</td>
+        </tr><tr>
+            <td class="name-cell">艾伯维</td>
+            <td class="num up">+4.20%</td>
+            <td class="num">+14.3%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">16.5亿</td>
+        </tr><tr>
+            <td class="name-cell">奥多比</td>
+            <td class="num up">+4.80%</td>
+            <td class="num">+127.0%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#dc3545">开仓</span></td>
+            <td class="num">13.4亿</td>
+        </tr><tr>
+            <td class="name-cell">信达思</td>
+            <td class="num up">+7.20%</td>
+            <td class="num">+16.7%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">8.7亿</td>
+        </tr><tr>
+            <td class="name-cell">麦克森</td>
+            <td class="num up">+5.60%</td>
+            <td class="num">+7.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">11.1亿</td>
+        </tr><tr>
+            <td class="name-cell">JB亨特运输服务</td>
+            <td class="num up">+8.00%</td>
+            <td class="num">+6.6%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">7.3亿</td>
+        </tr><tr>
+            <td class="name-cell">菲利普莫里斯国际</td>
+            <td class="num up">+5.00%</td>
+            <td class="num">+3.1%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">11.0亿</td>
+        </tr><tr>
+            <td class="name-cell">默沙东</td>
+            <td class="num up">+3.30%</td>
+            <td class="num">+10.8%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">15.8亿</td>
+        </tr><tr>
+            <td class="name-cell">万事达</td>
+            <td class="num up">+3.10%</td>
+            <td class="num">+10.0%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">16.0亿</td>
+        </tr><tr>
+            <td class="name-cell">英格索兰</td>
+            <td class="num up">+7.10%</td>
+            <td class="num">+8.0%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">6.9亿</td>
+        </tr><tr>
+            <td class="name-cell">英美烟草</td>
+            <td class="num up">+7.50%</td>
+            <td class="num">+2.9%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">5.9亿</td>
+        </tr></tbody>
+    </table></div>
+    </div><div class="section ">
+        <div class="section-title">美股 ETF TOP50</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC20</th><th>信号</th><th>操作</th><th>成交额</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">三倍做多半导体ETF-Direxion</td>
+            <td class="num down">-13.90%</td>
+            <td class="num">-37.0%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">108.6亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多SNDK ETF-Tradr</td>
+            <td class="num down">-25.00%</td>
+            <td class="num">-59.8%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">18.2亿</td>
+        </tr><tr>
+            <td class="name-cell">Roundhill Memory ETF</td>
+            <td class="num down">-8.80%</td>
+            <td class="num">-19.6%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">51.7亿</td>
+        </tr><tr>
+            <td class="name-cell">纳指100ETF-Invesco QQQ Trust</td>
+            <td class="num down">-1.60%</td>
+            <td class="num">-3.3%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">276.4亿</td>
+        </tr><tr>
+            <td class="name-cell">三倍做空半导体ETF-Direxion</td>
+            <td class="num up">+13.10%</td>
+            <td class="num">+1023.5%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">31.3亿</td>
+        </tr><tr>
+            <td class="name-cell">半导体指数ETF-VanEck</td>
+            <td class="num down">-3.70%</td>
+            <td class="num">-7.6%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">69.9亿</td>
+        </tr><tr>
+            <td class="name-cell">半导体ETF-iShares</td>
+            <td class="num down">-4.50%</td>
+            <td class="num">-10.3%</td>
+            <td><span class="badge" style="background:#6b7280">下跌已企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">54.4亿</td>
+        </tr><tr>
+            <td class="name-cell">三倍做多纳指ETF-ProShares</td>
+            <td class="num down">-5.00%</td>
+            <td class="num">-11.5%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">47.1亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做空SNDK ETF-Tradr</td>
+            <td class="num up">+24.90%</td>
+            <td class="num">-6.7%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">8.5亿</td>
+        </tr><tr>
+            <td class="name-cell">1倍做空GOOGL ETF-Direxion</td>
+            <td class="num up">+912.40%</td>
+            <td class="num">+930.4%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">2015万</td>
+        </tr><tr>
+            <td class="name-cell">韩国ETF-iShares MSCI</td>
+            <td class="num down">-4.80%</td>
+            <td class="num">-20.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">38.2亿</td>
+        </tr><tr>
+            <td class="name-cell">标普500ETF-SPDR</td>
+            <td class="num down">-0.50%</td>
+            <td class="num">+0.3%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">347.7亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多MU ETF-Direxion</td>
+            <td class="num down">-12.00%</td>
+            <td class="num">-22.5%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">12.0亿</td>
+        </tr><tr>
+            <td class="name-cell">三倍做空纳指ETF-ProShares</td>
+            <td class="num up">+5.00%</td>
+            <td class="num">+6.6%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">21.3亿</td>
+        </tr><tr>
+            <td class="name-cell">Direxion Daily South Korea Bull 3X Shares</td>
+            <td class="num down">-14.70%</td>
+            <td class="num">-59.4%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">4.9亿</td>
+        </tr><tr>
+            <td class="name-cell">黄金ETF-SPDR</td>
+            <td class="num down">-2.00%</td>
+            <td class="num">-5.5%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">32.0亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多SNDK ETF-T-REX</td>
+            <td class="num down">-26.30%</td>
+            <td class="num">-60.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">2.4亿</td>
+        </tr><tr>
+            <td class="name-cell">黄金矿业ETF-VanEck</td>
+            <td class="num down">-3.50%</td>
+            <td class="num">-18.2%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">17.1亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多ASTS ETF-Tradr</td>
+            <td class="num down">-34.00%</td>
+            <td class="num">-73.6%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">1.5亿</td>
+        </tr><tr>
+            <td class="name-cell">区域银行指数ETF-SPDR KBW</td>
+            <td class="num up">+2.80%</td>
+            <td class="num">+7.5%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">16.2亿</td>
+        </tr><tr>
+            <td class="name-cell">比特币期货ETF-ProShares</td>
+            <td class="num down">-0.90%</td>
+            <td class="num">-2.2%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">48.3亿</td>
+        </tr><tr>
+            <td class="name-cell">安博</td>
+            <td class="num up">+4.60%</td>
+            <td class="num">+2.7%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">9.3亿</td>
+        </tr><tr>
+            <td class="name-cell">医疗保健精选行业指数ETF-SPDR</td>
+            <td class="num up">+2.20%</td>
+            <td class="num">+5.8%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">19.1亿</td>
+        </tr><tr>
+            <td class="name-cell">标普生物科技ETF-SPDR</td>
+            <td class="num down">-2.70%</td>
+            <td class="num">+12.3%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">15.0亿</td>
+        </tr><tr>
+            <td class="name-cell">白银ETF-iShares</td>
+            <td class="num down">-3.50%</td>
+            <td class="num">-20.5%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">9.7亿</td>
+        </tr><tr>
+            <td class="name-cell">科技行业精选指数ETF-SPDR</td>
+            <td class="num down">-2.20%</td>
+            <td class="num">-4.8%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">15.4亿</td>
+        </tr><tr>
+            <td class="name-cell">iShares安硕MSCI美国动量因素</td>
+            <td class="num down">-3.00%</td>
+            <td class="num">-6.9%</td>
+            <td><span class="badge" style="background:#6b7280">下跌已企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">9.8亿</td>
+        </tr><tr>
+            <td class="name-cell">新兴市场ETF-iShares</td>
+            <td class="num down">-2.10%</td>
+            <td class="num">-6.5%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">13.8亿</td>
+        </tr><tr>
+            <td class="name-cell">日常消费品精选行业指数ETF-SPDR</td>
+            <td class="num up">+2.80%</td>
+            <td class="num">+0.3%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">10.4亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多RKLB ETF-Defiance</td>
+            <td class="num down">-23.40%</td>
+            <td class="num">-63.2%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">1.1亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多MU ETF-GraniteShares</td>
+            <td class="num down">-11.30%</td>
+            <td class="num">-25.1%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">2.2亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多NBIS ETF-GraniteShares</td>
+            <td class="num down">-28.00%</td>
+            <td class="num">-48.5%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">8320万</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多GOOGL-Direxion</td>
+            <td class="num down">-9.00%</td>
+            <td class="num">-12.0%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">2.6亿</td>
+        </tr><tr>
+            <td class="name-cell">小型黄金矿业ETF-VanEck</td>
+            <td class="num down">-4.00%</td>
+            <td class="num">-19.0%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">5.4亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多NVDA ETF-GraniteShares</td>
+            <td class="num down">-4.70%</td>
+            <td class="num">-67.4%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">4.0亿</td>
+        </tr><tr>
+            <td class="name-cell">核心MSCI新兴市场ETF-iShares</td>
+            <td class="num down">-2.00%</td>
+            <td class="num">-6.1%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">9.0亿</td>
+        </tr><tr>
+            <td class="name-cell">美国红利股ETF-Schwab</td>
+            <td class="num up">+2.20%</td>
+            <td class="num">+1.6%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">8.1亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做空NVDA ETF-GraniteShares</td>
+            <td class="num up">+4.40%</td>
+            <td class="num">-2.9%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">4.0亿</td>
+        </tr><tr>
+            <td class="name-cell">创新ETF-ARK</td>
+            <td class="num down">-3.70%</td>
+            <td class="num">-3.0%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">4.7亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多BE ETF-Tradr</td>
+            <td class="num down">-27.30%</td>
+            <td class="num">-42.1%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">6035万</td>
+        </tr><tr>
+            <td class="name-cell">标普500ETF-Vanguard</td>
+            <td class="num down">-0.50%</td>
+            <td class="num">+0.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">32.7亿</td>
+        </tr><tr>
+            <td class="name-cell">Invesco S&P 500 Momentum ETF</td>
+            <td class="num down">-3.10%</td>
+            <td class="num">-6.0%</td>
+            <td><span class="badge" style="background:#6b7280">下跌已企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">5.1亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多AMD ETF-GraniteShares</td>
+            <td class="num down">-10.80%</td>
+            <td class="num">-1.7%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">1.5亿</td>
+        </tr><tr>
+            <td class="name-cell">三倍做多黄金矿业ETN-MicroSectors</td>
+            <td class="num down">-10.90%</td>
+            <td class="num">-49.2%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">1.4亿</td>
+        </tr><tr>
+            <td class="name-cell">平均加权指数ETF-Rydex S&P</td>
+            <td class="num up">+1.00%</td>
+            <td class="num">+1.4%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">15.2亿</td>
+        </tr><tr>
+            <td class="name-cell">NASDAQ100指数ETF-Invesco</td>
+            <td class="num down">-1.70%</td>
+            <td class="num">-3.3%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">9.0亿</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多NBIS ETF-Leverage Shares</td>
+            <td class="num down">-27.70%</td>
+            <td class="num">-49.1%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">5427万</td>
+        </tr><tr>
+            <td class="name-cell">2倍做多IREN ETF-Defiance</td>
+            <td class="num down">-18.10%</td>
+            <td class="num">-66.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">8251万</td>
+        </tr><tr>
+            <td class="name-cell">标普500ETF-iShares</td>
+            <td class="num down">-0.50%</td>
+            <td class="num">+0.3%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">29.8亿</td>
+        </tr><tr>
+            <td class="name-cell">三倍做空生物技术ETF-Direxion</td>
+            <td class="num up">+8.60%</td>
+            <td class="num">-32.4%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">1.7亿</td>
+        </tr></tbody>
+    </table></div>
+    </div><div class="section ">
+        <div class="section-title">美股个股 TOP50</div>
+        <div class="section-body"><table>
+        <thead><tr><th>名称</th><th>今日</th><th>ROC20</th><th>信号</th><th>操作</th><th>成交额</th></tr></thead>
+        <tbody><tr>
+            <td class="name-cell">闪迪</td>
+            <td class="num down">-12.60%</td>
+            <td class="num">-25.0%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">247.8亿</td>
+        </tr><tr>
+            <td class="name-cell">美光科技</td>
+            <td class="num down">-5.60%</td>
+            <td class="num">-16.4%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">393.4亿</td>
+        </tr><tr>
+            <td class="name-cell">超威半导体</td>
+            <td class="num down">-5.30%</td>
+            <td class="num">-1.3%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">135.7亿</td>
+        </tr><tr>
+            <td class="name-cell">Nebius Group NV-A</td>
+            <td class="num down">-13.90%</td>
+            <td class="num">-22.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">49.6亿</td>
+        </tr><tr>
+            <td class="name-cell">谷歌-A</td>
+            <td class="num down">-4.40%</td>
+            <td class="num">-5.0%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">148.1亿</td>
+        </tr><tr>
+            <td class="name-cell">英伟达</td>
+            <td class="num down">-2.40%</td>
+            <td class="num">-0.0%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">253.6亿</td>
+        </tr><tr>
+            <td class="name-cell">英特尔</td>
+            <td class="num down">-5.80%</td>
+            <td class="num">-17.1%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">104.5亿</td>
+        </tr><tr>
+            <td class="name-cell">迈威尔科技</td>
+            <td class="num down">-8.70%</td>
+            <td class="num">-32.4%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">65.9亿</td>
+        </tr><tr>
+            <td class="name-cell">AST SpaceMobile Inc-A</td>
+            <td class="num down">-17.00%</td>
+            <td class="num">-43.6%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">30.1亿</td>
+        </tr><tr>
+            <td class="name-cell">Bloom Energy Corp-A</td>
+            <td class="num down">-13.60%</td>
+            <td class="num">-16.9%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">34.8亿</td>
+        </tr><tr>
+            <td class="name-cell">希捷科技</td>
+            <td class="num down">-10.00%</td>
+            <td class="num">-27.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">46.9亿</td>
+        </tr><tr>
+            <td class="name-cell">西部数据</td>
+            <td class="num down">-9.20%</td>
+            <td class="num">-31.5%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">49.4亿</td>
+        </tr><tr>
+            <td class="name-cell">甲骨文</td>
+            <td class="num down">-6.20%</td>
+            <td class="num">-34.0%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">68.7亿</td>
+        </tr><tr>
+            <td class="name-cell">博通</td>
+            <td class="num down">-5.00%</td>
+            <td class="num">-0.6%</td>
+            <td><span class="badge" style="background:#6b7280">横盘无行情</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">85.1亿</td>
+        </tr><tr>
+            <td class="name-cell">苹果</td>
+            <td class="num up">+1.80%</td>
+            <td class="num">+11.4%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">208.1亿</td>
+        </tr><tr>
+            <td class="name-cell">谷歌-C</td>
+            <td class="num down">-4.40%</td>
+            <td class="num">-4.7%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">85.0亿</td>
+        </tr><tr>
+            <td class="name-cell">雅培</td>
+            <td class="num up">+10.70%</td>
+            <td class="num">+9.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">31.1亿</td>
+        </tr><tr>
+            <td class="name-cell">Atai Beckley NV</td>
+            <td class="num up">+26.10%</td>
+            <td class="num">+65.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">11.8亿</td>
+        </tr><tr>
+            <td class="name-cell">Meta Platforms Inc-A</td>
+            <td class="num down">-2.50%</td>
+            <td class="num">+10.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">105.4亿</td>
+        </tr><tr>
+            <td class="name-cell">康宁</td>
+            <td class="num down">-9.20%</td>
+            <td class="num">-10.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">28.0亿</td>
+        </tr><tr>
+            <td class="name-cell">Robinhood Markets Inc-A</td>
+            <td class="num down">-8.20%</td>
+            <td class="num">+15.0%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">30.9亿</td>
+        </tr><tr>
+            <td class="name-cell">Rocket Lab Corp</td>
+            <td class="num down">-11.60%</td>
+            <td class="num">-41.3%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">21.0亿</td>
+        </tr><tr>
+            <td class="name-cell">台积电</td>
+            <td class="num down">-2.30%</td>
+            <td class="num">-3.6%</td>
+            <td><span class="badge" style="background:#6b7280">下跌已企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">101.4亿</td>
+        </tr><tr>
+            <td class="name-cell">亚马逊</td>
+            <td class="num down">-2.00%</td>
+            <td class="num">+1.6%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">114.2亿</td>
+        </tr><tr>
+            <td class="name-cell">微软</td>
+            <td class="num up">+1.40%</td>
+            <td class="num">+1.8%</td>
+            <td><span class="badge" style="background:#f59e0b">高位预警</span></td>
+            <td><span class="badge" style="background:#f59e0b">减仓</span></td>
+            <td class="num">147.9亿</td>
+        </tr><tr>
+            <td class="name-cell">IBM国际商业机器</td>
+            <td class="num up">+3.70%</td>
+            <td class="num">-19.1%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">47.8亿</td>
+        </tr><tr>
+            <td class="name-cell">CareDx</td>
+            <td class="num up">+102.00%</td>
+            <td class="num">+139.7%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">1.7亿</td>
+        </tr><tr>
+            <td class="name-cell">Lumentum Holdings Inc</td>
+            <td class="num down">-6.10%</td>
+            <td class="num">-20.6%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">28.2亿</td>
+        </tr><tr>
+            <td class="name-cell">应用材料</td>
+            <td class="num down">-3.20%</td>
+            <td class="num">-1.3%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">47.4亿</td>
+        </tr><tr>
+            <td class="name-cell">拉姆研究</td>
+            <td class="num down">-4.30%</td>
+            <td class="num">-13.0%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">34.2亿</td>
+        </tr><tr>
+            <td class="name-cell">Credo Technology Group Holding </td>
+            <td class="num down">-8.30%</td>
+            <td class="num">-21.4%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">16.6亿</td>
+        </tr><tr>
+            <td class="name-cell">高盛</td>
+            <td class="num down">-4.90%</td>
+            <td class="num">+0.4%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">27.9亿</td>
+        </tr><tr>
+            <td class="name-cell">Arm Holdings plc ADR</td>
+            <td class="num down">-5.40%</td>
+            <td class="num">-23.4%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">25.3亿</td>
+        </tr><tr>
+            <td class="name-cell">戴尔科技</td>
+            <td class="num down">-5.20%</td>
+            <td class="num">-3.1%</td>
+            <td><span class="badge" style="background:#6b7280">趋势整理</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">25.6亿</td>
+        </tr><tr>
+            <td class="name-cell">Astera Labs Inc</td>
+            <td class="num down">-8.80%</td>
+            <td class="num">-13.0%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">15.1亿</td>
+        </tr><tr>
+            <td class="name-cell">IREN Ltd</td>
+            <td class="num down">-9.00%</td>
+            <td class="num">-38.6%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">14.6亿</td>
+        </tr><tr>
+            <td class="name-cell">卡特彼勒</td>
+            <td class="num down">-4.10%</td>
+            <td class="num">-7.2%</td>
+            <td><span class="badge" style="background:#6b7280">下跌已企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">31.6亿</td>
+        </tr><tr>
+            <td class="name-cell">诺基亚</td>
+            <td class="num down">-7.70%</td>
+            <td class="num">-25.8%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">15.1亿</td>
+        </tr><tr>
+            <td class="name-cell">高通</td>
+            <td class="num down">-4.10%</td>
+            <td class="num">-20.3%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">27.2亿</td>
+        </tr><tr>
+            <td class="name-cell">Coherent Corp</td>
+            <td class="num down">-7.50%</td>
+            <td class="num">-27.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">13.9亿</td>
+        </tr><tr>
+            <td class="name-cell">特斯拉</td>
+            <td class="num down">-0.90%</td>
+            <td class="num">-3.4%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">113.7亿</td>
+        </tr><tr>
+            <td class="name-cell">CoreWeave Inc-A</td>
+            <td class="num down">-5.50%</td>
+            <td class="num">-23.8%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">18.2亿</td>
+        </tr><tr>
+            <td class="name-cell">GE航空航天</td>
+            <td class="num down">-4.10%</td>
+            <td class="num">-1.7%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">23.6亿</td>
+        </tr><tr>
+            <td class="name-cell">维萨</td>
+            <td class="num up">+2.80%</td>
+            <td class="num">+9.6%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">32.9亿</td>
+        </tr><tr>
+            <td class="name-cell">Applovin Corp-A</td>
+            <td class="num down">-4.00%</td>
+            <td class="num">-9.2%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">22.7亿</td>
+        </tr><tr>
+            <td class="name-cell">万宝盛华</td>
+            <td class="num up">+32.40%</td>
+            <td class="num">+98.9%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">2.8亿</td>
+        </tr><tr>
+            <td class="name-cell">天弘科技</td>
+            <td class="num down">-9.20%</td>
+            <td class="num">-20.5%</td>
+            <td><span class="badge" style="background:#22c55e">持续下行</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">8.9亿</td>
+        </tr><tr>
+            <td class="name-cell">摩根士丹利</td>
+            <td class="num down">-4.50%</td>
+            <td class="num">-1.1%</td>
+            <td><span class="badge" style="background:#dc3545">强势主升</span></td>
+            <td><span class="badge" style="background:#17a2b8">持有</span></td>
+            <td class="num">18.2亿</td>
+        </tr><tr>
+            <td class="name-cell">应用光电</td>
+            <td class="num down">-8.10%</td>
+            <td class="num">-42.0%</td>
+            <td><span class="badge" style="background:#22c55e">下跌未企稳</span></td>
+            <td><span class="badge" style="background:#6c757d">观望</span></td>
+            <td class="num">10.0亿</td>
+        </tr><tr>
+            <td class="name-cell">开市客</td>
+            <td class="num up">+3.20%</td>
+            <td class="num">-4.2%</td>
+            <td><span class="badge" style="background:#22c55e">趋势终结</span></td>
+            <td><span class="badge" style="background:#22c55e">清仓</span></td>
+            <td class="num">25.3亿</td>
+        </tr></tbody>
+    </table></div>
+    </div></div>
+
+    <script>
+    function switchTab(idx) {
+        document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+            btn.classList.toggle('active', i === idx);
+        });
+        document.querySelectorAll('.tab-panel').forEach((panel, i) => {
+            panel.classList.toggle('active', i === idx);
+        });
+    }
+    </script>
+</body>
+</html>
