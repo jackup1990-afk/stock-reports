@@ -1,59 +1,59 @@
 {
   "market": "HK",
-  "date": "2026-08-14",
-  "generated_at": "2026-08-14 16:21:48",
+  "date": "2026-08-17",
+  "generated_at": "2026-08-17 16:21:47",
   "overview": [
     {
       "tier": "100亿以上",
-      "total": 2,
-      "strong_count": 2,
+      "total": 1,
+      "strong_count": 1,
       "strong_ratio": 100.0,
-      "avg_drawdown": -30.2,
-      "count_10": 2,
-      "count_20": 2,
-      "count_30": 1,
-      "avg_daily_change": -3.35,
-      "avg_roc_5": -0.98,
-      "avg_roc_20": -0.77
+      "avg_drawdown": -15.9,
+      "count_10": 1,
+      "count_20": 0,
+      "count_30": 0,
+      "avg_daily_change": 6.1,
+      "avg_roc_5": 13.52,
+      "avg_roc_20": 7.74
     },
     {
       "tier": "50-100亿",
       "total": 1,
       "strong_count": 1,
       "strong_ratio": 100.0,
-      "avg_drawdown": -3.7,
-      "count_10": 0,
-      "count_20": 0,
-      "count_30": 0,
-      "avg_daily_change": -3.7,
-      "avg_roc_5": 19.57,
-      "avg_roc_20": 56.86
+      "avg_drawdown": -35.0,
+      "count_10": 1,
+      "count_20": 1,
+      "count_30": 1,
+      "avg_daily_change": 7.5,
+      "avg_roc_5": 1.75,
+      "avg_roc_20": -2.1
     },
     {
       "tier": "10-50亿",
-      "total": 10,
-      "strong_count": 10,
+      "total": 11,
+      "strong_count": 11,
       "strong_ratio": 100.0,
-      "avg_drawdown": -21.4,
-      "count_10": 3,
+      "avg_drawdown": -18.1,
+      "count_10": 4,
       "count_20": 3,
       "count_30": 3,
-      "avg_daily_change": 0.96,
-      "avg_roc_5": 1.04,
-      "avg_roc_20": 18.52
+      "avg_daily_change": 4.35,
+      "avg_roc_5": 6.57,
+      "avg_roc_20": 20.09
     },
     {
       "tier": "10亿以下",
-      "total": 86,
-      "strong_count": 86,
+      "total": 85,
+      "strong_count": 85,
       "strong_ratio": 100.0,
-      "avg_drawdown": -14.2,
-      "count_10": 48,
-      "count_20": 22,
-      "count_30": 8,
-      "avg_daily_change": -0.3,
-      "avg_roc_5": 0.71,
-      "avg_roc_20": 11.71
+      "avg_drawdown": -11.0,
+      "count_10": 37,
+      "count_20": 16,
+      "count_30": 3,
+      "avg_daily_change": 1.48,
+      "avg_roc_5": 0.34,
+      "avg_roc_20": 12.09
     }
   ]
 }
