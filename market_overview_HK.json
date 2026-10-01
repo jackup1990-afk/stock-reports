@@ -1,7 +1,7 @@
 {
   "market": "HK",
   "date": "2026-09-30",
-  "generated_at": "2026-09-30 16:22:48",
+  "generated_at": "2026-10-01 16:21:03",
   "overview": [
     {
       "tier": "100亿以上",
@@ -44,15 +44,15 @@
     },
     {
       "tier": "10亿以下",
-      "total": 64,
-      "strong_count": 64,
+      "total": 62,
+      "strong_count": 62,
       "strong_ratio": 100.0,
-      "avg_drawdown": -8.7,
+      "avg_drawdown": -8.8,
       "count_10": 23,
       "count_20": 7,
       "count_30": 2,
-      "avg_daily_change": 1.25,
-      "avg_roc_5": 0.92,
+      "avg_daily_change": 1.2,
+      "avg_roc_5": 0.78,
       "avg_roc_20": 2.45
     }
   ]
