@@ -1,7 +1,7 @@
 {
   "market": "A",
   "date": "2026-09-30",
-  "generated_at": "2026-10-02 15:13:22",
+  "generated_at": "2026-10-05 15:13:51",
   "overview": [
     {
       "tier": "100亿以上",
@@ -48,7 +48,7 @@
       "strong_count": 1066,
       "strong_ratio": 100.0,
       "avg_drawdown": -17.1,
-      "count_10": 720,
+      "count_10": 718,
       "count_20": 387,
       "count_30": 169,
       "avg_daily_change": -0.58,
