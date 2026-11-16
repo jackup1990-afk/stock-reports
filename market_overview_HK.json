@@ -1,7 +1,7 @@
 {
   "market": "HK",
-  "date": "2026-11-13",
-  "generated_at": "2026-11-13 16:22:58",
+  "date": "2026-11-16",
+  "generated_at": "2026-11-16 16:23:02",
   "overview": [
     {
       "tier": "100亿以上",
@@ -34,26 +34,26 @@
       "total": 8,
       "strong_count": 8,
       "strong_ratio": 100.0,
-      "avg_drawdown": -28.0,
+      "avg_drawdown": -28.4,
       "count_10": 5,
       "count_20": 4,
       "count_30": 4,
-      "avg_daily_change": -3.29,
-      "avg_roc_5": -2.42,
-      "avg_roc_20": -10.99
+      "avg_daily_change": -2.04,
+      "avg_roc_5": -3.76,
+      "avg_roc_20": -13.31
     },
     {
       "tier": "10亿以下",
-      "total": 55,
-      "strong_count": 55,
+      "total": 51,
+      "strong_count": 51,
       "strong_ratio": 100.0,
-      "avg_drawdown": -14.6,
-      "count_10": 26,
-      "count_20": 17,
-      "count_30": 12,
-      "avg_daily_change": -1.72,
-      "avg_roc_5": -1.21,
-      "avg_roc_20": -1.63
+      "avg_drawdown": -13.3,
+      "count_10": 22,
+      "count_20": 15,
+      "count_30": 10,
+      "avg_daily_change": -0.01,
+      "avg_roc_5": -1.5,
+      "avg_roc_20": -1.05
     }
   ]
 }
