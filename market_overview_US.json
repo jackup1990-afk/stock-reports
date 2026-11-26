@@ -1,7 +1,7 @@
 {
   "market": "US",
   "date": "2026-11-25",
-  "generated_at": "2026-11-26 06:05:51",
+  "generated_at": "2026-11-27 06:03:57",
   "overview": [
     {
       "tier": "100亿以上",
@@ -44,16 +44,16 @@
     },
     {
       "tier": "10亿以下",
-      "total": 623,
-      "strong_count": 623,
+      "total": 620,
+      "strong_count": 620,
       "strong_ratio": 100.0,
       "avg_drawdown": -11.3,
-      "count_10": 242,
+      "count_10": 241,
       "count_20": 108,
       "count_30": 57,
       "avg_daily_change": 0.67,
       "avg_roc_5": 0.38,
-      "avg_roc_20": -0.45
+      "avg_roc_20": -0.42
     }
   ]
 }
